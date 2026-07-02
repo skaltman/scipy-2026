@@ -1,0 +1,117 @@
+/*-- scss:defaults --*/
+
+// https://quarto.org/docs/presentations/revealjs/themes.html#saas-variables
+// https://github.com/twbs/bootstrap-sass/blob/master/assets/stylesheets/bootstrap/_variables.scss
+
+@import url('https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500&display=swap');
+
+// Primary colors
+$peach: #ee6331;
+$purple: #447099;
+$cream: #f9e6b5;
+$light-cream: #FCF6EC;
+
+// colors
+$body-bg: white !default;
+$body-color: darken($purple, 30%) !default;
+$link-color: $peach !default;
+
+// headings
+$presentation-heading-font: 'DM Sans', sans-serif !default;
+$presentation-heading-color: darken($purple, 30%) !default;
+
+/*-- scss:rules --*/
+
+// Annotation link
+.annotation-link {
+ position: fixed;
+ top: 10px;
+ right: 10px;
+ font-size: 75px;
+}
+
+// When `#| output-location: column` is set, it is no longer 100% height
+.reveal .column-output-location .column:first-of-type div.sourceCode {
+ height: unset !important;
+}
+
+.reveal .slide blockquote {
+ color: #a1a1a1;
+}
+
+// Change up the color scheme for H1 slides (default)
+.reveal h1 {
+ color: #ffffff;
+}
+
+// Footer is rendered outside the section, so key off the currently-shown
+// slide. Match both reveal's runtime has-dark-background class and the explicit
+// blue background, since #447099 is the deck's only dark slide. !important
+// overrides the inline orange color baked into the footer span.
+body:has(.slides section.present.has-dark-background) .footer,
+body:has(.slides section.present.has-dark-background) .footer *,
+body:has(.slides section.present[data-background-color="#447099"]) .footer,
+body:has(.slides section.present[data-background-color="#447099"]) .footer * {
+ color: darken($purple, 25%) !important;
+}
+
+// Additional colors for code
+$code-bg: lighten($purple, 73%) !default;  // Very light background
+$code-color: darken($purple, 30%) !default;
+$code-block-bg: lighten($purple, 71%) !default;  // Slightly darker than inline code
+
+/*-- scss:rules --*/
+
+// Your existing rules remain the same
+
+// Code chunk styling
+.reveal div.sourceCode {
+ background-color: $code-block-bg;
+ border-radius: 4px;
+ margin-bottom: 1em;
+}
+
+.reveal pre code {
+ background-color: transparent;
+ padding: 0.5em;
+ font-size: 0.75em;
+}
+
+// Syntax highlighting colors
+.reveal .sourceCode {
+ .fu {
+   color: $peach;
+ }
+
+ .st {
+   color: darken($purple, 30%);
+ }
+
+ .fl, .dv {
+   color: darken($peach, 10%);
+ }
+
+ .co {
+   color: lighten(darken($purple, 30%), 40%);
+   font-style: italic;
+ }
+
+ .va, .at {
+   color: darken($purple, 35%);
+ }
+
+ .kw {
+   color: $peach;
+   font-weight: 500;
+ }
+
+ .op {
+   color: darken($purple, 30%);
+ }
+
+ .cn {
+   color: darken($purple, 40%);
+ }
+}

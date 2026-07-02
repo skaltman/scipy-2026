@@ -1,0 +1,17 @@
+{
+  "permission": {
+    "external_directory": {
+      "/Users/saraa/GitHub/skaltman/model-eval/*": "allow",
+      "/Users/saraa/GitHub/simonpcouch/*": "allow",
+      "/Users/saraa/GitHub/skaltman/*": "allow"
+    },
+    "executeCode": {
+      "*": "allow"
+    },
+    "edit": {
+      "*.qmd": "allow",
+      "*.md": "allow",
+      "*.R": "allow"
+    }
+  }
+}
