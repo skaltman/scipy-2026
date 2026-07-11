@@ -234,10 +234,6 @@ _LLMs can 'see' plots just fine._
 
 ![](figures/original-bluffbench-results.png)
 
-. . .
-
-[👽]{style="position: absolute; top: 6%; right: 12%; font-size: 4em; transform: rotate(-18deg);"}
-
 :::footer
 <span style="color:#ee6331;">simonpcouch.github.io/bluffbench</span>
 :::
@@ -284,15 +280,6 @@ Please describe this plot.
 
 ##
 
-::: {style="font-size: 1.5em; text-align: center;"}
-<br>
-<br>
-<br>
-👽👽👽
-:::
-
-##
-
 ::: {style="display: flex; flex-direction: row; gap: 24px; padding: 0 20px 20px 20px; max-width: 100%; margin: 0 auto; font-size: 0.75em;"}
 
 ::: {style="flex: 3; display: flex; flex-direction: column; gap: 12px;"}
@@ -330,16 +317,7 @@ Please describe this plot.
 :::
 
 :::
-
-:::
-
-##
-
-::: {style="font-size: 1.5em; text-align: center;"}
-<br>
-<br>
-<br>
-👾👾👾
+🛸
 :::
 
 ##
@@ -364,15 +342,6 @@ _Calls tool: Run R code_
 There is a **strong, negative association.**
 :::
 
-:::
-
-##
-
-::: {style="font-size: 1.5em; text-align: center;"}
-<br>
-<br>
-<br>
-👽🛸👾
 :::
 
 ## {visibility="hidden"}
@@ -415,41 +384,6 @@ There is a **strong, negative association.**
 <br>
 _Agents enact a performance of progress._
 :::
-
-. . .
-
-::: {style="font-size: 1.8em; text-align: center;"}
-<br>
-<div id="alien-field" style="position: relative; width: 100%; height: 320px; margin-top: -260px;">
-<span class="alien" style="position: absolute; left: 50%; top: 50%;">👽</span>
-<span class="alien" style="position: absolute; left: 50%; top: 50%;">👾</span>
-<span class="alien" style="position: absolute; left: 50%; top: 50%;">🛸</span>
-</div>
-:::
-
-<script type="text/javascript">
-(function () {
-  const aliens = Array.from(document.querySelectorAll('#alien-field .alien'));
-  // amplitude (px), angular frequency, and phase for each axis, per alien
-  const params = [
-    {ax: 300, ay: 130, fx: 0.7, fy: 1.1, px: 0,            py: Math.PI / 2},
-    {ax: 240, ay: 150, fx: 1.3, fy: 0.5, px: Math.PI,      py: 0},
-    {ax: 360, ay: 100, fx: 0.9, fy: 1.7, px: Math.PI / 3,  py: Math.PI}
-  ];
-  const start = performance.now();
-  function tick(now) {
-    const t = (now - start) / 1000;
-    aliens.forEach(function (el, i) {
-      const p = params[i % params.length];
-      const x = p.ax * Math.sin(p.fx * t + p.px);
-      const y = p.ay * Math.sin(p.fy * t + p.py);
-      el.style.transform = "translate(calc(-50% + " + x + "px), calc(-50% + " + y + "px))";
-    });
-    requestAnimationFrame(tick);
-  }
-  requestAnimationFrame(tick);
-})();
-</script>
 
 ## Correctness matters in data analysis
 
@@ -547,7 +481,7 @@ What does this mean for agents for data analysis?
 <br>
 <br>
 <br>
-1. LLMs are aliens. 
+1. LLMs are weird. 
 :::
 
 ## {background-color="#FCF6EC"}
@@ -844,7 +778,7 @@ for verification and transparency: the human has to keep pace and see eye-to-eye
 ::: {style="display: flex; flex-direction: column; gap: 32px; max-width: 90%; margin: 10px auto 0 auto;"}
 
 ::: {.fragment style="background-color: #FCF6EC; border-radius: 18px; padding: 18px 32px; box-shadow: 0 4px 16px rgba(0,0,0,.2);"}
-[LLMs are aliens]{style="color: #ee6331; font-weight: 700; font-size: 1.4em;"}
+[LLMs are weird]{style="color: #ee6331; font-weight: 700; font-size: 1.4em;"}
 
 ::: {style="color: #ee6331; font-size: 0.95em; margin-top: 10px; line-height: 1.5;"}
 • Can make strange errors <br>
