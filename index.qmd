@@ -317,7 +317,7 @@ Please describe this plot.
 :::
 
 :::
-🛸
+
 :::
 
 ##
@@ -812,5 +812,5 @@ for verification and transparency: the human has to keep pace and see eye-to-eye
 ## {background-color="#FCF6EC"}
 
 ::: {style="display: flex; justify-content: center; align-items: center; min-height: 70vh;"}
-[thank you]{style="color: #ee6331; font-weight: 700; font-size: 2.4em;"} <span style="font-size: 2.4em; margin-left: 0.25em;">🛸</span>
+[thank you]{style="color: #ee6331; font-weight: 700; font-size: 2.4em;"} <span style="font-size: 2.4em; margin-left: 0.25em;"></span>
 :::
