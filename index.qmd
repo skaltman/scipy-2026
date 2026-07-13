@@ -3,7 +3,7 @@ title: ""
 format:
   revealjs:
     theme: [default, custom.scss]
-    footer: '<span style="color:#ee6331;">github.com/simonpcouch/gen-ai-pharma-26</span>'
+    footer: '<span style="color:#587453;">github.com/simonpcouch/gen-ai-pharma-26</span>'
 editor: source
 knitr:
   opts_chunk:
@@ -12,19 +12,25 @@ knitr:
     comment: "#>"
 ---
 
-## {background-image="figures/hero-d55.webp" background-size="cover" background-position="center"}
+## {background-image="figures/hero-bare.png" background-size="cover" background-position="center"}
 
-::: {style="display:flex; justify-content:flex-end; align-items:center; min-height:80vh; padding-right:calc(13% - 70px);"}
-::: {style="width: 62%; text-align: right; font-family:'DM Sans',sans-serif;"}
+::: {style="display:flex; justify-content:flex-end; align-items:flex-start; min-height:80vh; padding-top:6vh; padding-right:calc(6% - 70px);"}
+::: {style="width: 72%; text-align: right; font-family:'DM Sans',sans-serif;"}
 <span style="color:#ffffff; font-size:215%; font-weight:600; line-height:0.98; display:block;">It's (still) very bad to be wrong</span>
 
-<span style="color:#cdd9e6; display:block; margin-top:0.7em; font-family:'DM Sans',sans-serif; font-weight:500; text-transform:uppercase; letter-spacing:0.16em; font-size:0.78em;">Agents for Correct, Transparent, and Reproducible Data Analysis</span>
+<span style="color:#d2dcd0; display:block; margin-top:0.7em; font-family:'DM Sans',sans-serif; font-weight:500; text-transform:uppercase; letter-spacing:0.16em; font-size:0.78em;">Agents for Correct, Transparent, and Reproducible Data Analysis</span>
 
+<br>
+<br>
+<br>
 <br>
 
 <span style="color:#ffffff; display:block; font-weight:300; font-style:italic;">Sara Altman & Simon Couch</span>
-<span style="color:#f07344; font-size:0.85em;">AI Core Team @ Posit</span>
+<span style="color:#ffffff; font-size:0.85em;">AI Core Team @ Posit</span>
 :::
+:::
+
+:::footer
 :::
 
 ```{r}
@@ -227,7 +233,7 @@ _LLMs can 'see' plots just fine._
 ![](figures/bluffbench-post.png){fig-align="center"}
 
 :::footer
-<span style="color:#ee6331;">simonpcouch.github.io/bluffbench</span>
+<span style="color:#587453;">simonpcouch.github.io/bluffbench</span>
 :::
 
 ##
@@ -235,7 +241,7 @@ _LLMs can 'see' plots just fine._
 ![](figures/original-bluffbench-results.png)
 
 :::footer
-<span style="color:#ee6331;">simonpcouch.github.io/bluffbench</span>
+<span style="color:#587453;">simonpcouch.github.io/bluffbench</span>
 :::
 
 ##
@@ -373,7 +379,7 @@ There is a **strong, negative association.**
 ![](https://simonpcouch.github.io/bluffbench/index_files/figure-html/plot-bluff-eval-mocked-1.png)
 
 :::footer
-<span style="color:#ee6331;">simonpcouch.github.io/bluffbench</span>
+<span style="color:#587453;">simonpcouch.github.io/bluffbench</span>
 :::
 
 ## {background-color="#447099"}
@@ -477,7 +483,7 @@ What does this mean for agents for data analysis?
 
 ## {background-color="#FCF6EC"}
 
-::: {style="font-size: 2em; text-align: left; color: #ee6331; font-weight: 700;"}
+::: {style="font-size: 2em; text-align: left; color: #587453; font-weight: 700;"}
 <br>
 <br>
 <br>
@@ -486,7 +492,7 @@ What does this mean for agents for data analysis?
 
 ## {background-color="#FCF6EC"}
 
-::: {style="font-size: 2em; text-align: left; color: #ee6331; font-weight: 700;"}
+::: {style="font-size: 2em; text-align: left; color: #587453; font-weight: 700;"}
 <br>
 <br>
 <br>
@@ -778,18 +784,18 @@ for verification and transparency: the human has to keep pace and see eye-to-eye
 ::: {style="display: flex; flex-direction: column; gap: 32px; max-width: 90%; margin: 10px auto 0 auto;"}
 
 ::: {.fragment style="background-color: #FCF6EC; border-radius: 18px; padding: 18px 32px; box-shadow: 0 4px 16px rgba(0,0,0,.2);"}
-[LLMs are weird]{style="color: #ee6331; font-weight: 700; font-size: 1.4em;"}
+[LLMs are weird]{style="color: #587453; font-weight: 700; font-size: 1.4em;"}
 
-::: {style="color: #ee6331; font-size: 0.95em; margin-top: 10px; line-height: 1.5;"}
+::: {style="color: #587453; font-size: 0.95em; margin-top: 10px; line-height: 1.5;"}
 • Can make strange errors <br>
 • Can be more concerned with performing progress than correctness
 :::
 :::
 
 ::: {.fragment style="background-color: #FCF6EC; border-radius: 18px; padding: 18px 32px; box-shadow: 0 4px 16px rgba(0,0,0,.2);"}
-[LLMs are still useful for data analysis]{style="color: #ee6331; font-weight: 700; font-size: 1.4em;"}
+[LLMs are still useful for data analysis]{style="color: #587453; font-weight: 700; font-size: 1.4em;"}
 
-::: {style="color: #ee6331; font-size: 0.95em; margin-top: 10px; line-height: 1.5;"}
+::: {style="color: #587453; font-size: 0.95em; margin-top: 10px; line-height: 1.5;"}
 • Tell them to care about being right<br>
 • Design the scaffold so that it matters less if they are wrong
 :::
@@ -812,5 +818,5 @@ for verification and transparency: the human has to keep pace and see eye-to-eye
 ## {background-color="#FCF6EC"}
 
 ::: {style="display: flex; justify-content: center; align-items: center; min-height: 70vh;"}
-[thank you]{style="color: #ee6331; font-weight: 700; font-size: 2.4em;"} <span style="font-size: 2.4em; margin-left: 0.25em;"></span>
+[thank you]{style="color: #587453; font-weight: 700; font-size: 2.4em;"} <span style="font-size: 2.4em; margin-left: 0.25em;"></span>
 :::
