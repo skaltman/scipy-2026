@@ -376,7 +376,7 @@ There is a **strong, negative association.**
 
 ##
 
-![](https://simonpcouch.github.io/bluffbench/index_files/figure-html/plot-bluff-eval-mocked-1.png)
+![](https://posit-dev.github.io/bluffbench/index_files/figure-html/plot-bluff-eval-mocked-1.png)
 
 :::footer
 <span style="color:#587453;">posit-dev.github.io/bluffbench</span>
