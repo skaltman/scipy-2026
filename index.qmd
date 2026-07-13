@@ -3,7 +3,7 @@ title: ""
 format:
   revealjs:
     theme: [default, custom.scss]
-    footer: '<span style="color:#587453;">github.com/simonpcouch/gen-ai-pharma-26</span>'
+    footer: '<span style="color:#587453;">github.com/skaltman/scipy-2026</span>'
 editor: source
 knitr:
   opts_chunk:
@@ -233,7 +233,7 @@ _LLMs can 'see' plots just fine._
 ![](figures/bluffbench-post.png){fig-align="center"}
 
 :::footer
-<span style="color:#587453;">simonpcouch.github.io/bluffbench</span>
+<span style="color:#587453;">posit-dev.github.io/bluffbench</span>
 :::
 
 ##
@@ -241,7 +241,7 @@ _LLMs can 'see' plots just fine._
 ![](figures/original-bluffbench-results.png)
 
 :::footer
-<span style="color:#587453;">simonpcouch.github.io/bluffbench</span>
+<span style="color:#587453;">posit-dev.github.io/bluffbench</span>
 :::
 
 ##
@@ -376,10 +376,10 @@ There is a **strong, negative association.**
 
 ##
 
-![](https://simonpcouch.github.io/bluffbench/index_files/figure-html/plot-bluff-eval-mocked-1.png)
+![](https://posit-dev.github.io/bluffbench/index_files/figure-html/plot-bluff-eval-mocked-1.png)
 
 :::footer
-<span style="color:#587453;">simonpcouch.github.io/bluffbench</span>
+<span style="color:#587453;">posit-dev.github.io/bluffbench</span>
 :::
 
 ## {background-color="#447099"}
@@ -539,7 +539,7 @@ LLMs are still useful for data analysis
 
 ## Posit Assistant
 
-![](figures/posit-assistant.png){fig-align="center" width="820"}
+![](figures/posit-assistant-python.png){fig-align="center" width="820"}
 
 :::notes
 define agent
@@ -712,7 +712,7 @@ code is a good choice
 
 Makes auditing easy when it matters
 
-![](figures/posit-assistant-code.png){fig-align="center"}
+![](figures/posit-assistant-python-code.png){fig-align="center"}
 
 ::: notes
 probably not enough for the model to write that code
@@ -725,7 +725,7 @@ small things like syntax highlighting, code styling
 
 See eye-to-eye with the agent
 
-![](figures/posit-assistant-console.png){fig-align="center"}
+![](figures/posit-assistant-python-console.png){fig-align="center"}
 
 ::: notes
 not only is the model writing code
