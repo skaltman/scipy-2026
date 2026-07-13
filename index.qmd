@@ -712,7 +712,7 @@ code is a good choice
 
 Makes auditing easy when it matters
 
-![](figures/posit-assistant-code.png){fig-align="center"}
+![](figures/posit-assistant-python-code.png){fig-align="center"}
 
 ::: notes
 probably not enough for the model to write that code
@@ -725,7 +725,7 @@ small things like syntax highlighting, code styling
 
 See eye-to-eye with the agent
 
-![](figures/posit-assistant-console.png){fig-align="center"}
+![](figures/posit-assistant-python-console.png){fig-align="center"}
 
 ::: notes
 not only is the model writing code
