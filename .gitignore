@@ -9,3 +9,5 @@
 .positai
 
 **/*.quarto_ipynb
+
+.venv/
