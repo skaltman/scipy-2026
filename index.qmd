@@ -233,7 +233,7 @@ _LLMs can 'see' plots just fine._
 ![](figures/bluffbench-post.png){fig-align="center"}
 
 :::footer
-<span style="color:#587453;">simonpcouch.github.io/bluffbench</span>
+<span style="color:#587453;">posit-dev.github.io/bluffbench</span>
 :::
 
 ##
@@ -241,7 +241,7 @@ _LLMs can 'see' plots just fine._
 ![](figures/original-bluffbench-results.png)
 
 :::footer
-<span style="color:#587453;">simonpcouch.github.io/bluffbench</span>
+<span style="color:#587453;">posit-dev.github.io/bluffbench</span>
 :::
 
 ##
@@ -379,7 +379,7 @@ There is a **strong, negative association.**
 ![](https://simonpcouch.github.io/bluffbench/index_files/figure-html/plot-bluff-eval-mocked-1.png)
 
 :::footer
-<span style="color:#587453;">simonpcouch.github.io/bluffbench</span>
+<span style="color:#587453;">posit-dev.github.io/bluffbench</span>
 :::
 
 ## {background-color="#447099"}
