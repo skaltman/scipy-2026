@@ -3,7 +3,7 @@ title: ""
 format:
   revealjs:
     theme: [default, custom.scss]
-    footer: '<span style="color:#587453;">github.com/simonpcouch/gen-ai-pharma-26</span>'
+    footer: '<span style="color:#587453;">github.com/skaltman/scipy-2026</span>'
 editor: source
 knitr:
   opts_chunk:
