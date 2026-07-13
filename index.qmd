@@ -539,7 +539,7 @@ LLMs are still useful for data analysis
 
 ## Posit Assistant
 
-![](figures/posit-assistant.png){fig-align="center" width="820"}
+![](figures/posit-assistant-python.png){fig-align="center" width="820"}
 
 :::notes
 define agent
