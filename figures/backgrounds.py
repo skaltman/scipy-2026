@@ -1,14 +1,17 @@
 """
-hero.py — generates hero.png, the SciPy 2026 title hero image.
+backgrounds.py — generates the SciPy 2026 slide background images.
 
-Composition: sage diagonal gradient background with a faint plot grid, a
-stream of two-tone (cream + deep-aqua) scatter markers with thin dark outlines
-flowing in from the lower-left, and right-aligned white Lato text
-(title / subtitle / authors / team). No plot panel.
+Outputs (all 1920x1080):
+  hero.png / hero-bare.png — title hero: sage diagonal gradient with a faint
+    plot grid, a stream of two-tone (cream + deep-aqua) scatter markers with
+    thin dark outlines flowing in from the lower-left, and right-aligned white
+    Lato text (bare = no text, for reveal.js to overlay its own).
+  thankyou-bare.png — closing slide: light background with the same faint grid
+    and a sparse teal/orange scatter, a nod to the hero's points.
 
 Requires: numpy, Pillow, and the Lato family. Fonts are resolved by
 _find_font_dir() — vendored in ./fonts by default, else the Linux system path.
-Run: python3 hero.py  ->  writes hero.png and hero-bare.png (1920x1080).
+Run: python3 backgrounds.py  ->  writes all of the above.
 """
 import os, numpy as np, math, random
 from PIL import Image, ImageFilter, ImageDraw, ImageFont
@@ -193,7 +196,70 @@ def main(out="hero.png", text=True, title_color=(255, 255, 255),
     img.save(out)
     print("saved", out)
 
+def gen_dots_thankyou(seed=417, layout="corner"):
+    """A sparse nod to the hero's scatter, kept clear of the centered 'thank
+    you' text. Far fewer points than the hero.
+
+    layout="corner": a short stream drifting up from the lower-right corner,
+      with a few big anchor dots — the whole gesture pooled in one corner.
+    layout="band":   the stream spread horizontally along the bottom edge, so
+      the weight sits under the text rather than in the corner.
+    """
+    rng = random.Random(seed)
+    dots = []
+    if layout == "band":
+        for _ in range(52):  # scatter riding along the bottom, densest at right
+            t = rng.random() ** 1.3
+            cx = W * (0.30 + 0.66 * (1 - t)) + rng.gauss(0, 60)
+            cy = H * (0.88 - 0.10 * t) + rng.gauss(0, 40)
+            r = rng.uniform(3, 14) * (1.05 - 0.35 * t)
+            a = rng.uniform(120, 235) * (1.0 - 0.20 * t)
+            dots.append((cx, cy, r, a))
+        for _ in range(8):  # big anchor dots spread across the bottom
+            x = rng.uniform(W * 0.34, W * 0.90); y = rng.uniform(H * 0.80, H * 0.94)
+            dots.append((x, y, rng.uniform(9, 18), rng.uniform(180, 245)))
+        return dots
+    # layout == "corner"
+    x0 = W * 0.92  # dense start in the lower-right, tapering up and leftward
+    for _ in range(46):
+        t = rng.random() ** 1.7
+        cx = x0 - t * W * 0.42
+        cy = H * (0.86 - 0.20 * t) + rng.gauss(0, 46)
+        cx += rng.gauss(0, 38); cy += rng.gauss(0, 26)
+        r = rng.uniform(3, 15) * (1.1 - 0.45 * t)
+        a = rng.uniform(120, 235) * (1.05 - 0.30 * t)
+        dots.append((cx, cy, r, a))
+    for _ in range(10):  # a few big anchor dots in the lower-right
+        x = rng.uniform(W * 0.70, W * 0.92); y = rng.uniform(H * 0.72, H * 0.92)
+        dots.append((x, y, rng.uniform(9, 20), rng.uniform(180, 245)))
+    return dots
+
+
+def thankyou(out="thankyou-bare.png", layout="corner"):
+    """Light-background companion to the hero for the closing slide: the same
+    faint grid and two-tone (teal/orange) scatter markers, tinted to read on
+    #F6FAFD, sparse and shifted below the centered text. See gen_dots_thankyou
+    for the `layout` options."""
+    canvas = Image.new("RGBA", (W, H), hex2rgb("#F6FAFD") + (255,))
+    canvas.alpha_composite(grid_overlay(color=hex2rgb("#093A3E"), alpha=12))
+
+    dots = [d for d in gen_dots_thankyou(layout=layout)
+            if not (W * 0.30 < d[0] < W * 0.70 and H * 0.36 < d[1] < H * 0.64)]
+    rng = random.Random(908)
+    teal, accent = [], []
+    for d in dots:
+        (accent if rng.random() < 0.38 else teal).append(d)
+    for pts, col in [(teal, hex2rgb("#33C6C6")), (accent, hex2rgb("#F37748"))]:
+        canvas.alpha_composite(stamp_dots(pts, col, alpha_scale=0.42))
+    canvas.alpha_composite(stamp_dots(teal + accent, hex2rgb("#093A3E"),
+                                      sprite=_ring_sprite, alpha_scale=0.55))
+
+    canvas.convert("RGB").save(out)
+    print("saved", out)
+
+
 if __name__ == "__main__":
     main("hero.png", title_color=(255, 255, 255), sub_color=(255, 255, 255),
          author_italic=False, author_sizes=(52, 44), author_ys=(776, 852))
     main("hero-bare.png", text=False)
+    thankyou("thankyou-bare.png", layout="band")
