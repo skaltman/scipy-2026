@@ -416,15 +416,21 @@ bluff2_summary |>
 _Models fail to notice subtle data quality issues that data scientists would not._
 :::
 
-## Correctness matters in data analysis
+## {background-color="#093A3E"}
 
-::: {.fragment}
-but do LLMs _care_ about correctness?
+::: {style="font-size: 2em; text-align: left; color: #E8F0F6; font-weight: 700;"}
+<br>
+LLMs fail at tasks central to data science.
+
+::: {style="font-size: 0.6em; font-weight: 400; margin-left: 1.5em;"}
+- Fail to override priors about data
+- Fail to notice some subtle data quality issues
+:::
 :::
 
 ::: notes
 so why is this a problem?
-when you're working with real data with real world consequences, being correct matters. 
+when you're working with real data with real world consequences, being correct matters.
 correctness, fittingly, is really a core value of data science
 when you do an analysis, you want your results to actually line up with the real world, or at least approximate it. That's the whole point.
 But LLM behavior doesn't necessarily always line up with this value of correctness
@@ -489,30 +495,13 @@ shared tone, shared style, shared length -- but different description each time
 if you didn't know waht the plot looked like, you wouldn't be able to disentangel the correct ones from the incorrect ones
 :::
 
-## Correctness matters in data analysis
-
-::: {.fragment style="text-align:left; font-size:1.7em; margin-top:60px;"}
-and so do [reproducibility]{style="color:#093A3E; font-weight:700;"} and [transparency]{style="color:#093A3E; font-weight:700;"}
-:::
-
-::: {.fragment style="text-align:left; font-size:1.7em; margin-top:60px;"}
-...all often at odds with how LLMs behave
-:::
-
-::: notes
-we already mentioned how "correctness matters". 
-reproducibility -- get consistent results from same conditions -- and transparency -- insight into how an analysis was done -- are also central to data science, all often at odds with the nondetermistic and black box nature of LLMs.
-
-What does this mean for agents for data analysis?
-:::
-
 ## {background-color="#093A3E"}
 
 ::: {style="font-size: 2em; text-align: left; color: #E8F0F6; font-weight: 700;"}
 <br>
 <br>
 <br>
-1. LLMs are great performers, but not always reliable reporters.
+1. LLMs fail at tasks central to data science.
 :::
 
 ## {background-color="#093A3E" auto-animate=true}
@@ -553,7 +542,7 @@ we're going to talk about what we did...
 
 ::: {style="display: inline-block; text-align: left; font-size: 1.05em; line-height: 1.9; margin-top: 50px;"}
 <ul>
-<li class="fragment" data-fragment-index="1">Help them get it right.</li>
+<li class="fragment" data-fragment-index="1">Make it easy for them to be right.</li>
 <li class="fragment" data-fragment-index="1">Make it matter less when they're wrong.</li>
 </ul>
 :::
@@ -562,14 +551,19 @@ we're going to talk about what we did...
 
 ## We'll be talking about agents
 
+::: {style="display: flex; flex-direction: column; justify-content: center; min-height: 65vh; font-size: 1.6em;"}
+
+
 ::: {.incremental}
 * Can gather information from the world (e.g., read files)
 * Can alter the world (e.g., run code)
 :::
 
+:::
+
 ## We'll be talking about agents
 
-::: {style="display: flex; flex-direction: column; justify-content: center; min-height: 65vh;"}
+::: {style="display: flex; flex-direction: column; justify-content: center; min-height: 65vh; font-size: 1.6em;"}
 
 ::: {.fragment}
 you can use an existing agent
@@ -612,26 +606,22 @@ we are going to use Posit Assistant
 
 ::: {style="display: inline-block; text-align: left; font-size: 1.05em; line-height: 1.9; margin-top: 50px;"}
 <ul>
-<li class="fragment toc-emph" data-fragment-index="1">Help them get it right</li>
+<li class="fragment toc-emph" data-fragment-index="1">Make it easy for them to be right.</li>
 <li class="fragment semi-fade-out" data-fragment-index="1">Make it matter less when they're wrong</li>
 </ul>
 :::
 
 :::
 
-## An agent is more than just the model
+## Build the environment so that it's easy to be right
+
+You control the <span style="position:relative; display:inline-block;"><span class="fragment fade-out" data-fragment-index="1">_environment_</span><span class="fragment fade-in" data-fragment-index="1" style="position:absolute; left:0; top:0; font-weight:700; white-space:nowrap;">harness</span></span> around the model, not the model itself
 
 ::: {.fragment}
-::: {style="font-size: 1.2em;"}
-It comes wrapped in a harness:
-:::
-:::
-
 ::: {.incremental}
-* How it's told to act (prompting)
-* What tools it has access to use (run code, read files, etc.)
-* What information it has access to
-* and more
+* Have the model write code
+* Design the harness with correctness in mind
+:::
 :::
 
 ::: notes
@@ -653,9 +643,8 @@ tools that matter for correctness, ability to see your active session
 ## Code as the foundation
 
 ::: {.incremental}
-* Models are good at writing code
-* Code can be run again - reproducibility
-* Code is auditable - transparency
+* LLMs are good at writing code
+* Reproducible, transparent, auditable
 :::
 
 ::: notes
@@ -669,7 +658,21 @@ Code is auditable
 code is a good choice
 :::
 
-## Tell the model to care about being right
+## Design the harness with correctness in mind
+
+::: {.incremental}
+* Prompting: prioritize correctness, not progress.
+* Tools that serve correctness: run code, see your session.
+* Access to your files and environment to have enough context.
+:::
+
+::: notesI like environment. 
+Prompting: prioritize correctness over just moving the analysis forward.
+Tools: the ability to run code and see your session.
+Context: give it broad access to your files and environment, so it has a good chance at knowing the correct context to solve the problem.
+:::
+
+## Performance improves when the environment makes it easy to be right
 
 ```{r}
 #| echo: false
@@ -729,28 +732,12 @@ bind_rows(raw, harness) |>
   )
 ```
 
-::: {.fragment style="text-align:left; font-size:1.2em; margin-top:60px;"}
-The harness can make a difference in correctness
-:::
-
 ::: notes
 and it turns out all of this can make a difference even without affecting the underlying model
 when we tried interventions in isolation in bluffbench, limited success
 by posit assistant largely does better than minimal harness (default bluffbench case)
 
 so you can essentially tell the model to value correctness and give it the ability to do so, and it does help
-:::
-
-## Trusted code
-
-::: {.incremental}
-* You don't always want the model writing code from scratch
-* If you have code you trust, have the agent reuse it
-:::
-
-::: notes
-models are good at writing code, but you don't always want them authoring it fresh
-if you already have vetted code use that
 :::
 
 ## {background-color="#E8F0F6"}
@@ -764,33 +751,34 @@ if you already have vetted code use that
 <div style="font-size: 2em; font-weight: 700;">LLMs are still useful for data analysis</div>
 <div style="display: inline-block; text-align: left; font-size: 1.05em; line-height: 1.9; margin-top: 50px;">
 <ul>
-<li class="fragment semi-fade-out" data-fragment-index="1">Help them get it right</li>
+<li class="fragment semi-fade-out" data-fragment-index="1">Make it easy for them to be right.</li>
 <li class="fragment toc-emph" data-fragment-index="1">Make it matter less when they're wrong
-<ul style="font-size: 0.8em; line-height: 1.7; margin-top: 12px; opacity: 0.9; font-weight: 400;">
-<li class="fragment" data-fragment-index="2">Lean on code as a foundation</li>
-<li class="fragment" data-fragment-index="3">Design for how it'll actually be used</li>
-</ul>
 </li>
 </ul>
 </div>
 </div>
 
+::: notes
+even with all that, it'll still make mistakes -- humans do, models do -- so make it less bad when it's wrong
+:::
+
 ## Make auditing easy
 
-You want a chance to catch mistakes
+A chance to catch or diagnose mistakes
 
 ![](figures/posit-assistant-python-code.png){fig-align="center"}
 
 ::: notes
 probably not enough for the model to write that code
 show it to the user when it matters
-make it easy to see and read 
-small things like syntax highlighting, code styling 
+make it easy to see and read
+small things like syntax highlighting, code styling
+you don't inspect every time, but if you suspect something went wrong you have the option
 :::
 
 ## Shared environment
 
-See eye-to-eye with the agent
+See eye-to-eye with the agent. See the same outputs, run the same code.
 
 ![](figures/posit-assistant-python-console.png){fig-align="center"}
 
@@ -807,94 +795,57 @@ this turns out to be very useful, especially for data analysis where you are oft
 you're seeing eye to eye with the agent, instead of the two of you occupying different worlds
 :::
 
-## Design for how it'll actually be used
-
-::: {.incremental}
-* How will people actually work with your agent?
-* What does that mean for correctness and reproducibility?
-:::
-
-::: notes
-this one is less a universal rule, more a design question you answer for your own agent
-think through how people will actually interact with it, and how that affects correctness and reproducibility
-our answer for data analysis comes next -- because the point of analysis is understanding, we made posit assistant pause often
-:::
-
-## Have the model pause often
-
-<div style="display: flex; align-items: center; gap: 48px; margin-top: 20px;">
-<div style="flex: 1; font-size: 1.3em; line-height: 1.5;">
-Keep pace with the agent during exploration and analysis
-</div>
-<div style="flex: 0 0 auto;">
-<video src="figures/posit-assistant-pause-often-short.mp4" autoplay loop muted playsinline style="height: 580px; display: block;"></video>
-</div>
-</div>
-
-::: notes
-so we said the first way to make it less bad if the model is wrong was having it write code
-the second way is having it, in some cases, pause and involve the user
-
-posit assistant, during open ended tasks or ones it thinks need user involvement, purposefully slows down and does shorter turns 
-
-notice in the gif how...
-
-this is in contrast to how it might behave without our harness, which is to move the analysis forward with lots of code and 
-
-losing the user and obscuring its uncertainties or deciding its own answers to questions 
-it should have asked user
-:::
-
-## Have the model pause often
-
-_What's the point of an analysis?_
-
-::: {.fragment style="font-size: 1.1em; margin-top: 40px;"}
-[(often)]{style="opacity:0.6;"} building an understanding of the data
-:::
-
-::: notes
-another reason for this though
-for verification and transparency: the human has to keep pace and see eye-to-eye with the agent (same environment).
-:::
-
 ## {background-color="#093A3E"}
 
 ::: {style="display: flex; flex-direction: column; gap: 44px; max-width: 90%; margin: 60px auto 0 auto; color: #E8F0F6;"}
 
 ::: {.fragment}
-[LLMs are great performers, but not always reliable reporters]{style="font-weight: 700; font-size: 1.4em;"}
-
-::: {style="font-size: 0.95em; margin-top: 12px; line-height: 1.5; opacity: 0.9;"}
-• Can and will confidently make errors  <br>
-:::
+[LLMs can fail at tasks central to data science.]{style="font-weight: 700; font-size: 1.4em;"}
 :::
 
 ::: {.fragment}
 [...but they're still useful for data analysis]{style="font-weight: 700; font-size: 1.4em;"}
+:::
 
+::: {.fragment}
 ::: {style="font-size: 0.95em; margin-top: 12px; line-height: 1.5; opacity: 0.9;"}
-• Help them be accurate.<br>
+• Make it easy for them to be right.<br>
 • Make it matter less when they're wrong.
 :::
-:::
 
 :::
 
-##
-
-![](figures/ai-newsletter.png){fig-align="center"}
-
-::: {style="text-align: center; font-size: 1.1em;"}
-[https://opensource.posit.co/tags/ai-newsletter/](https://opensource.posit.co/tags/ai-newsletter/)
 :::
 
-:::footer
-
-:::
 
 ## {background-image="figures/thankyou-bare.png" background-size="cover" background-position="center"}
 
-::: {style="display: flex; justify-content: center; align-items: center; min-height: 70vh;"}
+::: {style="display: flex; flex-direction: column; justify-content: center; align-items: center; min-height: 70vh; gap: 40px;"}
 [thank you!]{style="color: #093A3E; font-weight: 700; font-size: 2.4em;"} <span style="font-size: 2.4em; margin-left: 0.25em;"></span>
+
+::: {style="display: flex; flex-direction: row; justify-content: center; align-items: center; gap: 80px; color: #093A3E;"}
+
+::: {style="display: flex; flex-direction: column; align-items: flex-start; gap: 24px;"}
+::: {style="display: flex; flex-direction: column; align-items: flex-start; gap: 6px;"}
+[Slides]{style="font-weight: 700; font-size: 1.1em;"}
+
+[skaltman.github.io/scipy-2026](https://skaltman.github.io/scipy-2026){style="font-size: 0.9em;"}
+:::
+
+::: {style="display: flex; flex-direction: column; align-items: flex-start; gap: 6px;"}
+[bluffbench]{style="font-weight: 700; font-size: 1.1em;"}
+
+[github.com/posit-dev/bluffbench](github.com/posit-dev/bluffbench){style="font-size: 0.9em;"}
+
+[github.com/posit-dev/bluffbench2](github.com/posit-dev/bluffbench2){style="font-size: 0.9em;"}
+:::
+:::
+
+::: {style="display: flex; flex-direction: column; align-items: flex-start; gap: 10px;"}
+[AI newsletter]{style="font-weight: 700; font-size: 1.1em;"}
+
+![](figures/newsletter-qr.png){width="240px"}
+:::
+
+:::
 :::
