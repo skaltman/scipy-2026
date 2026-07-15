@@ -11,14 +11,14 @@
     "href": "index.html#section-1",
     "title": "",
     "section": "",
-    "text": "Please plot hp vs mpg in mtcars\n\n\nCalls tool: Run R code\n\n\n[Plot]\n\n\n\nThere is a strong, negative association."
+    "text": "Please plot total_bill vs tip in tips\n\n\nCalls tool: Run Python code\n\n\n[Plot]\n\n\n\nThere is a strong, positive association."
   },
   {
     "objectID": "index.html#section-2",
     "href": "index.html#section-2",
     "title": "",
     "section": "",
-    "text": "Please plot hp vs mpg in mtcars\n\n\nCalls tool: Run R code\n\n\n\n\n\nThere is a strong, negative association."
+    "text": "Please plot total_bill vs tip in tips\n\n\nCalls tool: Run Python code\n\n\n\n\n\nThere is a strong, positive association."
   },
   {
     "objectID": "index.html#section-3",
@@ -32,35 +32,35 @@
     "href": "index.html#section-4",
     "title": "",
     "section": "🤫",
-    "text": "🤫\n\nmtcars$hp &lt;- max(mtcars$hp) - mtcars$hp"
+    "text": "🤫\n\ntips[\"total_bill\"] = tips[\"total_bill\"].max() - tips[\"total_bill\"]"
   },
   {
     "objectID": "index.html#section-5",
     "href": "index.html#section-5",
     "title": "",
     "section": "",
-    "text": "Please plot hp vs mpg in mtcars\n\n\nCalls tool: Run R code\n\n\n\n\n\nThere is a strong, negative association."
+    "text": "Please plot total_bill vs tip in tips\n\n\nCalls tool: Run Python code\n\n\n\n\n\nThere is a strong, positive association."
   },
   {
     "objectID": "index.html#section-6",
     "href": "index.html#section-6",
     "title": "",
     "section": "",
-    "text": "Run this code and tell me how many points there are and what color they are.\nplot(runif(sample(3:10, 1)), \n     col = rgb(runif(1), runif(1), runif(1)),\n     pch = 16, cex = 2)"
+    "text": "Run this code and tell me how many points there are and what color they are.\nimport numpy as np\nimport seaborn as sns\n\nn = np.random.randint(3, 11)\nsns.scatterplot(x=range(n), y=np.random.random(n),\n                color=np.random.random(3), s=200)"
   },
   {
     "objectID": "index.html#section-7",
     "href": "index.html#section-7",
     "title": "",
     "section": "",
-    "text": "plot(\n  runif(sample(3:10, 1)),\n  col = rgb(runif(1), runif(1), runif(1)),\n  pch = 16,\n  cex = 2\n)"
+    "text": "import numpy as np\nimport seaborn as sns\n\nn = np.random.randint(3, 11)\nsns.scatterplot(x=range(n), y=np.random.random(n),\n                color=np.random.random(3), s=200)"
   },
   {
     "objectID": "index.html#section-8",
     "href": "index.html#section-8",
     "title": "",
     "section": "",
-    "text": "Run this code and tell me how many points there are and what color they are…\n\n\n\nCalls tool: Run R code\n\n\n\n\n\nThere are 3 cyan points."
+    "text": "Run this code and tell me how many points there are and what color they are…\n\n\n\nCalls tool: Run Python code\n\n\n\n\n\nThere are 3 cyan points."
   },
   {
     "objectID": "index.html#section-9",
@@ -88,21 +88,21 @@
     "href": "index.html#section-12",
     "title": "",
     "section": "",
-    "text": "Please plot hp vs mpg in mtcars\n\n\nCalls tool: Run R code\n\n\nA scatterplot of around 30 points showing a strong, positive association between x and y.\n\n\nThere is a strong, negative association.\n\n\n\n⟵\n\n\n\nPlease describe this plot."
+    "text": "Please plot total_bill vs tip in tips\n\n\nCalls tool: Run Python code\n\n\nA scatterplot of around 250 points showing a strong, negative association between x and y.\n\n\nThere is a strong, positive association.\n\n\n\n⟵\n\n\n\nPlease describe this plot."
   },
   {
     "objectID": "index.html#section-13",
     "href": "index.html#section-13",
     "title": "",
     "section": "",
-    "text": "Please plot hp vs mpg in mtcars\n\n\nCalls tool: Run R code\n\n\n\n\n\nThis is a scatterplot of around 30 points showing a strong, positive association.\nThere is a strong, negative association between hp and mpg.\n\n\n\n⟵\n\n\n\nPlease describe this plot."
+    "text": "Please plot total_bill vs tip in tips\n\n\nCalls tool: Run Python code\n\n\n\n\n\nThis is a scatterplot of around 250 points showing a strong, negative association.\nThere is a strong, positive association between total_bill and tip.\n\n\n\n⟵\n\n\n\nPlease describe this plot."
   },
   {
     "objectID": "index.html#section-14",
     "href": "index.html#section-14",
     "title": "",
     "section": "",
-    "text": "Please plot hp vs mpg in mtcars\n\n\nCalls tool: Run R code\n\n\n\n\n\n&lt;thought&gt; Huh, that’s weird. The association is positive. &lt;/thought&gt;\nThere is a strong, negative association."
+    "text": "Please plot total_bill vs tip in tips\n\n\nCalls tool: Run Python code\n\n\n\n\n\n&lt;thought&gt; Huh, that’s weird. The association is negative. &lt;/thought&gt;\nThere is a strong, positive association."
   },
   {
     "objectID": "index.html#section-16",
@@ -130,7 +130,7 @@
     "href": "index.html#its-a-convincing-performance",
     "title": "",
     "section": "It’s a convincing performance",
-    "text": "It’s a convincing performance\n\n\n\n\n \n\n\n\n\nbut one that occasionally fails to match reality\n\n\nbut it’s a convincing performance right we’ve seen in bluffbench that the model will interpret the plot, and will provide details and supposed evidence for what they see they act like they are moving the analysis forward the only problem is that, like in this case where it says this clearly positive trend is negative, is that it’s one that can fail to match reality"
+    "text": "It’s a convincing performance\n\n\n\n\n \n\n\n\n\nbut one that occasionally fails to match reality\n\n\nbut it’s a convincing performance right we’ve seen in bluffbench that the model will interpret the plot, and will provide details and supposed evidence for what they see they act like they are moving the analysis forward the only problem is that, like in this case where it says this clearly negative trend is positive, is that it’s one that can fail to match reality"
   },
   {
     "objectID": "index.html#the-answers-look-the-same",
@@ -158,7 +158,7 @@
     "href": "index.html#section-19",
     "title": "",
     "section": "",
-    "text": "2. LLMs are still useful for data analysis.\n\n\ndon’t need to throw the whole thing away\nWe shouldn’t take evidence like bluffbench to mean that LLMs are useless anywhere you value correctness.\nInstead, you have to figure out where they can fit and how to design around their limitations.\nwe’re going to talk about what we did…"
+    "text": "2. LLMs are still useful for data analysis.\n\n\n\ndon’t need to throw the whole thing away\nWe shouldn’t take evidence like bluffbench to mean that LLMs are useless anywhere you value correctness.\nInstead, you have to figure out where they can fit and how to design around their limitations.\nwe’re going to talk about what we did…"
   },
   {
     "objectID": "index.html#section-20",
@@ -235,7 +235,7 @@
     "href": "index.html#have-the-model-pause-often",
     "title": "",
     "section": "Have the model pause often",
-    "text": "Have the model pause often\n\n\n\nKeep pace with the agent during exploration and analysis\n\n\n\n\n\n\nso we said the first way to make it less bad if the model is wrong was having it write code the second way is having it, in some cases, pause and involve the user\nposit assistant, during open ended tasks or ones it thinks need user involvement, purposefully slows down and does shorter turns\nnotice in the gif how…\nthis is in contrast to how it might behave without our harness, which is to move the analysis forward with lots of code and\nlosing the user and obscuring its uncertainties or deciding its own answers to questions it should have asked user"
+    "text": "Have the model pause often\n\n\nKeep pace with the agent during exploration and analysis\n\n\n\n\n\n\n\nso we said the first way to make it less bad if the model is wrong was having it write code the second way is having it, in some cases, pause and involve the user\nposit assistant, during open ended tasks or ones it thinks need user involvement, purposefully slows down and does shorter turns\nnotice in the gif how…\nthis is in contrast to how it might behave without our harness, which is to move the analysis forward with lots of code and\nlosing the user and obscuring its uncertainties or deciding its own answers to questions it should have asked user"
   },
   {
     "objectID": "index.html#have-the-model-pause-often-1",
