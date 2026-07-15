@@ -416,10 +416,16 @@ bluff2_summary |>
 Models fail to notice some subtle data quality issues that data scientists would not._
 :::
 
-## Correctness matters in data analysis
+## {background-color="#093A3E"}
 
-::: {.fragment}
-but do LLMs _care_ about correctness?
+::: {style="font-size: 2em; text-align: left; color: #E8F0F6; font-weight: 700;"}
+<br>
+LLMs fail at tasks central to data science.
+
+::: {style="font-size: 0.6em; font-weight: 400; margin-left: 1.5em;"}
+- Fail to override priors about data
+- Fail to notice some subtle data quality issues
+:::
 :::
 
 ::: notes
@@ -489,23 +495,6 @@ shared tone, shared style, shared length -- but different description each time
 if you didn't know waht the plot looked like, you wouldn't be able to disentangel the correct ones from the incorrect ones
 :::
 
-## Correctness matters in data analysis
-
-::: {.fragment style="text-align:left; font-size:1.7em; margin-top:60px;"}
-and so do [reproducibility]{style="color:#093A3E; font-weight:700;"} and [transparency]{style="color:#093A3E; font-weight:700;"}
-:::
-
-::: {.fragment style="text-align:left; font-size:1.7em; margin-top:60px;"}
-...all often at odds with how LLMs behave
-:::
-
-::: notes
-we already mentioned how "correctness matters". 
-reproducibility -- get consistent results from same conditions -- and transparency -- insight into how an analysis was done -- are also central to data science, all often at odds with the nondetermistic and black box nature of LLMs.
-
-What does this mean for agents for data analysis?
-:::
-
 ## {background-color="#093A3E"}
 
 ::: {style="font-size: 2em; text-align: left; color: #E8F0F6; font-weight: 700;"}
@@ -513,11 +502,6 @@ What does this mean for agents for data analysis?
 <br>
 <br>
 1. LLMs fail at tasks central to data science.
-
-::: {style="font-size: 0.6em; font-weight: 400; margin-left: 1.5em;"}
-- Models largely fail to override priors about data
-- Models fail to notice some subtle data quality issues
-:::
 :::
 
 ## {background-color="#093A3E" auto-animate=true}
@@ -624,20 +608,11 @@ we are going to use Posit Assistant
 
 :::
 
-## An agent is more than just the model
+## Build the environment so that it's easy to be right
 
-::: {.fragment}
-::: {style="font-size: 1.2em;"}
-It comes wrapped in a harness:
-:::
-:::
-
-::: {.incremental}
-* How it's told to act (prompting)
-* What tools it has access to use (run code, read files, etc.)
-* What information it has access to
-* and more
-:::
+* Code as the foundation
+* Harness
+* Trusted code
 
 ::: notes
 there's more to an agent than just the model
@@ -659,8 +634,8 @@ tools that matter for correctness, ability to see your active session
 
 ::: {.incremental}
 * Models are good at writing code
-* Code can be run again - reproducibility
-* Code is auditable - transparency
+* Code can be run again 
+* Code is auditable 
 :::
 
 ::: notes
@@ -674,7 +649,22 @@ Code is auditable
 code is a good choice
 :::
 
-## Tell the model to care about being right
+## Harness
+
+::: {.fragment}
+::: {style="font-size: 1.2em;"}
+It comes wrapped in a harness:
+:::
+:::
+
+::: {.incremental}
+* How it's told to act (prompting)
+* What tools it has access to use (run code, read files, etc.)
+* What information it has access to
+* and more
+:::
+
+## Performance improves in an environment that makes it easy to be right
 
 ```{r}
 #| echo: false
@@ -734,28 +724,12 @@ bind_rows(raw, harness) |>
   )
 ```
 
-::: {.fragment style="text-align:left; font-size:1.2em; margin-top:60px;"}
-The harness can make a difference in correctness
-:::
-
 ::: notes
 and it turns out all of this can make a difference even without affecting the underlying model
 when we tried interventions in isolation in bluffbench, limited success
 by posit assistant largely does better than minimal harness (default bluffbench case)
 
 so you can essentially tell the model to value correctness and give it the ability to do so, and it does help
-:::
-
-## Trusted code
-
-::: {.incremental}
-* You don't always want the model writing code from scratch
-* If you have code you trust, have the agent reuse it
-:::
-
-::: notes
-models are good at writing code, but you don't always want them authoring it fresh
-if you already have vetted code use that
 :::
 
 ## {background-color="#E8F0F6"}
@@ -810,57 +784,6 @@ it can inspect your objects and rerun code you ran
 this turns out to be very useful, especially for data analysis where you are often turning the same object around and looking at it from multiple angles and transforming it
 
 you're seeing eye to eye with the agent, instead of the two of you occupying different worlds
-:::
-
-## Design for how it'll actually be used
-
-::: {.incremental}
-* How will people actually work with your agent?
-* What does that mean for correctness and reproducibility?
-:::
-
-::: notes
-this one is less a universal rule, more a design question you answer for your own agent
-think through how people will actually interact with it, and how that affects correctness and reproducibility
-our answer for data analysis comes next -- because the point of analysis is understanding, we made posit assistant pause often
-:::
-
-## Have the model pause often
-
-<div style="display: flex; align-items: center; gap: 48px; margin-top: 20px;">
-<div style="flex: 1; font-size: 1.3em; line-height: 1.5;">
-Keep pace with the agent during exploration and analysis
-</div>
-<div style="flex: 0 0 auto;">
-<video src="figures/posit-assistant-pause-often-short.mp4" autoplay loop muted playsinline style="height: 580px; display: block;"></video>
-</div>
-</div>
-
-::: notes
-so we said the first way to make it less bad if the model is wrong was having it write code
-the second way is having it, in some cases, pause and involve the user
-
-posit assistant, during open ended tasks or ones it thinks need user involvement, purposefully slows down and does shorter turns 
-
-notice in the gif how...
-
-this is in contrast to how it might behave without our harness, which is to move the analysis forward with lots of code and 
-
-losing the user and obscuring its uncertainties or deciding its own answers to questions 
-it should have asked user
-:::
-
-## Have the model pause often
-
-_What's the point of an analysis?_
-
-::: {.fragment style="font-size: 1.1em; margin-top: 40px;"}
-[(often)]{style="opacity:0.6;"} building an understanding of the data
-:::
-
-::: notes
-another reason for this though
-for verification and transparency: the human has to keep pace and see eye-to-eye with the agent (same environment).
 :::
 
 ## {background-color="#093A3E"}
