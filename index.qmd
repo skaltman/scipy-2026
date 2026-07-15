@@ -262,58 +262,6 @@ _Models largely fail to override their own priors about data._
 
 ##
 
-::: {style="align-self: flex-end; background-color: #d6eaf8; padding: 12px 18px; border-radius: 18px 18px 4px 18px; max-width: 70%; margin: 0 0 12px auto; box-shadow: 0 2px 4px rgba(0,0,0,0.1);"}
-load in labs.csv and print it out
-:::
-
-::: {.fragment style="align-self: flex-start; background-color: white; padding: 12px 18px; border-radius: 18px 18px 18px 4px; max-width: 70%; margin: 0 auto 24px 0; box-shadow: 0 2px 4px rgba(0,0,0,0.1); border: 1px solid #e0e0e0;"}
-_Calls tool: Run Python code_
-:::
-
-::: {.fragment}
-
-```{python}
-#| echo: false
-import pandas as pd
-
-labs = pd.read_csv("data/labs.csv")
-labs
-```
-
-:::
-
-:::notes
-say you load some patient data in with a coding agent...
-:::
-
-##
-
-::: {style="align-self: flex-end; background-color: #d6eaf8; padding: 12px 18px; border-radius: 18px 18px 4px 18px; max-width: 70%; margin: 0 0 12px auto; box-shadow: 0 2px 4px rgba(0,0,0,0.1);"}
-make a histogram of bmi
-:::
-
-::: {.fragment style="align-self: flex-start; background-color: white; padding: 12px 18px; border-radius: 18px 18px 18px 4px; max-width: 70%; margin: 0 auto 24px 0; box-shadow: 0 2px 4px rgba(0,0,0,0.1); border: 1px solid #e0e0e0;"}
-_Calls tool: Run Python code_
-:::
-
-::: {.fragment}
-
-```{python}
-#| echo: false
-#| fig-align: center
-fig, ax = plt.subplots(figsize=(5.5, 3))
-ax.hist(labs["bmi"], bins=20)
-ax.set_xlabel("BMI")
-ax.set_ylabel("count")
-plt.show()
-```
-
-:::
-
-:::notes
-make a plot...
-:::
-
 ##
 
 ::: {style="align-self: flex-end; background-color: #d6eaf8; padding: 12px 18px; border-radius: 18px 18px 4px 18px; max-width: 70%; margin: 0 0 12px auto; box-shadow: 0 2px 4px rgba(0,0,0,0.1);"}
