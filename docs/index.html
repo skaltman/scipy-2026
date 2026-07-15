@@ -208,6 +208,19 @@
 <div class="footer">
 
 </div>
+<aside class="notes">
+<p>For the data-inclined folks in the audience… There are two gotchas I want to try and slip past you in the first half of this talk.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="section-1" class="slide level2">
 <h2></h2>
@@ -215,11 +228,11 @@
 <div class="fragment" style="align-self: flex-end; background-color: #d6eaf8; padding: 12px 18px; border-radius: 18px 18px 4px 18px; max-width: 70%; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
 <p>Please plot total_bill vs tip in tips</p>
 </div>
-<div class="fragment" style="align-self: flex-start; background-color: white; padding: 12px 18px; border-radius: 18px 18px 18px 4px; max-width: 70%; box-shadow: 0 2px 4px rgba(0,0,0,0.1); border: 1px solid #e0e0e0;">
+<div class="fragment" style="align-self: flex-start; background-color: white; padding: 12px 18px; border-radius: 18px 18px 18px 4px; max-width: 70%; box-shadow: 0 2px 4px rgba(0,0,0,0.1); border: 1px solid #e0e0e0; margin-top: 10px;">
 <p><em>Calls tool: Run Python code</em></p>
 </div>
 <div class="fragment" style="align-self: flex-end; background-color: #d6eaf8; padding: 6px; border-radius: 18px 18px 4px 18px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-<p>[Plot]</p>
+<p><img data-src="figures/tips-bill-tip-thumb.png" style="border-radius: 12px; display: block;" width="160"></p>
 <p><br></p>
 </div>
 <div class="fragment" style="align-self: flex-start; background-color: white; padding: 12px 18px; border-radius: 18px 18px 18px 4px; max-width: 70%; box-shadow: 0 2px 4px rgba(0,0,0,0.1); border: 1px solid #e0e0e0;">
@@ -228,39 +241,22 @@
 </div>
 </section>
 <section id="section-2" class="slide level2">
-<h2></h2>
-<div style="display: flex; flex-direction: column; gap: 0px; padding: 20px; max-width: 100%; margin: 40px auto 0 auto;">
-<div style="align-self: flex-end; background-color: #d6eaf8; padding: 12px 18px; border-radius: 18px 18px 4px 18px; max-width: 70%; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-<p>Please plot total_bill vs tip in tips</p>
-</div>
-<div style="align-self: flex-start; background-color: white; padding: 12px 18px; border-radius: 18px 18px 18px 4px; max-width: 70%; box-shadow: 0 2px 4px rgba(0,0,0,0.1); border: 1px solid #e0e0e0;">
-<p><em>Calls tool: Run Python code</em></p>
-</div>
-<div style="align-self: flex-end; background-color: #d6eaf8; padding: 6px; border-radius: 18px 18px 4px 18px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-<p><img data-src="figures/tips-bill-tip-thumb.png" style="border-radius: 12px; display: block;" width="160"></p>
-</div>
-<div style="align-self: flex-start; background-color: white; padding: 12px 18px; border-radius: 18px 18px 18px 4px; max-width: 70%; box-shadow: 0 2px 4px rgba(0,0,0,0.1); border: 1px solid #e0e0e0;">
-<p>There is a <strong>strong, positive association.</strong></p>
-</div>
-</div>
-</section>
-<section id="section-3" class="slide level2">
 <h2>❓</h2>
 
 <img data-src="index_files/figure-revealjs/unnamed-chunk-3-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
-<section id="section-4" class="slide level2">
+<section id="section-3" class="slide level2">
 <h2>🤫</h2>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a>tips[<span class="st">"total_bill"</span>] <span class="op">=</span> tips[<span class="st">"total_bill"</span>].<span class="bu">max</span>() <span class="op">-</span> tips[<span class="st">"total_bill"</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
-<section id="section-5" class="slide level2">
+<section id="section-4" class="slide level2">
 <h2></h2>
 <div style="display: flex; flex-direction: column; gap: 0px; padding: 20px; max-width: 100%; margin: 40px auto 0 auto;">
 <div style="align-self: flex-end; background-color: #d6eaf8; padding: 12px 18px; border-radius: 18px 18px 4px 18px; max-width: 70%; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
 <p>Please plot total_bill vs tip in tips</p>
 </div>
-<div style="align-self: flex-start; background-color: white; padding: 12px 18px; border-radius: 18px 18px 18px 4px; max-width: 70%; box-shadow: 0 2px 4px rgba(0,0,0,0.1); border: 1px solid #e0e0e0;">
+<div style="align-self: flex-start; background-color: white; padding: 12px 18px; border-radius: 18px 18px 18px 4px; max-width: 70%; box-shadow: 0 2px 4px rgba(0,0,0,0.1); border: 1px solid #e0e0e0; margin-top: 10px;">
 <p><em>Calls tool: Run Python code</em></p>
 </div>
 <div style="align-self: flex-end; background-color: #d6eaf8; padding: 6px; border-radius: 18px 18px 4px 18px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
@@ -271,7 +267,7 @@
 </div>
 </div>
 </section>
-<section id="section-6" class="slide level2">
+<section id="section-5" class="slide level2">
 <h2></h2>
 <div style="display: flex; flex-direction: column; gap: 0px; padding: 20px; max-width: 100%; margin: 40px auto 0 auto; font-size: 0.85em;">
 <div style="align-self: flex-end; background-color: #d6eaf8; padding: 12px 18px; border-radius: 18px 18px 4px 18px; max-width: 70%; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
@@ -285,7 +281,7 @@
 </div>
 </div>
 </section>
-<section id="section-7" class="slide level2">
+<section id="section-6" class="slide level2">
 <h2></h2>
 <div class="cell" data-layout-align="center">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -297,7 +293,7 @@
 
 </div>
 <img data-src="index_files/figure-revealjs/unnamed-chunk-7-3.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
-<section id="section-8" class="slide level2">
+<section id="section-7" class="slide level2">
 <h2></h2>
 <div style="display: flex; flex-direction: column; gap: 0px; padding: 20px; max-width: 100%; margin: 40px auto 0 auto; font-size: 0.85em;">
 <div style="align-self: flex-end; background-color: #d6eaf8; padding: 12px 18px; border-radius: 18px 18px 4px 18px; max-width: 70%; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
@@ -314,114 +310,194 @@
 <p>There are <strong>3 cyan points.</strong></p>
 </div>
 </div>
+<aside class="notes">
+<p>LLMs can ‘see’ these plots just fine</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
-<section id="section-9" class="slide level2" data-background-color="#F6FAFD">
-<h2></h2>
-<div style="font-size: 1.5em; text-align: center; color: #093A3E;">
-<p><br> <br> <br> <em>LLMs can ‘see’ plots just fine.</em></p>
-</div>
-</section>
-<section id="section-10" class="slide level2">
-<h2></h2>
+<section id="posit-devbluffbench" class="slide level2">
+<h2>posit-dev/bluffbench</h2>
 
 <img data-src="figures/bluffbench-post.png" class="quarto-figure quarto-figure-center r-stretch"><div class="footer">
 <p><span style="color:#093A3E;">posit-dev.github.io/bluffbench</span></p>
 </div>
 </section>
-<section id="section-11" class="slide level2">
-<h2></h2>
+<section id="posit-devbluffbench-1" class="slide level2">
+<h2>posit-dev/bluffbench</h2>
 
 <img data-src="figures/original-bluffbench-results.png" class="r-stretch"><div class="footer">
 <p><span style="color:#093A3E;">posit-dev.github.io/bluffbench</span></p>
 </div>
+<aside class="notes">
+<p>We tried a bunch of stuff to drive those scores up and nothing worked. Hilariously, we let the model “think”, and in its thinking, it would say “Huh, that association doesn’t look like I expect”, and then turn around and say exactly what it expected to see.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
-<section id="section-12" class="slide level2">
-<h2></h2>
-<div style="display: flex; flex-direction: row; gap: 24px; padding: 20px; max-width: 100%; margin: 40px auto 0 auto; font-size: 0.75em;">
-<div style="flex: 3; display: flex; flex-direction: column; gap: 12px;">
-<div style="align-self: flex-end; background-color: #d6eaf8; padding: 12px 18px; border-radius: 18px 18px 4px 18px; max-width: 70%; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-<p>Please plot total_bill vs tip in tips</p>
-</div>
-<div style="align-self: flex-start; background-color: white; padding: 12px 18px; border-radius: 18px 18px 18px 4px; max-width: 70%; box-shadow: 0 2px 4px rgba(0,0,0,0.1); border: 1px solid #e0e0e0;">
-<p><em>Calls tool: Run Python code</em></p>
-</div>
-<div style="align-self: flex-end; background-color: #d6eaf8; padding: 12px 18px; border-radius: 18px 18px 4px 18px; max-width: 70%; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-<p><em>A scatterplot of around 250 points showing a strong, negative association between x and y.</em></p>
-</div>
-<div style="align-self: flex-start; background-color: white; padding: 12px 18px; border-radius: 18px 18px 18px 4px; max-width: 70%; box-shadow: 0 2px 4px rgba(0,0,0,0.1); border: 1px solid #e0e0e0;">
-<p>There is a <strong>strong, positive association.</strong></p>
-</div>
-</div>
-<div style="display: flex; align-items: center; font-size: 2.5em; color: #888;">
-<p>⟵</p>
-</div>
-<div style="flex: 2; display: flex; flex-direction: column; gap: 0px; justify-content: center; border-left: 2px dashed #bbb; padding-left: 24px;">
-<div style="align-self: flex-end; background-color: #d6eaf8; padding: 12px 18px; border-radius: 18px 18px 4px 18px; max-width: 85%; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-<p>Please describe this plot.</p>
-<p><img data-src="figures/tips-bill-tip-thumb.png" style="border-radius: 12px; display: block; margin-top: 8px;" width="140"></p>
-</div>
-</div>
-</div>
-</section>
-<section id="section-13" class="slide level2">
-<h2></h2>
-<div style="display: flex; flex-direction: row; gap: 24px; padding: 0 20px 20px 20px; max-width: 100%; margin: 0 auto; font-size: 0.75em;">
-<div style="flex: 3; display: flex; flex-direction: column; gap: 12px;">
-<div style="align-self: flex-end; background-color: #d6eaf8; padding: 12px 18px; border-radius: 18px 18px 4px 18px; max-width: 70%; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-<p>Please plot total_bill vs tip in tips</p>
-</div>
-<div style="align-self: flex-start; background-color: white; padding: 12px 18px; border-radius: 18px 18px 18px 4px; max-width: 70%; box-shadow: 0 2px 4px rgba(0,0,0,0.1); border: 1px solid #e0e0e0;">
-<p><em>Calls tool: Run Python code</em></p>
-</div>
-<div style="align-self: flex-end; background-color: #d6eaf8; padding: 6px; border-radius: 18px 18px 4px 18px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin-top: -8px;">
-<p><img data-src="figures/tips-bill-tip-thumb.png" style="border-radius: 12px; display: block;" width="140"></p>
-</div>
-<div style="align-self: flex-start; background-color: white; padding: 12px 18px; border-radius: 18px 18px 18px 4px; max-width: 70%; box-shadow: 0 2px 4px rgba(0,0,0,0.1); border: 1px solid #e0e0e0;">
-<p><em>This is a scatterplot of around 250 points showing a strong, negative association.</em></p>
-<p>There is a <strong>strong, positive association</strong> between total_bill and tip.</p>
-</div>
-</div>
-<div style="display: flex; align-items: flex-end; padding-bottom: 165px; font-size: 2.5em; color: #888;">
-<p>⟵</p>
-</div>
-<div style="flex: 2; display: flex; flex-direction: column; gap: 0px; justify-content: flex-end; padding-bottom: 145px; border-left: 2px dashed #bbb; padding-left: 24px;">
-<div style="align-self: flex-end; background-color: #d6eaf8; padding: 12px 18px; border-radius: 18px 18px 4px 18px; max-width: 85%; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-<p>Please describe this plot.</p>
-<p><img data-src="figures/tips-bill-tip-thumb.png" style="border-radius: 12px; display: block; margin-top: 8px;" width="140"></p>
-</div>
-</div>
-</div>
-</section>
-<section id="section-14" class="slide level2">
-<h2></h2>
-<div style="display: flex; flex-direction: column; gap: 0px; padding: 20px; max-width: 100%; margin: 40px auto 0 auto;">
-<div style="align-self: flex-end; background-color: #d6eaf8; padding: 12px 18px; border-radius: 18px 18px 4px 18px; max-width: 70%; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-<p>Please plot total_bill vs tip in tips</p>
-</div>
-<div style="align-self: flex-start; background-color: white; padding: 12px 18px; border-radius: 18px 18px 18px 4px; max-width: 70%; box-shadow: 0 2px 4px rgba(0,0,0,0.1); border: 1px solid #e0e0e0;">
-<p><em>Calls tool: Run Python code</em></p>
-</div>
-<div style="align-self: flex-end; background-color: #d6eaf8; padding: 6px; border-radius: 18px 18px 4px 18px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-<p><img data-src="figures/tips-bill-tip-thumb.png" style="border-radius: 12px; display: block;" width="160"></p>
-</div>
-<div style="align-self: flex-start; background-color: white; padding: 12px 18px; border-radius: 18px 18px 18px 4px; max-width: 70%; box-shadow: 0 2px 4px rgba(0,0,0,0.1); border: 1px solid #e0e0e0;">
-<p>&lt;thought&gt; Huh, that’s weird. The association is negative. &lt;/thought&gt;</p>
-<p>There is a <strong>strong, positive association.</strong></p>
-</div>
-</div>
-</section>
-
-<section id="section-16" class="slide level2">
-<h2></h2>
+<section id="posit-devbluffbench-2" class="slide level2">
+<h2>posit-dev/bluffbench</h2>
 
 <img data-src="https://posit-dev.github.io/bluffbench/index_files/figure-html/plot-bluff-eval-mocked-1.png" class="r-stretch"><div class="footer">
 <p><span style="color:#093A3E;">posit-dev.github.io/bluffbench</span></p>
 </div>
+<aside class="notes">
+<p>However, our priors are usually subverted more subtly…</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
-<section id="section-17" class="slide level2" data-background-color="#F6FAFD">
+<section id="section-8" class="slide level2" data-background-color="#E8F0F6">
 <h2></h2>
 <div style="font-size: 1.5em; text-align: center; color: #093A3E;">
-<p><br> <br> <br> <em>Agents enact a performance of progress.</em></p>
+<p><br> <br> <br> <em>Models largely fail to override their own priors about data.</em></p>
+</div>
+</section>
+<section id="section-9" class="slide level2">
+<h2></h2>
+<div style="align-self: flex-end; background-color: #d6eaf8; padding: 12px 18px; border-radius: 18px 18px 4px 18px; max-width: 70%; margin: 0 0 12px auto; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+<p>load in labs.csv and print it out</p>
+</div>
+<div class="fragment" style="align-self: flex-start; background-color: white; padding: 12px 18px; border-radius: 18px 18px 18px 4px; max-width: 70%; margin: 0 auto 24px 0; box-shadow: 0 2px 4px rgba(0,0,0,0.1); border: 1px solid #e0e0e0;">
+<p><em>Calls tool: Run Python code</em></p>
+</div>
+<div class="fragment">
+<div class="cell">
+<pre><code>#&gt;     specimen fasting   bmi  cholesterol
+#&gt; 0     L-0030     yes  35.4        168.4
+#&gt; 1     L-0051     yes  34.2        256.2
+#&gt; 2     L-0072     yes  40.4        196.9
+#&gt; 3     L-0103     yes  32.7        187.2
+#&gt; 4     L-0123     yes  24.8        220.5
+#&gt; ..       ...     ...   ...          ...
+#&gt; 173   L-0135     yes  24.4        203.7
+#&gt; 174   L-0077     yes  35.1        189.7
+#&gt; 175   L-0050     yes  27.8        198.7
+#&gt; 176   L-0165     yes  33.6        207.4
+#&gt; 177   L-0060     yes  27.9        215.9
+#&gt; 
+#&gt; [178 rows x 4 columns]</code></pre>
+</div>
+</div>
+<aside class="notes">
+<p>say you load some patient data in with a coding agent…</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="section-10" class="slide level2">
+<h2></h2>
+<div style="align-self: flex-end; background-color: #d6eaf8; padding: 12px 18px; border-radius: 18px 18px 4px 18px; max-width: 70%; margin: 0 0 12px auto; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+<p>make a histogram of bmi</p>
+</div>
+<div class="fragment" style="align-self: flex-start; background-color: white; padding: 12px 18px; border-radius: 18px 18px 18px 4px; max-width: 70%; margin: 0 auto 24px 0; box-shadow: 0 2px 4px rgba(0,0,0,0.1); border: 1px solid #e0e0e0;">
+<p><em>Calls tool: Run Python code</em></p>
+</div>
+<div class="fragment">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="index_files/figure-revealjs/unnamed-chunk-10-5.png" class="quarto-figure quarto-figure-center" width="528"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<aside class="notes">
+<p>make a plot…</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="section-11" class="slide level2">
+<h2></h2>
+<div style="align-self: flex-end; background-color: #d6eaf8; padding: 12px 18px; border-radius: 18px 18px 4px 18px; max-width: 70%; margin: 0 0 12px auto; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+<p>plot bmi vs cholesterol</p>
+</div>
+<div class="fragment" style="align-self: flex-start; background-color: white; padding: 12px 18px; border-radius: 18px 18px 18px 4px; max-width: 70%; margin: 0 auto 24px 0; box-shadow: 0 2px 4px rgba(0,0,0,0.1); border: 1px solid #e0e0e0;">
+<p><em>Calls tool: Run Python code</em></p>
+</div>
+<div class="fragment">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="index_files/figure-revealjs/unnamed-chunk-11-7.png" class="quarto-figure quarto-figure-center" width="528"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div class="fragment" style="position: absolute; right: 6%; top: 45%; font-size: 4em; transform: rotate(18deg);">
+<p>🤨</p>
+</div>
+<aside class="notes">
+<p>make another plot</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="section-12" class="slide level2">
+<h2>🤨</h2>
+
+<img data-src="index_files/figure-revealjs/unnamed-chunk-12-9.png" class="quarto-figure quarto-figure-center r-stretch" width="1152"></section>
+<section id="posit-devbluffbench2" class="slide level2">
+<h2>posit-dev/bluffbench2</h2>
+
+<img data-src="index_files/figure-revealjs/unnamed-chunk-13-11.png" class="quarto-figure quarto-figure-center r-stretch" width="960"></section>
+<section id="section-13" class="slide level2" data-background-color="#E8F0F6">
+<h2></h2>
+<div style="font-size: 1.5em; text-align: center; color: #093A3E;">
+<p><br> <br> <br> Models fail to notice some subtle data quality issues that data scientists would not._</p>
 </div>
 </section>
 <section id="correctness-matters-in-data-analysis" class="slide level2">
@@ -527,15 +603,15 @@
           display:block!important;
       }</style></aside>
 </section>
-<section id="section-18" class="slide level2" data-background-color="#F6FAFD">
+<section id="section-14" class="slide level2" data-background-color="#093A3E">
 <h2></h2>
-<div style="font-size: 2em; text-align: left; color: #093A3E; font-weight: 700;">
-<p><br> <br> <br> 1. LLMs are weird.</p>
+<div style="font-size: 2em; text-align: left; color: #E8F0F6; font-weight: 700;">
+<p><br> <br> <br> 1. LLMs are great performers, but not always reliable reporters.</p>
 </div>
 </section>
-<section id="section-19" class="slide level2" data-background-color="#F6FAFD" data-auto-animate="true">
+<section id="section-15" class="slide level2" data-background-color="#093A3E" data-auto-animate="true">
 <h2 data-id="quarto-animate-title"></h2>
-<div style="font-size: 2em; text-align: left; color: #093A3E; font-weight: 700;">
+<div style="font-size: 2em; text-align: left; color: #E8F0F6; font-weight: 700;">
 <p><br> <br> <br></p>
 <div data-id="still-useful">
 <p>2. LLMs are still useful for data analysis.</p>
@@ -558,19 +634,27 @@
           display:block!important;
       }</style></aside>
 </section>
-<section id="section-20" class="slide level2" data-background-color="#F6FAFD" data-auto-animate="true">
+<section id="section-16" class="slide level2" data-background-color="#E8F0F6" data-auto-animate="true">
 <h2 data-id="quarto-animate-title"></h2>
 <style>
 .reveal .slides section .fragment.toc-emph { opacity: 1; visibility: inherit; transition: font-weight .2s; }
 .reveal .slides section .fragment.toc-emph.visible { font-weight: 700; }
 </style>
-<div style="text-align: center; color: #093A3E; margin-top: 60px;">
-<div style="font-size: 2em;" data-id="still-useful">
-<p>LLMs are still useful for data analysis</p>
+<div style="text-align: left; color: #093A3E; margin-top: 60px;">
+<div style="font-size: 2em; font-weight: 700;" data-id="still-useful">
+<ol start="2" type="1">
+<li>LLMs are still useful for data analysis.</li>
+</ol>
 </div>
 <div style="display: inline-block; text-align: left; font-size: 1.05em; line-height: 1.9; margin-top: 50px;">
-<p><span class="fragment" data-fragment-index="1">1. Tell them to care about being right</span></p>
-<p><span class="fragment" data-fragment-index="1">2. Design the scaffold so that it matters less if they’re wrong</span></p>
+<ul>
+<li class="fragment" data-fragment-index="1">
+Help them get it right.
+</li>
+<li class="fragment" data-fragment-index="1">
+Make it matter less when they’re wrong.
+</li>
+</ul>
 </div>
 </div>
 </section>
@@ -580,6 +664,30 @@
 <li class="fragment">Can gather information from the world (e.g., read files)</li>
 <li class="fragment">Can alter the world (e.g., run code)</li>
 </ul>
+</section>
+<section id="well-be-talking-about-agents-1" class="slide level2">
+<h2>We’ll be talking about agents</h2>
+<div style="display: flex; flex-direction: column; justify-content: center; min-height: 65vh;">
+<div class="fragment">
+<p>you can use an existing agent</p>
+</div>
+<div class="fragment">
+<p>…or build one yourself</p>
+</div>
+</div>
+<aside class="notes">
+<p>lots of coding agents out there you can use for data analysis we’ll use Posit Assistant as our running example but everything here applies broadly – and these lessons are most pertinent if you’re building your own agent</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="posit-assistant" class="slide level2">
 <h2>Posit Assistant</h2>
@@ -598,19 +706,27 @@
           display:block!important;
       }</style></aside>
 </section>
-<section id="section-21" class="slide level2" data-background-color="#F6FAFD">
+<section id="section-17" class="slide level2" data-background-color="#E8F0F6">
 <h2></h2>
 <style>
 .reveal .slides section .fragment.toc-emph { opacity: 1; visibility: inherit; transition: font-weight .2s; }
 .reveal .slides section .fragment.toc-emph.visible { font-weight: 700; }
 </style>
-<div style="text-align: center; color: #093A3E; margin-top: 60px;">
-<div style="font-size: 2em;">
-<p>LLMs are still useful for data analysis</p>
+<div style="text-align: left; color: #093A3E; margin-top: 60px;">
+<div style="font-size: 2em; font-weight: 700;">
+<ol start="2" type="1">
+<li>LLMs are still useful for data analysis.</li>
+</ol>
 </div>
 <div style="display: inline-block; text-align: left; font-size: 1.05em; line-height: 1.9; margin-top: 50px;">
-<p><span class="fragment toc-emph" data-fragment-index="1">1. Tell them to care about being right</span></p>
-<p><span class="fragment semi-fade-out" data-fragment-index="1">2. Design the scaffold so that it matters less if they’re wrong</span></p>
+<ul>
+<li class="fragment toc-emph" data-fragment-index="1">
+Help them get it right
+</li>
+<li class="fragment semi-fade-out" data-fragment-index="1">
+Make it matter less when they’re wrong
+</li>
+</ul>
 </div>
 </div>
 </section>
@@ -628,7 +744,7 @@
 <li class="fragment">and more</li>
 </ul>
 <aside class="notes">
-<p>there’s more to an agent than just the model comes wrapped in a harness [list] Unless your building or fine tuning an LLM yourself, you don’t have much control over the underlying LLM You do have control over the harness</p>
+<p>there’s more to an agent than just the model comes wrapped in a harness [list] Unless your building or fine tuning an LLM yourself, you don’t have much control over the underlying LLM but you control the harness – this is what you shape, whether you use an agent like Posit Assistant or build your own</p>
 <p>this is what we control when we control posit assistant extensive prompting about prioritizing correctness not just advancing the analysis forward statistical robustness</p>
 <p>tools that matter for correctness, ability to see your active session</p>
 <style type="text/css">
@@ -642,45 +758,6 @@
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
-</section>
-<section id="tell-the-model-to-care-about-being-right" class="slide level2">
-<h2>Tell the model to care about being right</h2>
-
-<img data-src="index_files/figure-revealjs/unnamed-chunk-9-5.png" class="quarto-figure quarto-figure-center r-stretch" width="960"><div class="fragment" style="text-align:left; font-size:1.2em; margin-top:60px;">
-<p>The harness can make a difference in correctness</p>
-</div>
-<aside class="notes">
-<p>and it turns out all of this can make a difference even without affecting the underlying model when we tried interventions in isolation in bluffbench, limited success by posit assistant largely does better than minimal harness (default bluffbench case)</p>
-<p>so you can essentially tell the model to value correctness and give it the ability to do so, and it does help</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="section-22" class="slide level2" data-background-color="#F6FAFD">
-<h2></h2>
-<style>
-.reveal .slides section .fragment.toc-emph { opacity: 1; visibility: inherit; transition: font-weight .2s; }
-.reveal .slides section .fragment.toc-emph.visible { font-weight: 700; }
-</style>
-<div style="text-align: left; color: #093A3E; margin-top: 60px;">
-<div style="font-size: 2em;">
-LLMs are still useful for data analysis
-</div>
-<div style="display: inline-block; text-align: left; font-size: 1.05em; line-height: 1.9; margin-top: 50px;">
-<span class="fragment semi-fade-out" data-fragment-index="1">1. Tell them to care about being right</span><br> <span class="fragment toc-emph" data-fragment-index="1">2. Design the scaffold so that it matters less if <br> they’re wrong</span>
-<div style="font-size: 0.8em; margin-left: 1.5em; line-height: 1.7; margin-top: 12px; opacity: 0.9;">
-<p><span class="fragment" data-fragment-index="2">• Have the model write code, in a shared environment, and show it to the user</span><br> <span class="fragment" data-fragment-index="3">• Have the model pause often</span></p>
-</div>
-</div>
-</div>
 </section>
 <section id="code-as-the-foundation" class="slide level2">
 <h2>Code as the foundation</h2>
@@ -705,9 +782,80 @@ LLMs are still useful for data analysis
           display:block!important;
       }</style></aside>
 </section>
-<section id="code-as-the-foundation-1" class="slide level2">
-<h2>Code as the foundation</h2>
-<p>Makes auditing easy when it matters</p>
+<section id="tell-the-model-to-care-about-being-right" class="slide level2">
+<h2>Tell the model to care about being right</h2>
+
+<img data-src="index_files/figure-revealjs/unnamed-chunk-14-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"><div class="fragment" style="text-align:left; font-size:1.2em; margin-top:60px;">
+<p>The harness can make a difference in correctness</p>
+</div>
+<aside class="notes">
+<p>and it turns out all of this can make a difference even without affecting the underlying model when we tried interventions in isolation in bluffbench, limited success by posit assistant largely does better than minimal harness (default bluffbench case)</p>
+<p>so you can essentially tell the model to value correctness and give it the ability to do so, and it does help</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="trusted-code" class="slide level2">
+<h2>Trusted code</h2>
+<ul>
+<li class="fragment">You don’t always want the model writing code from scratch</li>
+<li class="fragment">If you have code you trust, have the agent reuse it</li>
+</ul>
+<aside class="notes">
+<p>models are good at writing code, but you don’t always want them authoring it fresh if you already have vetted code use that</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="section-18" class="slide level2" data-background-color="#E8F0F6">
+<h2></h2>
+<style>
+.reveal .slides section .fragment.toc-emph { opacity: 1; visibility: inherit; transition: font-weight .2s; }
+.reveal .slides section .fragment.toc-emph.visible { font-weight: 700; }
+</style>
+<div style="text-align: left; color: #093A3E; margin-top: 60px;">
+<div style="font-size: 2em; font-weight: 700;">
+LLMs are still useful for data analysis
+</div>
+<div style="display: inline-block; text-align: left; font-size: 1.05em; line-height: 1.9; margin-top: 50px;">
+<ul>
+<li class="fragment semi-fade-out" data-fragment-index="1">
+Help them get it right
+</li>
+<li class="fragment toc-emph" data-fragment-index="1">
+Make it matter less when they’re wrong
+<ul style="font-size: 0.8em; line-height: 1.7; margin-top: 12px; opacity: 0.9; font-weight: 400;">
+<li class="fragment" data-fragment-index="2">
+Lean on code as a foundation
+</li>
+<li class="fragment" data-fragment-index="3">
+Design for how it’ll actually be used
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="make-auditing-easy" class="slide level2">
+<h2>Make auditing easy</h2>
+<p>You want a chance to catch mistakes</p>
 
 <img data-src="figures/posit-assistant-python-code.png" class="quarto-figure quarto-figure-center r-stretch"><aside class="notes">
 <p>probably not enough for the model to write that code show it to the user when it matters make it easy to see and read small things like syntax highlighting, code styling</p>
@@ -731,6 +879,26 @@ LLMs are still useful for data analysis
 <p>not only is the model writing code writing it in a shared environment it has access to your same r/python session its not guessing what data you have loaded – it can see into that data in the same way you can you can audit its code by running it yourself it can inspect your objects and rerun code you ran</p>
 <p>this turns out to be very useful, especially for data analysis where you are often turning the same object around and looking at it from multiple angles and transforming it</p>
 <p>you’re seeing eye to eye with the agent, instead of the two of you occupying different worlds</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="design-for-how-itll-actually-be-used" class="slide level2">
+<h2>Design for how it’ll actually be used</h2>
+<ul>
+<li class="fragment">How will people actually work with your agent?</li>
+<li class="fragment">What does that mean for correctness and reproducibility?</li>
+</ul>
+<aside class="notes">
+<p>this one is less a universal rule, more a design question you answer for your own agent think through how people will actually interact with it, and how that affects correctness and reproducibility our answer for data analysis comes next – because the point of analysis is understanding, we made posit assistant pause often</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -792,24 +960,24 @@ LLMs are still useful for data analysis
           display:block!important;
       }</style></aside>
 </section>
-<section id="section-23" class="slide level2">
+<section id="section-19" class="slide level2" data-background-color="#093A3E">
 <h2></h2>
-<div style="display: flex; flex-direction: column; gap: 32px; max-width: 90%; margin: 10px auto 0 auto;">
-<div class="fragment" style="background-color: #F6FAFD; border-radius: 18px; padding: 18px 32px; box-shadow: 0 4px 16px rgba(0,0,0,.2);">
-<p><span style="color: #093A3E; font-weight: 700; font-size: 1.4em;">LLMs are weird</span></p>
-<div style="color: #093A3E; font-size: 0.95em; margin-top: 10px; line-height: 1.5;">
-<p>• Can make strange errors <br> • Can be more concerned with performing progress than correctness</p>
+<div style="display: flex; flex-direction: column; gap: 44px; max-width: 90%; margin: 60px auto 0 auto; color: #E8F0F6;">
+<div class="fragment">
+<p><span style="font-weight: 700; font-size: 1.4em;">LLMs are great performers, but not always reliable reporters</span></p>
+<div style="font-size: 0.95em; margin-top: 12px; line-height: 1.5; opacity: 0.9;">
+<p>• Can and will confidently make errors <br></p>
 </div>
 </div>
-<div class="fragment" style="background-color: #F6FAFD; border-radius: 18px; padding: 18px 32px; box-shadow: 0 4px 16px rgba(0,0,0,.2);">
-<p><span style="color: #093A3E; font-weight: 700; font-size: 1.4em;">LLMs are still useful for data analysis</span></p>
-<div style="color: #093A3E; font-size: 0.95em; margin-top: 10px; line-height: 1.5;">
-<p>• Tell them to care about being right<br> • Design the scaffold so that it matters less if they are wrong</p>
+<div class="fragment">
+<p><span style="font-weight: 700; font-size: 1.4em;">…but they’re still useful for data analysis</span></p>
+<div style="font-size: 0.95em; margin-top: 12px; line-height: 1.5; opacity: 0.9;">
+<p>• Help them be accurate.<br> • Make it matter less when they’re wrong.</p>
 </div>
 </div>
 </div>
 </section>
-<section id="section-24" class="slide level2">
+<section id="section-20" class="slide level2">
 <h2></h2>
 
 <img data-src="figures/ai-newsletter.png" class="quarto-figure quarto-figure-center r-stretch"><div style="text-align: center; font-size: 1.1em;">
@@ -819,10 +987,10 @@ LLMs are still useful for data analysis
 
 </div>
 </section>
-<section id="section-25" class="slide level2" data-background-image="figures/thankyou-bare.png" data-background-size="cover" data-background-position="center">
+<section id="section-21" class="slide level2" data-background-image="figures/thankyou-bare.png" data-background-size="cover" data-background-position="center">
 <h2></h2>
 <div style="display: flex; justify-content: center; align-items: center; min-height: 70vh;">
-<p><span style="color: #093A3E; font-weight: 700; font-size: 2.4em;">thank you</span> <span style="font-size: 2.4em; margin-left: 0.25em;"></span></p>
+<p><span style="color: #093A3E; font-weight: 700; font-size: 2.4em;">thank you!</span> <span style="font-size: 2.4em; margin-left: 0.25em;"></span></p>
 </div>
 
 
