@@ -47,6 +47,11 @@ theme_update(
 ```
 
 
+:::notes
+For the data-inclined folks in the audience...
+There are two gotchas I want to try and slip past you in the first half of this talk.
+:::
+
 ##
 
 ```{python}
@@ -77,34 +82,12 @@ _Calls tool: Run Python code_
 :::
 
 ::: {.fragment style="align-self: flex-end; background-color: #d6eaf8; padding: 6px; border-radius: 18px 18px 4px 18px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);"}
-[Plot]
+![](figures/tips-bill-tip-thumb.png){width="160px" style="border-radius: 12px; display: block;"}
 
 <br>
 :::
 
 ::: {.fragment style="align-self: flex-start; background-color: white; padding: 12px 18px; border-radius: 18px 18px 18px 4px; max-width: 70%; box-shadow: 0 2px 4px rgba(0,0,0,0.1); border: 1px solid #e0e0e0;"}
-There is a **strong, positive association.**
-:::
-
-:::
-
-##
-
-::: {style="display: flex; flex-direction: column; gap: 0px; padding: 20px; max-width: 100%; margin: 40px auto 0 auto;"}
-
-::: {style="align-self: flex-end; background-color: #d6eaf8; padding: 12px 18px; border-radius: 18px 18px 4px 18px; max-width: 70%; box-shadow: 0 2px 4px rgba(0,0,0,0.1);"}
-Please plot total_bill vs tip in tips
-:::
-
-::: {style="align-self: flex-start; background-color: white; padding: 12px 18px; border-radius: 18px 18px 18px 4px; max-width: 70%; box-shadow: 0 2px 4px rgba(0,0,0,0.1); border: 1px solid #e0e0e0; margin-top: 10px;"}
-_Calls tool: Run Python code_
-:::
-
-::: {style="align-self: flex-end; background-color: #d6eaf8; padding: 6px; border-radius: 18px 18px 4px 18px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);"}
-![](figures/tips-bill-tip-thumb.png){width="160px" style="border-radius: 12px; display: block;"}
-:::
-
-::: {style="align-self: flex-start; background-color: white; padding: 12px 18px; border-radius: 18px 18px 18px 4px; max-width: 70%; box-shadow: 0 2px 4px rgba(0,0,0,0.1); border: 1px solid #e0e0e0;"}
 There is a **strong, positive association.**
 :::
 
@@ -231,17 +214,11 @@ There are **3 cyan points.**
 
 :::
 
-## {background-color="#E8F0F6"}
-
-::: {style="font-size: 1.5em; text-align: center; color: #093A3E;"}
-<br>
-<br>
-<br>
-_LLMs can 'see' these plots just fine._
+:::notes
+LLMs can 'see' these plots just fine
 :::
 
-
-##
+## posit-dev/bluffbench
 
 ![](figures/bluffbench-post.png){fig-align="center"}
 
@@ -249,7 +226,7 @@ _LLMs can 'see' these plots just fine._
 <span style="color:#093A3E;">posit-dev.github.io/bluffbench</span>
 :::
 
-##
+## posit-dev/bluffbench
 
 ![](figures/original-bluffbench-results.png)
 
@@ -257,12 +234,21 @@ _LLMs can 'see' these plots just fine._
 <span style="color:#093A3E;">posit-dev.github.io/bluffbench</span>
 :::
 
-##
+:::notes
+We tried a bunch of stuff to drive those scores up and nothing worked.
+Hilariously, we let the model "think", and in its thinking, it would say "Huh, that association doesn't look like I expect", and then turn around and say exactly what it expected to see.
+:::
+
+## posit-dev/bluffbench
 
 ![](https://posit-dev.github.io/bluffbench/index_files/figure-html/plot-bluff-eval-mocked-1.png)
 
 :::footer
 <span style="color:#093A3E;">posit-dev.github.io/bluffbench</span>
+:::
+
+:::notes
+However, our priors are usually subverted more subtly...
 :::
 
 ## {background-color="#E8F0F6"}
@@ -271,7 +257,163 @@ _LLMs can 'see' these plots just fine._
 <br>
 <br>
 <br>
-_Agents enact a performance of progress._
+_Models largely fail to override their own priors about data._
+:::
+
+##
+
+::: {style="align-self: flex-end; background-color: #d6eaf8; padding: 12px 18px; border-radius: 18px 18px 4px 18px; max-width: 70%; margin: 0 0 12px auto; box-shadow: 0 2px 4px rgba(0,0,0,0.1);"}
+load in labs.csv and print it out
+:::
+
+::: {.fragment style="align-self: flex-start; background-color: white; padding: 12px 18px; border-radius: 18px 18px 18px 4px; max-width: 70%; margin: 0 auto 24px 0; box-shadow: 0 2px 4px rgba(0,0,0,0.1); border: 1px solid #e0e0e0;"}
+_Calls tool: Run Python code_
+:::
+
+::: {.fragment}
+
+```{python}
+#| echo: false
+import pandas as pd
+
+labs = pd.read_csv("data/labs.csv")
+labs
+```
+
+:::
+
+:::notes
+say you load some patient data in with a coding agent...
+:::
+
+##
+
+::: {style="align-self: flex-end; background-color: #d6eaf8; padding: 12px 18px; border-radius: 18px 18px 4px 18px; max-width: 70%; margin: 0 0 12px auto; box-shadow: 0 2px 4px rgba(0,0,0,0.1);"}
+make a histogram of bmi
+:::
+
+::: {.fragment style="align-self: flex-start; background-color: white; padding: 12px 18px; border-radius: 18px 18px 18px 4px; max-width: 70%; margin: 0 auto 24px 0; box-shadow: 0 2px 4px rgba(0,0,0,0.1); border: 1px solid #e0e0e0;"}
+_Calls tool: Run Python code_
+:::
+
+::: {.fragment}
+
+```{python}
+#| echo: false
+#| fig-align: center
+fig, ax = plt.subplots(figsize=(5.5, 3))
+ax.hist(labs["bmi"], bins=20)
+ax.set_xlabel("BMI")
+ax.set_ylabel("count")
+plt.show()
+```
+
+:::
+
+:::notes
+make a plot...
+:::
+
+##
+
+::: {style="align-self: flex-end; background-color: #d6eaf8; padding: 12px 18px; border-radius: 18px 18px 4px 18px; max-width: 70%; margin: 0 0 12px auto; box-shadow: 0 2px 4px rgba(0,0,0,0.1);"}
+plot bmi vs cholesterol
+:::
+
+::: {.fragment style="align-self: flex-start; background-color: white; padding: 12px 18px; border-radius: 18px 18px 18px 4px; max-width: 70%; margin: 0 auto 24px 0; box-shadow: 0 2px 4px rgba(0,0,0,0.1); border: 1px solid #e0e0e0;"}
+_Calls tool: Run Python code_
+:::
+
+::: {.fragment}
+
+```{python}
+#| echo: false
+#| fig-align: center
+rng = np.random.default_rng(109)
+
+n, n_imp = 150, 35
+bmi = np.round(rng.uniform(18, 42, n), 1)
+cholesterol = np.round(120 + 2.6 * bmi + rng.normal(0, 18, n), 1)
+
+imp_bmi = np.round(rng.uniform(20, 40, n_imp), 1)
+imp_chol = np.round(120 + 2.6 * imp_bmi, 1)
+
+bmi = np.concatenate([bmi, imp_bmi])
+cholesterol = np.concatenate([cholesterol, imp_chol])
+
+fig, ax = plt.subplots(figsize=(5.5, 3))
+ax.scatter(bmi, cholesterol, alpha=0.8, s=20)
+ax.set_xlabel("BMI")
+ax.set_ylabel("cholesterol")
+plt.show()
+```
+
+:::
+
+::: {.fragment style="position: absolute; right: 6%; top: 45%; font-size: 4em; transform: rotate(18deg);"}
+🤨
+:::
+
+:::notes
+make another plot
+:::
+
+## 🤨
+
+```{python}
+#| echo: false
+#| fig-align: center
+fig, ax = plt.subplots(figsize=(12, 6.5))
+ax.scatter(bmi, cholesterol, alpha=0.8, s=40)
+ax.set_xlabel("BMI")
+ax.set_ylabel("cholesterol")
+plt.show()
+```
+
+## posit-dev/bluffbench2
+
+```{r}
+#| echo: false
+#| fig-align: center
+library(bluffbench2)
+library(scales)
+
+bluff2_summary <-
+  bluff2_results |>
+  summarize(
+    cost = sum(cost),
+    score = (sum(score == "C") + (sum(score == "P") * .5)) / n(),
+    n = n(),
+    .by = model
+  ) |>
+  mutate(model = gsub(" (medium)", "", model, fixed = TRUE))
+
+bluff2_summary |>
+  mutate(model = fct_reorder(model, score)) |>
+  ggplot() +
+  aes(x = score, y = model) +
+  geom_col(fill = "#2c84e1") +
+  theme_minimal() +
+  labs(
+    x = "Score",
+    y = "Model",
+    title = "Frontier models still struggle to notice subtle data quality issues"
+  ) +
+  scale_x_continuous(labels = label_percent(), limits = c(0, 1)) +
+  theme(
+    text = element_text(size = 20),
+    plot.title.position = "plot",
+    plot.title = element_text(hjust = 0)
+  )
+```
+
+## {background-color="#E8F0F6"}
+
+::: {style="font-size: 1.5em; text-align: center; color: #093A3E;"}
+<br>
+<br>
+<br>
+Models fail to notice some subtle data quality issues that data scientists would not._
 :::
 
 ## Correctness matters in data analysis

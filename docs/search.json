@@ -4,119 +4,126 @@
     "href": "index.html#section",
     "title": "",
     "section": "",
-    "text": "It’s (still) very bad to be wrong\nAgents for Correct, Transparent, and Reproducible Data Analysis\n   \nSara Altman & Simon Couch AI Core Team @ Posit"
+    "text": "It’s (still) very bad to be wrong\nAgents for Correct, Transparent, and Reproducible Data Analysis\n   \nSara Altman & Simon Couch AI Core Team @ Posit\n\n\n\n\n\n\nFor the data-inclined folks in the audience… There are two gotchas I want to try and slip past you in the first half of this talk."
   },
   {
     "objectID": "index.html#section-1",
     "href": "index.html#section-1",
     "title": "",
     "section": "",
-    "text": "Please plot total_bill vs tip in tips\n\n\nCalls tool: Run Python code\n\n\n[Plot]\n\n\n\nThere is a strong, positive association."
+    "text": "Please plot total_bill vs tip in tips\n\n\nCalls tool: Run Python code\n\n\n\n\n\n\nThere is a strong, positive association."
   },
   {
     "objectID": "index.html#section-2",
     "href": "index.html#section-2",
     "title": "",
-    "section": "",
-    "text": "Please plot total_bill vs tip in tips\n\n\nCalls tool: Run Python code\n\n\n\n\n\nThere is a strong, positive association."
+    "section": "❓",
+    "text": "❓"
   },
   {
     "objectID": "index.html#section-3",
     "href": "index.html#section-3",
     "title": "",
-    "section": "❓",
-    "text": "❓"
+    "section": "🤫",
+    "text": "🤫\n\ntips[\"total_bill\"] = tips[\"total_bill\"].max() - tips[\"total_bill\"]"
   },
   {
     "objectID": "index.html#section-4",
     "href": "index.html#section-4",
     "title": "",
-    "section": "🤫",
-    "text": "🤫\n\ntips[\"total_bill\"] = tips[\"total_bill\"].max() - tips[\"total_bill\"]"
+    "section": "",
+    "text": "Please plot total_bill vs tip in tips\n\n\nCalls tool: Run Python code\n\n\n\n\n\nThere is a strong, positive association."
   },
   {
     "objectID": "index.html#section-5",
     "href": "index.html#section-5",
     "title": "",
     "section": "",
-    "text": "Please plot total_bill vs tip in tips\n\n\nCalls tool: Run Python code\n\n\n\n\n\nThere is a strong, positive association."
+    "text": "Run this code and tell me how many points there are and what color they are.\nimport numpy as np\nimport seaborn as sns\n\nn = np.random.randint(3, 11)\nsns.scatterplot(x=range(n), y=np.random.random(n),\n                color=np.random.random(3), s=200)"
   },
   {
     "objectID": "index.html#section-6",
     "href": "index.html#section-6",
     "title": "",
     "section": "",
-    "text": "Run this code and tell me how many points there are and what color they are.\nimport numpy as np\nimport seaborn as sns\n\nn = np.random.randint(3, 11)\nsns.scatterplot(x=range(n), y=np.random.random(n),\n                color=np.random.random(3), s=200)"
+    "text": "import numpy as np\nimport seaborn as sns\n\nn = np.random.randint(3, 11)\nsns.scatterplot(x=range(n), y=np.random.random(n),\n                color=np.random.random(3), s=200)"
   },
   {
     "objectID": "index.html#section-7",
     "href": "index.html#section-7",
     "title": "",
     "section": "",
-    "text": "import numpy as np\nimport seaborn as sns\n\nn = np.random.randint(3, 11)\nsns.scatterplot(x=range(n), y=np.random.random(n),\n                color=np.random.random(3), s=200)"
+    "text": "Run this code and tell me how many points there are and what color they are…\n\n\n\nCalls tool: Run Python code\n\n\n\n\n\nThere are 3 cyan points.\n\n\n\nLLMs can ‘see’ these plots just fine"
+  },
+  {
+    "objectID": "index.html#posit-devbluffbench",
+    "href": "index.html#posit-devbluffbench",
+    "title": "",
+    "section": "posit-dev/bluffbench",
+    "text": "posit-dev/bluffbench\n\n\nposit-dev.github.io/bluffbench"
+  },
+  {
+    "objectID": "index.html#posit-devbluffbench-1",
+    "href": "index.html#posit-devbluffbench-1",
+    "title": "",
+    "section": "posit-dev/bluffbench",
+    "text": "posit-dev/bluffbench\n\n\nposit-dev.github.io/bluffbench\n\n\nWe tried a bunch of stuff to drive those scores up and nothing worked. Hilariously, we let the model “think”, and in its thinking, it would say “Huh, that association doesn’t look like I expect”, and then turn around and say exactly what it expected to see."
+  },
+  {
+    "objectID": "index.html#posit-devbluffbench-2",
+    "href": "index.html#posit-devbluffbench-2",
+    "title": "",
+    "section": "posit-dev/bluffbench",
+    "text": "posit-dev/bluffbench\n\n\nposit-dev.github.io/bluffbench\n\n\nHowever, our priors are usually subverted more subtly…"
   },
   {
     "objectID": "index.html#section-8",
     "href": "index.html#section-8",
     "title": "",
     "section": "",
-    "text": "Run this code and tell me how many points there are and what color they are…\n\n\n\nCalls tool: Run Python code\n\n\n\n\n\nThere are 3 cyan points."
+    "text": "Models largely fail to override their own priors about data."
   },
   {
     "objectID": "index.html#section-9",
     "href": "index.html#section-9",
     "title": "",
     "section": "",
-    "text": "LLMs can ‘see’ plots just fine."
+    "text": "load in labs.csv and print it out\n\n\nCalls tool: Run Python code\n\n\n\n#&gt;     specimen fasting   bmi  cholesterol\n#&gt; 0     L-0030     yes  35.4        168.4\n#&gt; 1     L-0051     yes  34.2        256.2\n#&gt; 2     L-0072     yes  40.4        196.9\n#&gt; 3     L-0103     yes  32.7        187.2\n#&gt; 4     L-0123     yes  24.8        220.5\n#&gt; ..       ...     ...   ...          ...\n#&gt; 173   L-0135     yes  24.4        203.7\n#&gt; 174   L-0077     yes  35.1        189.7\n#&gt; 175   L-0050     yes  27.8        198.7\n#&gt; 176   L-0165     yes  33.6        207.4\n#&gt; 177   L-0060     yes  27.9        215.9\n#&gt; \n#&gt; [178 rows x 4 columns]\n\n\n\nsay you load some patient data in with a coding agent…"
   },
   {
     "objectID": "index.html#section-10",
     "href": "index.html#section-10",
     "title": "",
     "section": "",
-    "text": "posit-dev.github.io/bluffbench"
+    "text": "make a histogram of bmi\n\n\nCalls tool: Run Python code\n\n\n\n\n\n\n\n\n\n\n\n\n\nmake a plot…"
   },
   {
     "objectID": "index.html#section-11",
     "href": "index.html#section-11",
     "title": "",
     "section": "",
-    "text": "posit-dev.github.io/bluffbench"
+    "text": "plot bmi vs cholesterol\n\n\nCalls tool: Run Python code\n\n\n\n\n\n\n\n\n\n\n\n\n\n🤨\n\n\nmake another plot"
   },
   {
     "objectID": "index.html#section-12",
     "href": "index.html#section-12",
     "title": "",
-    "section": "",
-    "text": "Please plot total_bill vs tip in tips\n\n\nCalls tool: Run Python code\n\n\nA scatterplot of around 250 points showing a strong, negative association between x and y.\n\n\nThere is a strong, positive association.\n\n\n\n⟵\n\n\n\nPlease describe this plot."
+    "section": "🤨",
+    "text": "🤨"
+  },
+  {
+    "objectID": "index.html#posit-devbluffbench2",
+    "href": "index.html#posit-devbluffbench2",
+    "title": "",
+    "section": "posit-dev/bluffbench2",
+    "text": "posit-dev/bluffbench2"
   },
   {
     "objectID": "index.html#section-13",
     "href": "index.html#section-13",
     "title": "",
     "section": "",
-    "text": "Please plot total_bill vs tip in tips\n\n\nCalls tool: Run Python code\n\n\n\n\n\nThis is a scatterplot of around 250 points showing a strong, negative association.\nThere is a strong, positive association between total_bill and tip.\n\n\n\n⟵\n\n\n\nPlease describe this plot."
-  },
-  {
-    "objectID": "index.html#section-14",
-    "href": "index.html#section-14",
-    "title": "",
-    "section": "",
-    "text": "Please plot total_bill vs tip in tips\n\n\nCalls tool: Run Python code\n\n\n\n\n\n&lt;thought&gt; Huh, that’s weird. The association is negative. &lt;/thought&gt;\nThere is a strong, positive association."
-  },
-  {
-    "objectID": "index.html#section-16",
-    "href": "index.html#section-16",
-    "title": "",
-    "section": "",
-    "text": "posit-dev.github.io/bluffbench"
-  },
-  {
-    "objectID": "index.html#section-17",
-    "href": "index.html#section-17",
-    "title": "",
-    "section": "",
-    "text": "Agents enact a performance of progress."
+    "text": "Models fail to notice some subtle data quality issues that data scientists would not._"
   },
   {
     "objectID": "index.html#correctness-matters-in-data-analysis",
@@ -147,25 +154,25 @@
     "text": "Correctness matters in data analysis\n\nand so do reproducibility and transparency\n\n\n…all often at odds with how LLMs behave\n\n\nwe already mentioned how “correctness matters”. reproducibility – get consistent results from same conditions – and transparency – insight into how an analysis was done – are also central to data science, all often at odds with the nondetermistic and black box nature of LLMs.\nWhat does this mean for agents for data analysis?"
   },
   {
-    "objectID": "index.html#section-18",
-    "href": "index.html#section-18",
+    "objectID": "index.html#section-14",
+    "href": "index.html#section-14",
     "title": "",
     "section": "",
-    "text": "1. LLMs are weird."
+    "text": "1. LLMs are great performers, but not always reliable reporters."
   },
   {
-    "objectID": "index.html#section-19",
-    "href": "index.html#section-19",
+    "objectID": "index.html#section-15",
+    "href": "index.html#section-15",
     "title": "",
     "section": "",
     "text": "2. LLMs are still useful for data analysis.\n\n\n\ndon’t need to throw the whole thing away\nWe shouldn’t take evidence like bluffbench to mean that LLMs are useless anywhere you value correctness.\nInstead, you have to figure out where they can fit and how to design around their limitations.\nwe’re going to talk about what we did…"
   },
   {
-    "objectID": "index.html#section-20",
-    "href": "index.html#section-20",
+    "objectID": "index.html#section-16",
+    "href": "index.html#section-16",
     "title": "",
     "section": "",
-    "text": "LLMs are still useful for data analysis\n\n\n1. Tell them to care about being right\n2. Design the scaffold so that it matters less if they’re wrong"
+    "text": "LLMs are still useful for data analysis.\n\n\n\n\n\nHelp them get it right.\n\n\nMake it matter less when they’re wrong."
   },
   {
     "objectID": "index.html#well-be-talking-about-agents",
@@ -175,6 +182,13 @@
     "text": "We’ll be talking about agents\n\nCan gather information from the world (e.g., read files)\nCan alter the world (e.g., run code)"
   },
   {
+    "objectID": "index.html#well-be-talking-about-agents-1",
+    "href": "index.html#well-be-talking-about-agents-1",
+    "title": "",
+    "section": "We’ll be talking about agents",
+    "text": "We’ll be talking about agents\n\n\nyou can use an existing agent\n\n\n…or build one yourself\n\n\n\nlots of coding agents out there you can use for data analysis we’ll use Posit Assistant as our running example but everything here applies broadly – and these lessons are most pertinent if you’re building your own agent"
+  },
+  {
     "objectID": "index.html#posit-assistant",
     "href": "index.html#posit-assistant",
     "title": "",
@@ -182,32 +196,18 @@
     "text": "Posit Assistant\n\n\ndefine agent we are going to use Posit Assistant"
   },
   {
-    "objectID": "index.html#section-21",
-    "href": "index.html#section-21",
+    "objectID": "index.html#section-17",
+    "href": "index.html#section-17",
     "title": "",
     "section": "",
-    "text": "LLMs are still useful for data analysis\n\n\n1. Tell them to care about being right\n2. Design the scaffold so that it matters less if they’re wrong"
+    "text": "LLMs are still useful for data analysis.\n\n\n\n\n\nHelp them get it right\n\n\nMake it matter less when they’re wrong"
   },
   {
     "objectID": "index.html#an-agent-is-more-than-just-the-model",
     "href": "index.html#an-agent-is-more-than-just-the-model",
     "title": "",
     "section": "An agent is more than just the model",
-    "text": "An agent is more than just the model\n\n\nIt comes wrapped in a harness:\n\n\n\nHow it’s told to act (prompting)\nWhat tools it has access to use (run code, read files, etc.)\nWhat information it has access to\nand more\n\n\nthere’s more to an agent than just the model comes wrapped in a harness [list] Unless your building or fine tuning an LLM yourself, you don’t have much control over the underlying LLM You do have control over the harness\nthis is what we control when we control posit assistant extensive prompting about prioritizing correctness not just advancing the analysis forward statistical robustness\ntools that matter for correctness, ability to see your active session"
-  },
-  {
-    "objectID": "index.html#tell-the-model-to-care-about-being-right",
-    "href": "index.html#tell-the-model-to-care-about-being-right",
-    "title": "",
-    "section": "Tell the model to care about being right",
-    "text": "Tell the model to care about being right\n\n\nThe harness can make a difference in correctness\n\n\nand it turns out all of this can make a difference even without affecting the underlying model when we tried interventions in isolation in bluffbench, limited success by posit assistant largely does better than minimal harness (default bluffbench case)\nso you can essentially tell the model to value correctness and give it the ability to do so, and it does help"
-  },
-  {
-    "objectID": "index.html#section-22",
-    "href": "index.html#section-22",
-    "title": "",
-    "section": "",
-    "text": "LLMs are still useful for data analysis\n\n\n1. Tell them to care about being right 2. Design the scaffold so that it matters less if  they’re wrong\n\n• Have the model write code, in a shared environment, and show it to the user • Have the model pause often"
+    "text": "An agent is more than just the model\n\n\nIt comes wrapped in a harness:\n\n\n\nHow it’s told to act (prompting)\nWhat tools it has access to use (run code, read files, etc.)\nWhat information it has access to\nand more\n\n\nthere’s more to an agent than just the model comes wrapped in a harness [list] Unless your building or fine tuning an LLM yourself, you don’t have much control over the underlying LLM but you control the harness – this is what you shape, whether you use an agent like Posit Assistant or build your own\nthis is what we control when we control posit assistant extensive prompting about prioritizing correctness not just advancing the analysis forward statistical robustness\ntools that matter for correctness, ability to see your active session"
   },
   {
     "objectID": "index.html#code-as-the-foundation",
@@ -217,11 +217,32 @@
     "text": "Code as the foundation\n\nModels are good at writing code\nCode can be run again - reproducibility\nCode is auditable - transparency\n\n\ndoesn’t necessarily need to write code could image an agent…\nModels are good at writing code Code is reproducible Code is auditable\ncode is a good choice"
   },
   {
-    "objectID": "index.html#code-as-the-foundation-1",
-    "href": "index.html#code-as-the-foundation-1",
+    "objectID": "index.html#tell-the-model-to-care-about-being-right",
+    "href": "index.html#tell-the-model-to-care-about-being-right",
     "title": "",
-    "section": "Code as the foundation",
-    "text": "Code as the foundation\nMakes auditing easy when it matters\n\n\nprobably not enough for the model to write that code show it to the user when it matters make it easy to see and read small things like syntax highlighting, code styling"
+    "section": "Tell the model to care about being right",
+    "text": "Tell the model to care about being right\n\n\nThe harness can make a difference in correctness\n\n\nand it turns out all of this can make a difference even without affecting the underlying model when we tried interventions in isolation in bluffbench, limited success by posit assistant largely does better than minimal harness (default bluffbench case)\nso you can essentially tell the model to value correctness and give it the ability to do so, and it does help"
+  },
+  {
+    "objectID": "index.html#trusted-code",
+    "href": "index.html#trusted-code",
+    "title": "",
+    "section": "Trusted code",
+    "text": "Trusted code\n\nYou don’t always want the model writing code from scratch\nIf you have code you trust, have the agent reuse it\n\n\nmodels are good at writing code, but you don’t always want them authoring it fresh if you already have vetted code use that"
+  },
+  {
+    "objectID": "index.html#section-18",
+    "href": "index.html#section-18",
+    "title": "",
+    "section": "",
+    "text": "LLMs are still useful for data analysis\n\n\n\n\nHelp them get it right\n\n\nMake it matter less when they’re wrong\n\n\nLean on code as a foundation\n\n\nDesign for how it’ll actually be used"
+  },
+  {
+    "objectID": "index.html#make-auditing-easy",
+    "href": "index.html#make-auditing-easy",
+    "title": "",
+    "section": "Make auditing easy",
+    "text": "Make auditing easy\nYou want a chance to catch mistakes\n\n\nprobably not enough for the model to write that code show it to the user when it matters make it easy to see and read small things like syntax highlighting, code styling"
   },
   {
     "objectID": "index.html#shared-environment",
@@ -229,6 +250,13 @@
     "title": "",
     "section": "Shared environment",
     "text": "Shared environment\nSee eye-to-eye with the agent\n\n\nnot only is the model writing code writing it in a shared environment it has access to your same r/python session its not guessing what data you have loaded – it can see into that data in the same way you can you can audit its code by running it yourself it can inspect your objects and rerun code you ran\nthis turns out to be very useful, especially for data analysis where you are often turning the same object around and looking at it from multiple angles and transforming it\nyou’re seeing eye to eye with the agent, instead of the two of you occupying different worlds"
+  },
+  {
+    "objectID": "index.html#design-for-how-itll-actually-be-used",
+    "href": "index.html#design-for-how-itll-actually-be-used",
+    "title": "",
+    "section": "Design for how it’ll actually be used",
+    "text": "Design for how it’ll actually be used\n\nHow will people actually work with your agent?\nWhat does that mean for correctness and reproducibility?\n\n\nthis one is less a universal rule, more a design question you answer for your own agent think through how people will actually interact with it, and how that affects correctness and reproducibility our answer for data analysis comes next – because the point of analysis is understanding, we made posit assistant pause often"
   },
   {
     "objectID": "index.html#have-the-model-pause-often",
@@ -245,24 +273,24 @@
     "text": "Have the model pause often\nWhat’s the point of an analysis?\n\n(often) building an understanding of the data\n\n\nanother reason for this though for verification and transparency: the human has to keep pace and see eye-to-eye with the agent (same environment)."
   },
   {
-    "objectID": "index.html#section-23",
-    "href": "index.html#section-23",
+    "objectID": "index.html#section-19",
+    "href": "index.html#section-19",
     "title": "",
     "section": "",
-    "text": "LLMs are weird\n\n• Can make strange errors  • Can be more concerned with performing progress than correctness\n\n\n\nLLMs are still useful for data analysis\n\n• Tell them to care about being right • Design the scaffold so that it matters less if they are wrong"
+    "text": "LLMs are great performers, but not always reliable reporters\n\n• Can and will confidently make errors \n\n\n\n…but they’re still useful for data analysis\n\n• Help them be accurate. • Make it matter less when they’re wrong."
   },
   {
-    "objectID": "index.html#section-24",
-    "href": "index.html#section-24",
+    "objectID": "index.html#section-20",
+    "href": "index.html#section-20",
     "title": "",
     "section": "",
     "text": "https://opensource.posit.co/tags/ai-newsletter/"
   },
   {
-    "objectID": "index.html#section-25",
-    "href": "index.html#section-25",
+    "objectID": "index.html#section-21",
+    "href": "index.html#section-21",
     "title": "",
     "section": "",
-    "text": "thank you"
+    "text": "thank you!"
   }
 ]
