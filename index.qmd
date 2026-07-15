@@ -500,7 +500,7 @@ What does this mean for agents for data analysis?
 <br>
 <br>
 <br>
-1. LLMs are weird.
+1. LLMs are great performers, but not always reliable reporters.
 :::
 
 ## {background-color="#093A3E" auto-animate=true}
@@ -795,23 +795,23 @@ another reason for this though
 for verification and transparency: the human has to keep pace and see eye-to-eye with the agent (same environment).
 :::
 
-##
+## {background-color="#093A3E"}
 
-::: {style="display: flex; flex-direction: column; gap: 32px; max-width: 90%; margin: 10px auto 0 auto;"}
+::: {style="display: flex; flex-direction: column; gap: 44px; max-width: 90%; margin: 60px auto 0 auto; color: #E8F0F6;"}
 
-::: {.fragment style="background-color: #E8F0F6; border-radius: 18px; padding: 18px 32px; box-shadow: 0 4px 16px rgba(0,0,0,.2);"}
-[LLMs are weird]{style="color: #093A3E; font-weight: 700; font-size: 1.4em;"}
+::: {.fragment}
+[LLMs are great performers, but not always reliable reporters.]{style="font-weight: 700; font-size: 1.4em;"}
 
-::: {style="color: #093A3E; font-size: 0.95em; margin-top: 10px; line-height: 1.5;"}
-• Can make strange errors <br>
+::: {style="font-size: 0.95em; margin-top: 12px; line-height: 1.5; opacity: 0.9;"}
+• Can and will confidently make errors  <br>
 • Can be more concerned with performing progress than correctness
 :::
 :::
 
-::: {.fragment style="background-color: #E8F0F6; border-radius: 18px; padding: 18px 32px; box-shadow: 0 4px 16px rgba(0,0,0,.2);"}
-[LLMs are still useful for data analysis]{style="color: #093A3E; font-weight: 700; font-size: 1.4em;"}
+::: {.fragment}
+[LLMs are still useful for data analysis]{style="font-weight: 700; font-size: 1.4em;"}
 
-::: {style="color: #093A3E; font-size: 0.95em; margin-top: 10px; line-height: 1.5;"}
+::: {style="font-size: 0.95em; margin-top: 12px; line-height: 1.5; opacity: 0.9;"}
 • Tell them to care about being right<br>
 • Design the scaffold so that it matters less if they are wrong
 :::
@@ -834,5 +834,5 @@ for verification and transparency: the human has to keep pace and see eye-to-eye
 ## {background-image="figures/thankyou-bare.png" background-size="cover" background-position="center"}
 
 ::: {style="display: flex; justify-content: center; align-items: center; min-height: 70vh;"}
-[thank you]{style="color: #093A3E; font-weight: 700; font-size: 2.4em;"} <span style="font-size: 2.4em; margin-left: 0.25em;"></span>
+[thank you!]{style="color: #093A3E; font-weight: 700; font-size: 2.4em;"} <span style="font-size: 2.4em; margin-left: 0.25em;"></span>
 :::
