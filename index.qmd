@@ -231,7 +231,7 @@ There are **3 cyan points.**
 
 :::
 
-## {background-color="#F6FAFD"}
+## {background-color="#E8F0F6"}
 
 ::: {style="font-size: 1.5em; text-align: center; color: #093A3E;"}
 <br>
@@ -395,7 +395,7 @@ There is a **strong, positive association.**
 <span style="color:#093A3E;">posit-dev.github.io/bluffbench</span>
 :::
 
-## {background-color="#F6FAFD"}
+## {background-color="#E8F0F6"}
 
 ::: {style="font-size: 1.5em; text-align: center; color: #093A3E;"}
 <br>
@@ -494,7 +494,7 @@ reproducibility -- get consistent results from same conditions -- and transparen
 What does this mean for agents for data analysis?
 :::
 
-## {background-color="#F6FAFD"}
+## {background-color="#E8F0F6"}
 
 ::: {style="font-size: 2em; text-align: left; color: #093A3E; font-weight: 700;"}
 <br>
@@ -503,7 +503,7 @@ What does this mean for agents for data analysis?
 1. LLMs are weird. 
 :::
 
-## {background-color="#F6FAFD" auto-animate=true}
+## {background-color="#E8F0F6" auto-animate=true}
 
 :::: {style="font-size: 2em; text-align: left; color: #093A3E; font-weight: 700;"}
 <br>
@@ -526,7 +526,7 @@ Instead, you have to figure out where they can fit and how to design around thei
 we're going to talk about what we did...
 :::
 
-## {background-color="#F6FAFD" auto-animate=true}
+## {background-color="#E8F0F6" auto-animate=true}
 
 <style>
 .reveal .slides section .fragment.toc-emph { opacity: 1; visibility: inherit; transition: font-weight .2s; }
@@ -563,7 +563,7 @@ define agent
 we are going to use Posit Assistant 
 :::
 
-## {background-color="#F6FAFD"}
+## {background-color="#E8F0F6"}
 
 <style>
 .reveal .slides section .fragment.toc-emph { opacity: 1; visibility: inherit; transition: font-weight .2s; }
@@ -687,7 +687,7 @@ by posit assistant largely does better than minimal harness (default bluffbench 
 so you can essentially tell the model to value correctness and give it the ability to do so, and it does help
 :::
 
-## {background-color="#F6FAFD"}
+## {background-color="#E8F0F6"}
 
 <style>
 .reveal .slides section .fragment.toc-emph { opacity: 1; visibility: inherit; transition: font-weight .2s; }
@@ -799,7 +799,7 @@ for verification and transparency: the human has to keep pace and see eye-to-eye
 
 ::: {style="display: flex; flex-direction: column; gap: 32px; max-width: 90%; margin: 10px auto 0 auto;"}
 
-::: {.fragment style="background-color: #F6FAFD; border-radius: 18px; padding: 18px 32px; box-shadow: 0 4px 16px rgba(0,0,0,.2);"}
+::: {.fragment style="background-color: #E8F0F6; border-radius: 18px; padding: 18px 32px; box-shadow: 0 4px 16px rgba(0,0,0,.2);"}
 [LLMs are weird]{style="color: #093A3E; font-weight: 700; font-size: 1.4em;"}
 
 ::: {style="color: #093A3E; font-size: 0.95em; margin-top: 10px; line-height: 1.5;"}
@@ -808,7 +808,7 @@ for verification and transparency: the human has to keep pace and see eye-to-eye
 :::
 :::
 
-::: {.fragment style="background-color: #F6FAFD; border-radius: 18px; padding: 18px 32px; box-shadow: 0 4px 16px rgba(0,0,0,.2);"}
+::: {.fragment style="background-color: #E8F0F6; border-radius: 18px; padding: 18px 32px; box-shadow: 0 4px 16px rgba(0,0,0,.2);"}
 [LLMs are still useful for data analysis]{style="color: #093A3E; font-weight: 700; font-size: 1.4em;"}
 
 ::: {style="color: #093A3E; font-size: 0.95em; margin-top: 10px; line-height: 1.5;"}
