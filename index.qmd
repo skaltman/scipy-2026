@@ -370,7 +370,7 @@ _Models fail to notice subtle data quality issues that data scientists would not
 <br>
 LLMs fail at tasks central to data analysis.
 
-::: {style="font-size: 0.6em; font-weight: 400; margin-left: 1.5em;"}
+::: {.incremental style="font-size: 0.6em; font-weight: 400; margin-left: 1.5em;"}
 - Fail to override priors about data
 - Fail to notice subtle data quality issues
 :::
