@@ -237,7 +237,7 @@ There are **3 cyan points.**
 <br>
 <br>
 <br>
-_LLMs can 'see' plots just fine._
+_LLMs can 'see' these plots just fine._
 :::
 
 
@@ -255,136 +255,6 @@ _LLMs can 'see' plots just fine._
 
 :::footer
 <span style="color:#093A3E;">posit-dev.github.io/bluffbench</span>
-:::
-
-##
-
-::: {style="display: flex; flex-direction: row; gap: 24px; padding: 20px; max-width: 100%; margin: 40px auto 0 auto; font-size: 0.75em;"}
-
-::: {style="flex: 3; display: flex; flex-direction: column; gap: 12px;"}
-
-::: {style="align-self: flex-end; background-color: #d6eaf8; padding: 12px 18px; border-radius: 18px 18px 4px 18px; max-width: 70%; box-shadow: 0 2px 4px rgba(0,0,0,0.1);"}
-Please plot total_bill vs tip in tips
-:::
-
-::: {style="align-self: flex-start; background-color: white; padding: 12px 18px; border-radius: 18px 18px 18px 4px; max-width: 70%; box-shadow: 0 2px 4px rgba(0,0,0,0.1); border: 1px solid #e0e0e0;"}
-_Calls tool: Run Python code_
-:::
-
-::: {style="align-self: flex-end; background-color: #d6eaf8; padding: 12px 18px; border-radius: 18px 18px 4px 18px; max-width: 70%; box-shadow: 0 2px 4px rgba(0,0,0,0.1);"}
-_A scatterplot of around 250 points showing a strong, negative association between x and y._
-:::
-
-::: {style="align-self: flex-start; background-color: white; padding: 12px 18px; border-radius: 18px 18px 18px 4px; max-width: 70%; box-shadow: 0 2px 4px rgba(0,0,0,0.1); border: 1px solid #e0e0e0;"}
-There is a **strong, positive association.**
-:::
-
-:::
-
-::: {style="display: flex; align-items: center; font-size: 2.5em; color: #888;"}
-⟵
-:::
-
-::: {style="flex: 2; display: flex; flex-direction: column; gap: 0px; justify-content: center; border-left: 2px dashed #bbb; padding-left: 24px;"}
-
-::: {style="align-self: flex-end; background-color: #d6eaf8; padding: 12px 18px; border-radius: 18px 18px 4px 18px; max-width: 85%; box-shadow: 0 2px 4px rgba(0,0,0,0.1);"}
-Please describe this plot.
-
-![](figures/tips-bill-tip-thumb.png){width="140px" style="border-radius: 12px; display: block; margin-top: 8px;"}
-:::
-
-:::
-
-:::
-
-##
-
-::: {style="display: flex; flex-direction: row; gap: 24px; padding: 0 20px 20px 20px; max-width: 100%; margin: 0 auto; font-size: 0.75em;"}
-
-::: {style="flex: 3; display: flex; flex-direction: column; gap: 12px;"}
-
-::: {style="align-self: flex-end; background-color: #d6eaf8; padding: 12px 18px; border-radius: 18px 18px 4px 18px; max-width: 70%; box-shadow: 0 2px 4px rgba(0,0,0,0.1);"}
-Please plot total_bill vs tip in tips
-:::
-
-::: {style="align-self: flex-start; background-color: white; padding: 12px 18px; border-radius: 18px 18px 18px 4px; max-width: 70%; box-shadow: 0 2px 4px rgba(0,0,0,0.1); border: 1px solid #e0e0e0;"}
-_Calls tool: Run Python code_
-:::
-
-::: {style="align-self: flex-end; background-color: #d6eaf8; padding: 6px; border-radius: 18px 18px 4px 18px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin-top: -8px;"}
-![](figures/tips-bill-tip-thumb.png){width="140px" style="border-radius: 12px; display: block;"}
-:::
-
-::: {style="align-self: flex-start; background-color: white; padding: 12px 18px; border-radius: 18px 18px 18px 4px; max-width: 70%; box-shadow: 0 2px 4px rgba(0,0,0,0.1); border: 1px solid #e0e0e0;"}
-_This is a scatterplot of around 250 points showing a strong, negative association._
-
-There is a **strong, positive association** between total_bill and tip.
-:::
-
-:::
-
-::: {style="display: flex; align-items: flex-end; padding-bottom: 165px; font-size: 2.5em; color: #888;"}
-⟵
-:::
-
-::: {style="flex: 2; display: flex; flex-direction: column; gap: 0px; justify-content: flex-end; padding-bottom: 145px; border-left: 2px dashed #bbb; padding-left: 24px;"}
-
-::: {style="align-self: flex-end; background-color: #d6eaf8; padding: 12px 18px; border-radius: 18px 18px 4px 18px; max-width: 85%; box-shadow: 0 2px 4px rgba(0,0,0,0.1);"}
-Please describe this plot.
-
-![](figures/tips-bill-tip-thumb.png){width="140px" style="border-radius: 12px; display: block; margin-top: 8px;"}
-:::
-
-:::
-
-:::
-
-##
-
-::: {style="display: flex; flex-direction: column; gap: 0px; padding: 20px; max-width: 100%; margin: 40px auto 0 auto;"}
-
-::: {style="align-self: flex-end; background-color: #d6eaf8; padding: 12px 18px; border-radius: 18px 18px 4px 18px; max-width: 70%; box-shadow: 0 2px 4px rgba(0,0,0,0.1);"}
-Please plot total_bill vs tip in tips
-:::
-
-::: {style="align-self: flex-start; background-color: white; padding: 12px 18px; border-radius: 18px 18px 18px 4px; max-width: 70%; box-shadow: 0 2px 4px rgba(0,0,0,0.1); border: 1px solid #e0e0e0; margin-top: 10px;"}
-_Calls tool: Run Python code_
-:::
-
-::: {style="align-self: flex-end; background-color: #d6eaf8; padding: 6px; border-radius: 18px 18px 4px 18px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);"}
-![](figures/tips-bill-tip-thumb.png){width="160px" style="border-radius: 12px; display: block;"}
-:::
-
-::: {style="align-self: flex-start; background-color: white; padding: 12px 18px; border-radius: 18px 18px 18px 4px; max-width: 70%; box-shadow: 0 2px 4px rgba(0,0,0,0.1); border: 1px solid #e0e0e0;"}
-\<thought\> Huh, that's weird. The association is negative. \</thought\>
-
-There is a **strong, positive association.**
-:::
-
-:::
-
-## {visibility="hidden"}
-
-::: {style="display: flex; flex-direction: column; gap: 0px; padding: 20px; max-width: 100%; margin: 40px auto 0 auto; font-size: 0.85em;"}
-
-::: {style="align-self: flex-end; background-color: #d6eaf8; padding: 12px 18px; border-radius: 18px 18px 4px 18px; max-width: 70%; box-shadow: 0 2px 4px rgba(0,0,0,0.1);"}
-Please plot total_bill vs tip in tips
-:::
-
-::: {style="align-self: flex-start; background-color: white; padding: 12px 18px; border-radius: 18px 18px 18px 4px; max-width: 70%; box-shadow: 0 2px 4px rgba(0,0,0,0.1); border: 1px solid #e0e0e0; margin-top: 10px;"}
-_Calls tool: Run Python code_
-:::
-
-::: {style="align-self: flex-end; background-color: #d6eaf8; padding: 6px; border-radius: 18px 18px 4px 18px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);"}
-![](figures/tips-bill-tip-thumb.png){width="160px" style="border-radius: 12px; display: block;"}
-:::
-
-::: {style="align-self: flex-start; background-color: white; padding: 12px 18px; border-radius: 18px 18px 18px 4px; max-width: 70%; box-shadow: 0 2px 4px rgba(0,0,0,0.1); border: 1px solid #e0e0e0;"}
-<div style="background-color: #f5f5f5; border-left: 3px solid #ccc; padding: 8px 12px; margin-bottom: 10px; font-size: 0.85em; color: #999; font-family: monospace;">&lt;private-scratchpad&gt;<br>Huh, that's not what I expected. The association is negative.<br>&lt;/private-scratchpad&gt;</div>
-
-There is a **strong, positive association.**
-:::
-
 :::
 
 ##
