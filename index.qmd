@@ -413,7 +413,7 @@ bluff2_summary |>
 <br>
 <br>
 <br>
-Models fail to notice some subtle data quality issues that data scientists would not._
+_Models fail to notice some subtle data quality issues that data scientists would not._
 :::
 
 ## Correctness matters in data analysis
