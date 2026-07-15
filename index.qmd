@@ -494,18 +494,18 @@ reproducibility -- get consistent results from same conditions -- and transparen
 What does this mean for agents for data analysis?
 :::
 
-## {background-color="#E8F0F6"}
+## {background-color="#093A3E"}
 
-::: {style="font-size: 2em; text-align: left; color: #093A3E; font-weight: 700;"}
+::: {style="font-size: 2em; text-align: left; color: #E8F0F6; font-weight: 700;"}
 <br>
 <br>
 <br>
-1. LLMs are weird. 
+1. LLMs are weird.
 :::
 
-## {background-color="#E8F0F6" auto-animate=true}
+## {background-color="#093A3E" auto-animate=true}
 
-:::: {style="font-size: 2em; text-align: left; color: #093A3E; font-weight: 700;"}
+:::: {style="font-size: 2em; text-align: left; color: #E8F0F6; font-weight: 700;"}
 <br>
 <br>
 <br>
