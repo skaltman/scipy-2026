@@ -387,20 +387,116 @@
 </div>
 <div class="fragment">
 <div class="cell">
-<pre><code>#&gt;     specimen fasting   bmi  cholesterol
-#&gt; 0     L-0030     yes  35.4        168.4
-#&gt; 1     L-0051     yes  34.2        256.2
-#&gt; 2     L-0072     yes  40.4        196.9
-#&gt; 3     L-0103     yes  32.7        187.2
-#&gt; 4     L-0123     yes  24.8        220.5
-#&gt; ..       ...     ...   ...          ...
-#&gt; 173   L-0135     yes  24.4        203.7
-#&gt; 174   L-0077     yes  35.1        189.7
-#&gt; 175   L-0050     yes  27.8        198.7
-#&gt; 176   L-0165     yes  33.6        207.4
-#&gt; 177   L-0060     yes  27.9        215.9
-#&gt; 
-#&gt; [178 rows x 4 columns]</code></pre>
+<div class="cell-output-display">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+
+<table class="dataframe caption-top" data-border="1">
+<thead>
+<tr class="header" style="text-align: right;">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">specimen</th>
+<th data-quarto-table-cell-role="th">fasting</th>
+<th data-quarto-table-cell-role="th">bmi</th>
+<th data-quarto-table-cell-role="th">cholesterol</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">0</th>
+<td>L-0030</td>
+<td>yes</td>
+<td>35.4</td>
+<td>168.4</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">1</th>
+<td>L-0051</td>
+<td>yes</td>
+<td>34.2</td>
+<td>256.2</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">2</th>
+<td>L-0072</td>
+<td>yes</td>
+<td>40.4</td>
+<td>196.9</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">3</th>
+<td>L-0103</td>
+<td>yes</td>
+<td>32.7</td>
+<td>187.2</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">4</th>
+<td>L-0123</td>
+<td>yes</td>
+<td>24.8</td>
+<td>220.5</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">...</th>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">173</th>
+<td>L-0135</td>
+<td>yes</td>
+<td>24.4</td>
+<td>203.7</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">174</th>
+<td>L-0077</td>
+<td>yes</td>
+<td>35.1</td>
+<td>189.7</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">175</th>
+<td>L-0050</td>
+<td>yes</td>
+<td>27.8</td>
+<td>198.7</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">176</th>
+<td>L-0165</td>
+<td>yes</td>
+<td>33.6</td>
+<td>207.4</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">177</th>
+<td>L-0060</td>
+<td>yes</td>
+<td>27.9</td>
+<td>215.9</td>
+</tr>
+</tbody>
+</table>
+
+<p>178 rows × 4 columns</p>
+</div>
+</div>
 </div>
 </div>
 <aside class="notes">
@@ -497,13 +593,19 @@
 <section id="section-13" class="slide level2" data-background-color="#E8F0F6">
 <h2></h2>
 <div style="font-size: 1.5em; text-align: center; color: #093A3E;">
-<p><br> <br> <br> Models fail to notice some subtle data quality issues that data scientists would not._</p>
+<p><br> <br> <br> <em>Models fail to notice subtle data quality issues that data scientists would not.</em></p>
 </div>
 </section>
-<section id="correctness-matters-in-data-analysis" class="slide level2">
-<h2>Correctness matters in data analysis</h2>
-<div class="fragment">
-<p>but do LLMs <em>care</em> about correctness?</p>
+<section id="section-14" class="slide level2" data-background-color="#093A3E">
+<h2></h2>
+<div style="font-size: 2em; text-align: left; color: #E8F0F6; font-weight: 700;">
+<p><br> LLMs fail at tasks central to data science.</p>
+<div style="font-size: 0.6em; font-weight: 400; margin-left: 1.5em;">
+<ul>
+<li>Fail to override priors about data</li>
+<li>Fail to notice some subtle data quality issues</li>
+</ul>
+</div>
 </div>
 <aside class="notes">
 <p>so why is this a problem? when you’re working with real data with real world consequences, being correct matters. correctness, fittingly, is really a core value of data science when you do an analysis, you want your results to actually line up with the real world, or at least approximate it. That’s the whole point. But LLM behavior doesn’t necessarily always line up with this value of correctness</p>
@@ -580,36 +682,13 @@
           display:block!important;
       }</style></aside>
 </section>
-<section id="correctness-matters-in-data-analysis-1" class="slide level2">
-<h2>Correctness matters in data analysis</h2>
-<div class="fragment" style="text-align:left; font-size:1.7em; margin-top:60px;">
-<p>and so do <span style="color:#093A3E; font-weight:700;">reproducibility</span> and <span style="color:#093A3E; font-weight:700;">transparency</span></p>
-</div>
-<div class="fragment" style="text-align:left; font-size:1.7em; margin-top:60px;">
-<p>…all often at odds with how LLMs behave</p>
-</div>
-<aside class="notes">
-<p>we already mentioned how “correctness matters”. reproducibility – get consistent results from same conditions – and transparency – insight into how an analysis was done – are also central to data science, all often at odds with the nondetermistic and black box nature of LLMs.</p>
-<p>What does this mean for agents for data analysis?</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="section-14" class="slide level2" data-background-color="#093A3E">
+<section id="section-15" class="slide level2" data-background-color="#093A3E">
 <h2></h2>
 <div style="font-size: 2em; text-align: left; color: #E8F0F6; font-weight: 700;">
-<p><br> <br> <br> 1. LLMs are great performers, but not always reliable reporters.</p>
+<p><br> <br> <br> 1. LLMs fail at tasks central to data science.</p>
 </div>
 </section>
-<section id="section-15" class="slide level2" data-background-color="#093A3E" data-auto-animate="true">
+<section id="section-16" class="slide level2" data-background-color="#093A3E" data-auto-animate="true">
 <h2 data-id="quarto-animate-title"></h2>
 <div style="font-size: 2em; text-align: left; color: #E8F0F6; font-weight: 700;">
 <p><br> <br> <br></p>
@@ -634,7 +713,7 @@
           display:block!important;
       }</style></aside>
 </section>
-<section id="section-16" class="slide level2" data-background-color="#E8F0F6" data-auto-animate="true">
+<section id="section-17" class="slide level2" data-background-color="#E8F0F6" data-auto-animate="true">
 <h2 data-id="quarto-animate-title"></h2>
 <style>
 .reveal .slides section .fragment.toc-emph { opacity: 1; visibility: inherit; transition: font-weight .2s; }
@@ -649,7 +728,7 @@
 <div style="display: inline-block; text-align: left; font-size: 1.05em; line-height: 1.9; margin-top: 50px;">
 <ul>
 <li class="fragment" data-fragment-index="1">
-Help them get it right.
+Make it easy for them to be right.
 </li>
 <li class="fragment" data-fragment-index="1">
 Make it matter less when they’re wrong.
@@ -660,14 +739,16 @@ Make it matter less when they’re wrong.
 </section>
 <section id="well-be-talking-about-agents" class="slide level2">
 <h2>We’ll be talking about agents</h2>
+<div style="display: flex; flex-direction: column; justify-content: center; min-height: 65vh; font-size: 1.6em;">
 <ul>
 <li class="fragment">Can gather information from the world (e.g., read files)</li>
 <li class="fragment">Can alter the world (e.g., run code)</li>
 </ul>
+</div>
 </section>
 <section id="well-be-talking-about-agents-1" class="slide level2">
 <h2>We’ll be talking about agents</h2>
-<div style="display: flex; flex-direction: column; justify-content: center; min-height: 65vh;">
+<div style="display: flex; flex-direction: column; justify-content: center; min-height: 65vh; font-size: 1.6em;">
 <div class="fragment">
 <p>you can use an existing agent</p>
 </div>
@@ -706,7 +787,7 @@ Make it matter less when they’re wrong.
           display:block!important;
       }</style></aside>
 </section>
-<section id="section-17" class="slide level2" data-background-color="#E8F0F6">
+<section id="section-18" class="slide level2" data-background-color="#E8F0F6">
 <h2></h2>
 <style>
 .reveal .slides section .fragment.toc-emph { opacity: 1; visibility: inherit; transition: font-weight .2s; }
@@ -721,7 +802,7 @@ Make it matter less when they’re wrong.
 <div style="display: inline-block; text-align: left; font-size: 1.05em; line-height: 1.9; margin-top: 50px;">
 <ul>
 <li class="fragment toc-emph" data-fragment-index="1">
-Help them get it right
+Make it easy for them to be right.
 </li>
 <li class="fragment semi-fade-out" data-fragment-index="1">
 Make it matter less when they’re wrong
@@ -730,19 +811,15 @@ Make it matter less when they’re wrong
 </div>
 </div>
 </section>
-<section id="an-agent-is-more-than-just-the-model" class="slide level2">
-<h2>An agent is more than just the model</h2>
+<section id="build-the-environment-so-that-its-easy-to-be-right" class="slide level2">
+<h2>Build the environment so that it’s easy to be right</h2>
+<p>You control the <span style="position:relative; display:inline-block;"><span class="fragment fade-out" data-fragment-index="1"><em>environment</em></span><span class="fragment fade-in" data-fragment-index="1" style="position:absolute; left:0; top:0; font-weight:700; white-space:nowrap;">harness</span></span> around the model, not the model itself</p>
 <div class="fragment">
-<div style="font-size: 1.2em;">
-<p>It comes wrapped in a harness:</p>
-</div>
-</div>
 <ul>
-<li class="fragment">How it’s told to act (prompting)</li>
-<li class="fragment">What tools it has access to use (run code, read files, etc.)</li>
-<li class="fragment">What information it has access to</li>
-<li class="fragment">and more</li>
+<li class="fragment">Have the model write code</li>
+<li class="fragment">Design the harness with correctness in mind</li>
 </ul>
+</div>
 <aside class="notes">
 <p>there’s more to an agent than just the model comes wrapped in a harness [list] Unless your building or fine tuning an LLM yourself, you don’t have much control over the underlying LLM but you control the harness – this is what you shape, whether you use an agent like Posit Assistant or build your own</p>
 <p>this is what we control when we control posit assistant extensive prompting about prioritizing correctness not just advancing the analysis forward statistical robustness</p>
@@ -762,9 +839,8 @@ Make it matter less when they’re wrong
 <section id="code-as-the-foundation" class="slide level2">
 <h2>Code as the foundation</h2>
 <ul>
-<li class="fragment">Models are good at writing code</li>
-<li class="fragment">Code can be run again - reproducibility</li>
-<li class="fragment">Code is auditable - transparency</li>
+<li class="fragment">LLMs are good at writing code</li>
+<li class="fragment">Reproducible, transparent, auditable</li>
 </ul>
 <aside class="notes">
 <p>doesn’t necessarily need to write code could image an agent…</p>
@@ -782,13 +858,31 @@ Make it matter less when they’re wrong
           display:block!important;
       }</style></aside>
 </section>
-<section id="tell-the-model-to-care-about-being-right" class="slide level2">
-<h2>Tell the model to care about being right</h2>
-
-<img data-src="index_files/figure-revealjs/unnamed-chunk-14-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"><div class="fragment" style="text-align:left; font-size:1.2em; margin-top:60px;">
-<p>The harness can make a difference in correctness</p>
-</div>
+<section id="design-the-harness-with-correctness-in-mind" class="slide level2">
+<h2>Design the harness with correctness in mind</h2>
+<ul>
+<li class="fragment">Prompting: prioritize correctness, not progress.</li>
+<li class="fragment">Tools that serve correctness: run code, see your session.</li>
+<li class="fragment">Access to your files and environment to have enough context.</li>
+</ul>
 <aside class="notes">
+<p>Prompting: prioritize correctness over just moving the analysis forward. Tools: the ability to run code and see your session. Context: give it broad access to your files and environment, so it has a good chance at knowing the correct context to solve the problem.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="performance-improves-when-the-environment-makes-it-easy-to-be-right" class="slide level2">
+<h2>Performance improves when the environment makes it easy to be right</h2>
+
+<img data-src="index_files/figure-revealjs/unnamed-chunk-14-1.png" class="quarto-figure quarto-figure-center r-stretch" width="960"><aside class="notes">
 <p>and it turns out all of this can make a difference even without affecting the underlying model when we tried interventions in isolation in bluffbench, limited success by posit assistant largely does better than minimal harness (default bluffbench case)</p>
 <p>so you can essentially tell the model to value correctness and give it the ability to do so, and it does help</p>
 <style type="text/css">
@@ -803,27 +897,7 @@ Make it matter less when they’re wrong
           display:block!important;
       }</style></aside>
 </section>
-<section id="trusted-code" class="slide level2">
-<h2>Trusted code</h2>
-<ul>
-<li class="fragment">You don’t always want the model writing code from scratch</li>
-<li class="fragment">If you have code you trust, have the agent reuse it</li>
-</ul>
-<aside class="notes">
-<p>models are good at writing code, but you don’t always want them authoring it fresh if you already have vetted code use that</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="section-18" class="slide level2" data-background-color="#E8F0F6">
+<section id="section-19" class="slide level2" data-background-color="#E8F0F6">
 <h2></h2>
 <style>
 .reveal .slides section .fragment.toc-emph { opacity: 1; visibility: inherit; transition: font-weight .2s; }
@@ -836,29 +910,34 @@ LLMs are still useful for data analysis
 <div style="display: inline-block; text-align: left; font-size: 1.05em; line-height: 1.9; margin-top: 50px;">
 <ul>
 <li class="fragment semi-fade-out" data-fragment-index="1">
-Help them get it right
+Make it easy for them to be right.
 </li>
 <li class="fragment toc-emph" data-fragment-index="1">
 Make it matter less when they’re wrong
-<ul style="font-size: 0.8em; line-height: 1.7; margin-top: 12px; opacity: 0.9; font-weight: 400;">
-<li class="fragment" data-fragment-index="2">
-Lean on code as a foundation
-</li>
-<li class="fragment" data-fragment-index="3">
-Design for how it’ll actually be used
-</li>
-</ul>
 </li>
 </ul>
 </div>
 </div>
+<aside class="notes">
+<p>even with all that, it’ll still make mistakes – humans do, models do – so make it less bad when it’s wrong</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="make-auditing-easy" class="slide level2">
 <h2>Make auditing easy</h2>
-<p>You want a chance to catch mistakes</p>
+<p>A chance to catch or diagnose mistakes</p>
 
 <img data-src="figures/posit-assistant-python-code.png" class="quarto-figure quarto-figure-center r-stretch"><aside class="notes">
-<p>probably not enough for the model to write that code show it to the user when it matters make it easy to see and read small things like syntax highlighting, code styling</p>
+<p>probably not enough for the model to write that code show it to the user when it matters make it easy to see and read small things like syntax highlighting, code styling you don’t inspect every time, but if you suspect something went wrong you have the option</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -873,7 +952,7 @@ Design for how it’ll actually be used
 </section>
 <section id="shared-environment" class="slide level2">
 <h2>Shared environment</h2>
-<p>See eye-to-eye with the agent</p>
+<p>See eye-to-eye with the agent. See the same outputs, run the same code.</p>
 
 <img data-src="figures/posit-assistant-python-console.png" class="quarto-figure quarto-figure-center r-stretch"><aside class="notes">
 <p>not only is the model writing code writing it in a shared environment it has access to your same r/python session its not guessing what data you have loaded – it can see into that data in the same way you can you can audit its code by running it yourself it can inspect your objects and rerun code you ran</p>
@@ -891,106 +970,43 @@ Design for how it’ll actually be used
           display:block!important;
       }</style></aside>
 </section>
-<section id="design-for-how-itll-actually-be-used" class="slide level2">
-<h2>Design for how it’ll actually be used</h2>
-<ul>
-<li class="fragment">How will people actually work with your agent?</li>
-<li class="fragment">What does that mean for correctness and reproducibility?</li>
-</ul>
-<aside class="notes">
-<p>this one is less a universal rule, more a design question you answer for your own agent think through how people will actually interact with it, and how that affects correctness and reproducibility our answer for data analysis comes next – because the point of analysis is understanding, we made posit assistant pause often</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="have-the-model-pause-often" class="slide level2">
-<h2>Have the model pause often</h2>
-<div style="display: flex; align-items: center; gap: 48px; margin-top: 20px;">
-<div style="flex: 1; font-size: 1.3em; line-height: 1.5;">
-<p>Keep pace with the agent during exploration and analysis</p>
-</div>
-<div style="flex: 0 0 auto;">
-<video src="figures/posit-assistant-pause-often-short.mp4" autoplay="" loop="" muted="" playsinline="" style="height: 580px; display: block;">
-</video>
-</div>
-</div>
-<aside class="notes">
-<p>so we said the first way to make it less bad if the model is wrong was having it write code the second way is having it, in some cases, pause and involve the user</p>
-<p>posit assistant, during open ended tasks or ones it thinks need user involvement, purposefully slows down and does shorter turns</p>
-<p>notice in the gif how…</p>
-<p>this is in contrast to how it might behave without our harness, which is to move the analysis forward with lots of code and</p>
-<p>losing the user and obscuring its uncertainties or deciding its own answers to questions it should have asked user</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="have-the-model-pause-often-1" class="slide level2">
-<h2>Have the model pause often</h2>
-<p><em>What’s the point of an analysis?</em></p>
-<div class="fragment" style="font-size: 1.1em; margin-top: 40px;">
-<p><span style="opacity:0.6;">(often)</span> building an understanding of the data</p>
-</div>
-<aside class="notes">
-<p>another reason for this though for verification and transparency: the human has to keep pace and see eye-to-eye with the agent (same environment).</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="section-19" class="slide level2" data-background-color="#093A3E">
+<section id="section-20" class="slide level2" data-background-color="#093A3E">
 <h2></h2>
 <div style="display: flex; flex-direction: column; gap: 44px; max-width: 90%; margin: 60px auto 0 auto; color: #E8F0F6;">
 <div class="fragment">
-<p><span style="font-weight: 700; font-size: 1.4em;">LLMs are great performers, but not always reliable reporters</span></p>
-<div style="font-size: 0.95em; margin-top: 12px; line-height: 1.5; opacity: 0.9;">
-<p>• Can and will confidently make errors <br></p>
-</div>
+<p><span style="font-weight: 700; font-size: 1.4em;">LLMs can fail at tasks central to data science.</span></p>
 </div>
 <div class="fragment">
 <p><span style="font-weight: 700; font-size: 1.4em;">…but they’re still useful for data analysis</span></p>
+</div>
+<div class="fragment">
 <div style="font-size: 0.95em; margin-top: 12px; line-height: 1.5; opacity: 0.9;">
-<p>• Help them be accurate.<br> • Make it matter less when they’re wrong.</p>
+<p>• Make it easy for them to be right.<br> • Make it matter less when they’re wrong.</p>
 </div>
 </div>
-</div>
-</section>
-<section id="section-20" class="slide level2">
-<h2></h2>
-
-<img data-src="figures/ai-newsletter.png" class="quarto-figure quarto-figure-center r-stretch"><div style="text-align: center; font-size: 1.1em;">
-<p><a href="https://opensource.posit.co/tags/ai-newsletter/">https://opensource.posit.co/tags/ai-newsletter/</a></p>
-</div>
-<div class="footer">
-
 </div>
 </section>
 <section id="section-21" class="slide level2" data-background-image="figures/thankyou-bare.png" data-background-size="cover" data-background-position="center">
 <h2></h2>
-<div style="display: flex; justify-content: center; align-items: center; min-height: 70vh;">
+<div style="display: flex; flex-direction: column; justify-content: center; align-items: center; min-height: 70vh; gap: 40px;">
 <p><span style="color: #093A3E; font-weight: 700; font-size: 2.4em;">thank you!</span> <span style="font-size: 2.4em; margin-left: 0.25em;"></span></p>
+<div style="display: flex; flex-direction: row; justify-content: center; align-items: center; gap: 80px; color: #093A3E;">
+<div style="display: flex; flex-direction: column; align-items: flex-start; gap: 24px;">
+<div style="display: flex; flex-direction: column; align-items: flex-start; gap: 6px;">
+<p><span style="font-weight: 700; font-size: 1.1em;">Slides</span></p>
+<p><a href="https://skaltman.github.io/scipy-2026" style="font-size: 0.9em;">skaltman.github.io/scipy-2026</a></p>
+</div>
+<div style="display: flex; flex-direction: column; align-items: flex-start; gap: 6px;">
+<p><span style="font-weight: 700; font-size: 1.1em;">bluffbench</span></p>
+<p><a href="github.com/posit-dev/bluffbench" style="font-size: 0.9em;">github.com/posit-dev/bluffbench</a></p>
+<p><a href="github.com/posit-dev/bluffbench2" style="font-size: 0.9em;">github.com/posit-dev/bluffbench2</a></p>
+</div>
+</div>
+<div style="display: flex; flex-direction: column; align-items: flex-start; gap: 10px;">
+<p><span style="font-weight: 700; font-size: 1.1em;">AI newsletter</span></p>
+<p><img data-src="figures/newsletter-qr.png" width="240"></p>
+</div>
+</div>
 </div>
 
 
