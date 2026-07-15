@@ -615,8 +615,14 @@ we are going to use Posit Assistant
 
 ## Build the environment so that it's easy to be right
 
+You control the <span style="position:relative; display:inline-block;"><span class="fragment fade-out" data-fragment-index="1">_environment_</span><span class="fragment fade-in" data-fragment-index="1" style="position:absolute; left:0; top:0; font-weight:700; white-space:nowrap;">harness</span></span> around the model, not the model itself
+
+::: {.fragment}
+::: {.incremental}
 * Have the model write code
 * Design the harness with correctness in mind
+:::
+:::
 
 ::: notes
 there's more to an agent than just the model
@@ -637,9 +643,8 @@ tools that matter for correctness, ability to see your active session
 ## Code as the foundation
 
 ::: {.incremental}
-* Models are good at writing code
-* Code can be run again 
-* Code is auditable 
+* LLMs are good at writing code
+* Reproducible, transparent, auditable
 :::
 
 ::: notes
@@ -656,13 +661,18 @@ code is a good choice
 ## Design the harness with correctness in mind
 
 ::: {.incremental}
-* How it's told to act (prompting)
-* What tools it has access to use (run code, read files, etc.)
-* What information it has access to
-* and more
+* Prompting: prioritize correctness, not progress.
+* Tools that serve correctness: run code, see your session.
+* Access to your files and environment to have enough context.
 :::
 
-## Performance improves in an environment that makes it easy to be right
+::: notesI like environment. 
+Prompting: prioritize correctness over just moving the analysis forward.
+Tools: the ability to run code and see your session.
+Context: give it broad access to your files and environment, so it has a good chance at knowing the correct context to solve the problem.
+:::
+
+## Performance improves when the environment makes it easy to be right
 
 ```{r}
 #| echo: false
@@ -748,22 +758,27 @@ so you can essentially tell the model to value correctness and give it the abili
 </div>
 </div>
 
+::: notes
+even with all that, it'll still make mistakes -- humans do, models do -- so make it less bad when it's wrong
+:::
+
 ## Make auditing easy
 
-You want a chance to catch mistakes
+A chance to catch or diagnose mistakes
 
 ![](figures/posit-assistant-python-code.png){fig-align="center"}
 
 ::: notes
 probably not enough for the model to write that code
 show it to the user when it matters
-make it easy to see and read 
-small things like syntax highlighting, code styling 
+make it easy to see and read
+small things like syntax highlighting, code styling
+you don't inspect every time, but if you suspect something went wrong you have the option
 :::
 
 ## Shared environment
 
-See eye-to-eye with the agent
+See eye-to-eye with the agent. See the same outputs, run the same code.
 
 ![](figures/posit-assistant-python-console.png){fig-align="center"}
 
@@ -802,20 +817,35 @@ you're seeing eye to eye with the agent, instead of the two of you occupying dif
 
 :::
 
-##
-
-![](figures/ai-newsletter.png){fig-align="center"}
-
-::: {style="text-align: center; font-size: 1.1em;"}
-[https://opensource.posit.co/tags/ai-newsletter/](https://opensource.posit.co/tags/ai-newsletter/)
-:::
-
-:::footer
-
-:::
 
 ## {background-image="figures/thankyou-bare.png" background-size="cover" background-position="center"}
 
-::: {style="display: flex; justify-content: center; align-items: center; min-height: 70vh;"}
+::: {style="display: flex; flex-direction: column; justify-content: center; align-items: center; min-height: 70vh; gap: 40px;"}
 [thank you!]{style="color: #093A3E; font-weight: 700; font-size: 2.4em;"} <span style="font-size: 2.4em; margin-left: 0.25em;"></span>
+
+::: {style="display: flex; flex-direction: row; justify-content: center; align-items: center; gap: 80px; color: #093A3E;"}
+
+::: {style="display: flex; flex-direction: column; align-items: flex-start; gap: 24px;"}
+::: {style="display: flex; flex-direction: column; align-items: flex-start; gap: 6px;"}
+[Slides]{style="font-weight: 700; font-size: 1.1em;"}
+
+[skaltman.github.io/scipy-2026](https://skaltman.github.io/scipy-2026){style="font-size: 0.9em;"}
+:::
+
+::: {style="display: flex; flex-direction: column; align-items: flex-start; gap: 6px;"}
+[bluffbench]{style="font-weight: 700; font-size: 1.1em;"}
+
+[github.com/posit-dev/bluffbench](github.com/posit-dev/bluffbench){style="font-size: 0.9em;"}
+
+[github.com/posit-dev/bluffbench2](github.com/posit-dev/bluffbench2){style="font-size: 0.9em;"}
+:::
+:::
+
+::: {style="display: flex; flex-direction: column; align-items: flex-start; gap: 10px;"}
+[AI newsletter]{style="font-weight: 700; font-size: 1.1em;"}
+
+![](figures/newsletter-qr.png){width="240px"}
+:::
+
+:::
 :::
