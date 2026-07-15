@@ -666,7 +666,7 @@ code is a good choice
 * Access to your files and environment to have enough context.
 :::
 
-::: notesI like environment. 
+::: notes
 Prompting: prioritize correctness over just moving the analysis forward.
 Tools: the ability to run code and see your session.
 Context: give it broad access to your files and environment, so it has a good chance at knowing the correct context to solve the problem.

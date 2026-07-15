@@ -1,5 +1,61 @@
 [
   {
+    "objectID": "notes/part-2-reorg-outline.html",
+    "href": "notes/part-2-reorg-outline.html",
+    "title": "Part 2 reorg — outline & plan",
+    "section": "",
+    "text": "Working doc for restructuring the second half of the talk (the “LLMs are still useful for data analysis” section). Goal: open it up from “here’s Posit Assistant” to “here’s how to design any data-analysis agent,” with Posit Assistant as the worked example.\n\n\nSciPy 2026 = 25th annual Scientific Computing with Python conference (Minneapolis, July 2026). Attendees are researchers, developers, and industry folks building open-source Python tools for science/engineering/data. Relevant tracks include Data-Driven Discovery / ML / AI.\nImplications for framing:\n\nThis audience builds their own tools — many will be building or wiring up their own agents, not just using an off-the-shelf one. Lean into that.\nThis audience already has domain code they trust (their own packages, well-tested numpy/scipy/pandas pipelines). That’s exactly the setup where the “trusted code” point lands hardest: giving the agent your vetted code beats letting it reinvent it.\n\n\n\n\nThe old framing was “1. Tell them to care about being right / 2. Design the scaffold so it matters less if they’re wrong.” Problem: “tell them” only covers prompting, but lots of the harness (including code as a foundation) also lowers the mistake rate — so lessons 1 and 2 blurred.\nNew framing:\n\nHelp them get it right — prevention. Everything in the harness that lowers the chance of a mistake: prompting them to value correctness, giving them the right tools / session access, and giving them trusted code to reuse.\nMake it matter less when they’re wrong — mitigation. Auditable + reproducible code they write, a shared environment, and (our choice) pausing often.\n\nThis split also dissolves the “code as the foundation” blur by giving code two distinct, clearly-placed roles:\n\nTrusted code you hand them → prevention → lesson 1\nAuditable / reproducible code they write → mitigation → lesson 2\n\n\n\n\n\nOpen it up to agents generally. Add a “whether you use an agent like Posit Assistant or build your own” beat. Can appear in multiple places (harness slide, and echoed on the final summary card).\nSeparate general principles from Posit-specific choices. “Code as a foundation” (near-universal) and “pause often” (our specific call) currently sit at the same level. Re-parent so the principle is the headline and the choice is the example.\nTrusted code = the prevention facet of “Code as the Foundation.” If you have code you trust to do a data-science task (complex or not), have the agent call it instead of writing its own. Often better than model- authored code. Lands especially well with a SciPy audience that already maintains trusted scientific code.\nShared environment is a coding-agent principle, not an all-agent one. Applies to many/all coding agents, but not necessarily every agent. Keep it, but don’t over-generalize.\n“Pause often” is our choice, not a rule. Re-parent under a general principle: design for how people will actually use the agent, and what that means for correctness/reproducibility. For data analysis the real goal is understanding, so we made Posit Assistant pause often.\n\n\n\n\nThe trusted-code idea draws partly from Commons (an internal coding-agent package, ~/GitHub/rstudio/commons). Commons is not public, so it must not be named or described in the talk. The mechanism there: a semantic layer — a pool of pre-vetted, trusted queries/definitions that are the agent’s “happy path,” so it reuses trusted artifacts instead of authoring its own SQL, only writing its own when nothing covers the request. Present this generically as “trusted code.”\n\n\n\nWe'll be talking about agents\nCoding agents                        NEW: landscape (Claude Code/Codex/Cursor)\n                                     + \"...or an agent you build yourself\";\n                                     note: lessons most pertinent if you build\nPosit Assistant                      our running example\n[card] the two lessons\nAn agent is more than the model      harness; notes: you control the harness\n                                     (whether Posit Assistant or your own)\nCode as the foundation               MOVED UP: substrate under both lessons\n── Lesson 1: Help them get it right (prevention) ──\n  Tell the model to care about being right   (bluffbench chart)\n  Trusted code                       NEW: reuse code you trust\n── Lesson 2: Make it matter less when they're wrong (mitigation) ──\n  [card emph #2] now previews two approaches as sub-bullets:\n      - Lean on code as a foundation\n      - Design for how it'll actually be used\n  Approach 1 — Lean on code as a foundation\n    Make auditing easy       code screenshot (renamed from \"Code as the foundation\")\n    Shared environment       console screenshot; rerun/audit in the same session\n  Approach 2 — Design for how it'll actually be used\n    Design for how it'll actually be used   principle: two questions\n    Have the model pause often (video)       our answer for data analysis\n    Have the model pause often (understanding)   \"point of analysis = understanding\"\n[teal] summary card                  bubbles removed -&gt; #093A3E divider\nLesson wording updated on all four takeaway cards: “Help them get it right” / “Make it matter less when they’re wrong.”\n\n\n\nThe two-approach grouping matches the emph-#2 card’s two sub-bullets, so the promise and the payoff line up. No structural work outstanding. Notes:\n\nImplicit code link (delivery, not structure). The Approach-1 slides are titled “Make auditing easy” / “Shared environment” — neither says “code as a foundation.” The connection rests on the moved-up foundation slide + the speaker saying it out loud. Optional light signpost; leaving to delivery.\n“Understanding” is setup→payoff, not redundant. The principle slide asks “what’s the point of an analysis?”; the pause slide answers “building an understanding of the data.” Keep both.\n\n\n\n\n\nTrusted code slide: text-only; may want its own figure/example (agent reusing a trusted function vs. writing its own). How hard to lean on SciPy’s “you already have trusted code” angle.\nShared environment: could add a scope note that it’s a coding-agent principle, not an all-agent one (currently unchanged).\nCard punctuation inconsistency: Card 1 has trailing periods (“…get it right.”), Cards 2 & 3 don’t. Make consistent.\nSummary card (edited by user): headline is now “LLMs are great performers, but not always reliable reporters” / “…but they’re still useful for data analysis”; dropped the “performing progress over correctness” bullet.\nTrusted-code title locked to “Trusted code”."
+  },
+  {
+    "objectID": "notes/part-2-reorg-outline.html#audience-scipy",
+    "href": "notes/part-2-reorg-outline.html#audience-scipy",
+    "title": "Part 2 reorg — outline & plan",
+    "section": "",
+    "text": "SciPy 2026 = 25th annual Scientific Computing with Python conference (Minneapolis, July 2026). Attendees are researchers, developers, and industry folks building open-source Python tools for science/engineering/data. Relevant tracks include Data-Driven Discovery / ML / AI.\nImplications for framing:\n\nThis audience builds their own tools — many will be building or wiring up their own agents, not just using an off-the-shelf one. Lean into that.\nThis audience already has domain code they trust (their own packages, well-tested numpy/scipy/pandas pipelines). That’s exactly the setup where the “trusted code” point lands hardest: giving the agent your vetted code beats letting it reinvent it."
+  },
+  {
+    "objectID": "notes/part-2-reorg-outline.html#the-two-lessons-prevention-vs.-mitigation",
+    "href": "notes/part-2-reorg-outline.html#the-two-lessons-prevention-vs.-mitigation",
+    "title": "Part 2 reorg — outline & plan",
+    "section": "",
+    "text": "The old framing was “1. Tell them to care about being right / 2. Design the scaffold so it matters less if they’re wrong.” Problem: “tell them” only covers prompting, but lots of the harness (including code as a foundation) also lowers the mistake rate — so lessons 1 and 2 blurred.\nNew framing:\n\nHelp them get it right — prevention. Everything in the harness that lowers the chance of a mistake: prompting them to value correctness, giving them the right tools / session access, and giving them trusted code to reuse.\nMake it matter less when they’re wrong — mitigation. Auditable + reproducible code they write, a shared environment, and (our choice) pausing often.\n\nThis split also dissolves the “code as the foundation” blur by giving code two distinct, clearly-placed roles:\n\nTrusted code you hand them → prevention → lesson 1\nAuditable / reproducible code they write → mitigation → lesson 2"
+  },
+  {
+    "objectID": "notes/part-2-reorg-outline.html#core-reframes",
+    "href": "notes/part-2-reorg-outline.html#core-reframes",
+    "title": "Part 2 reorg — outline & plan",
+    "section": "",
+    "text": "Open it up to agents generally. Add a “whether you use an agent like Posit Assistant or build your own” beat. Can appear in multiple places (harness slide, and echoed on the final summary card).\nSeparate general principles from Posit-specific choices. “Code as a foundation” (near-universal) and “pause often” (our specific call) currently sit at the same level. Re-parent so the principle is the headline and the choice is the example.\nTrusted code = the prevention facet of “Code as the Foundation.” If you have code you trust to do a data-science task (complex or not), have the agent call it instead of writing its own. Often better than model- authored code. Lands especially well with a SciPy audience that already maintains trusted scientific code.\nShared environment is a coding-agent principle, not an all-agent one. Applies to many/all coding agents, but not necessarily every agent. Keep it, but don’t over-generalize.\n“Pause often” is our choice, not a rule. Re-parent under a general principle: design for how people will actually use the agent, and what that means for correctness/reproducibility. For data analysis the real goal is understanding, so we made Posit Assistant pause often."
+  },
+  {
+    "objectID": "notes/part-2-reorg-outline.html#internal-note-do-not-present",
+    "href": "notes/part-2-reorg-outline.html#internal-note-do-not-present",
+    "title": "Part 2 reorg — outline & plan",
+    "section": "",
+    "text": "The trusted-code idea draws partly from Commons (an internal coding-agent package, ~/GitHub/rstudio/commons). Commons is not public, so it must not be named or described in the talk. The mechanism there: a semantic layer — a pool of pre-vetted, trusted queries/definitions that are the agent’s “happy path,” so it reuses trusted artifacts instead of authoring its own SQL, only writing its own when nothing covers the request. Present this generically as “trusted code.”"
+  },
+  {
+    "objectID": "notes/part-2-reorg-outline.html#implemented-structure-major-reorg-done",
+    "href": "notes/part-2-reorg-outline.html#implemented-structure-major-reorg-done",
+    "title": "Part 2 reorg — outline & plan",
+    "section": "",
+    "text": "We'll be talking about agents\nCoding agents                        NEW: landscape (Claude Code/Codex/Cursor)\n                                     + \"...or an agent you build yourself\";\n                                     note: lessons most pertinent if you build\nPosit Assistant                      our running example\n[card] the two lessons\nAn agent is more than the model      harness; notes: you control the harness\n                                     (whether Posit Assistant or your own)\nCode as the foundation               MOVED UP: substrate under both lessons\n── Lesson 1: Help them get it right (prevention) ──\n  Tell the model to care about being right   (bluffbench chart)\n  Trusted code                       NEW: reuse code you trust\n── Lesson 2: Make it matter less when they're wrong (mitigation) ──\n  [card emph #2] now previews two approaches as sub-bullets:\n      - Lean on code as a foundation\n      - Design for how it'll actually be used\n  Approach 1 — Lean on code as a foundation\n    Make auditing easy       code screenshot (renamed from \"Code as the foundation\")\n    Shared environment       console screenshot; rerun/audit in the same session\n  Approach 2 — Design for how it'll actually be used\n    Design for how it'll actually be used   principle: two questions\n    Have the model pause often (video)       our answer for data analysis\n    Have the model pause often (understanding)   \"point of analysis = understanding\"\n[teal] summary card                  bubbles removed -&gt; #093A3E divider\nLesson wording updated on all four takeaway cards: “Help them get it right” / “Make it matter less when they’re wrong.”"
+  },
+  {
+    "objectID": "notes/part-2-reorg-outline.html#lesson-2-structure-settled-assessment",
+    "href": "notes/part-2-reorg-outline.html#lesson-2-structure-settled-assessment",
+    "title": "Part 2 reorg — outline & plan",
+    "section": "",
+    "text": "The two-approach grouping matches the emph-#2 card’s two sub-bullets, so the promise and the payoff line up. No structural work outstanding. Notes:\n\nImplicit code link (delivery, not structure). The Approach-1 slides are titled “Make auditing easy” / “Shared environment” — neither says “code as a foundation.” The connection rests on the moved-up foundation slide + the speaker saying it out loud. Optional light signpost; leaving to delivery.\n“Understanding” is setup→payoff, not redundant. The principle slide asks “what’s the point of an analysis?”; the pause slide answers “building an understanding of the data.” Keep both."
+  },
+  {
+    "objectID": "notes/part-2-reorg-outline.html#remaining-polish-deferred",
+    "href": "notes/part-2-reorg-outline.html#remaining-polish-deferred",
+    "title": "Part 2 reorg — outline & plan",
+    "section": "",
+    "text": "Trusted code slide: text-only; may want its own figure/example (agent reusing a trusted function vs. writing its own). How hard to lean on SciPy’s “you already have trusted code” angle.\nShared environment: could add a scope note that it’s a coding-agent principle, not an all-agent one (currently unchanged).\nCard punctuation inconsistency: Card 1 has trailing periods (“…get it right.”), Cards 2 & 3 don’t. Make consistent.\nSummary card (edited by user): headline is now “LLMs are great performers, but not always reliable reporters” / “…but they’re still useful for data analysis”; dropped the “performing progress over correctness” bullet.\nTrusted-code title locked to “Trusted code”."
+  },
+  {
     "objectID": "index.html#section",
     "href": "index.html#section",
     "title": "",
@@ -88,7 +144,7 @@
     "href": "index.html#section-9",
     "title": "",
     "section": "",
-    "text": "load in labs.csv and print it out\n\n\nCalls tool: Run Python code\n\n\n\n#&gt;     specimen fasting   bmi  cholesterol\n#&gt; 0     L-0030     yes  35.4        168.4\n#&gt; 1     L-0051     yes  34.2        256.2\n#&gt; 2     L-0072     yes  40.4        196.9\n#&gt; 3     L-0103     yes  32.7        187.2\n#&gt; 4     L-0123     yes  24.8        220.5\n#&gt; ..       ...     ...   ...          ...\n#&gt; 173   L-0135     yes  24.4        203.7\n#&gt; 174   L-0077     yes  35.1        189.7\n#&gt; 175   L-0050     yes  27.8        198.7\n#&gt; 176   L-0165     yes  33.6        207.4\n#&gt; 177   L-0060     yes  27.9        215.9\n#&gt; \n#&gt; [178 rows x 4 columns]\n\n\n\nsay you load some patient data in with a coding agent…"
+    "text": "load in labs.csv and print it out\n\n\nCalls tool: Run Python code\n\n\n\n\n\n\n\n\n\n\n\nspecimen\nfasting\nbmi\ncholesterol\n\n\n\n\n0\nL-0030\nyes\n35.4\n168.4\n\n\n1\nL-0051\nyes\n34.2\n256.2\n\n\n2\nL-0072\nyes\n40.4\n196.9\n\n\n3\nL-0103\nyes\n32.7\n187.2\n\n\n4\nL-0123\nyes\n24.8\n220.5\n\n\n...\n...\n...\n...\n...\n\n\n173\nL-0135\nyes\n24.4\n203.7\n\n\n174\nL-0077\nyes\n35.1\n189.7\n\n\n175\nL-0050\nyes\n27.8\n198.7\n\n\n176\nL-0165\nyes\n33.6\n207.4\n\n\n177\nL-0060\nyes\n27.9\n215.9\n\n\n\n\n178 rows × 4 columns\n\n\n\n\n\nsay you load some patient data in with a coding agent…"
   },
   {
     "objectID": "index.html#section-10",
@@ -123,14 +179,14 @@
     "href": "index.html#section-13",
     "title": "",
     "section": "",
-    "text": "Models fail to notice some subtle data quality issues that data scientists would not._"
+    "text": "Models fail to notice subtle data quality issues that data scientists would not."
   },
   {
-    "objectID": "index.html#correctness-matters-in-data-analysis",
-    "href": "index.html#correctness-matters-in-data-analysis",
+    "objectID": "index.html#section-14",
+    "href": "index.html#section-14",
     "title": "",
-    "section": "Correctness matters in data analysis",
-    "text": "Correctness matters in data analysis\n\nbut do LLMs care about correctness?\n\n\nso why is this a problem? when you’re working with real data with real world consequences, being correct matters. correctness, fittingly, is really a core value of data science when you do an analysis, you want your results to actually line up with the real world, or at least approximate it. That’s the whole point. But LLM behavior doesn’t necessarily always line up with this value of correctness"
+    "section": "",
+    "text": "LLMs fail at tasks central to data science.\n\n\nFail to override priors about data\nFail to notice some subtle data quality issues\n\n\n\n\nso why is this a problem? when you’re working with real data with real world consequences, being correct matters. correctness, fittingly, is really a core value of data science when you do an analysis, you want your results to actually line up with the real world, or at least approximate it. That’s the whole point. But LLM behavior doesn’t necessarily always line up with this value of correctness"
   },
   {
     "objectID": "index.html#its-a-convincing-performance",
@@ -147,39 +203,32 @@
     "text": "The answers look the same\n\n\n\n\n ❌\n\n\n ✅\n\n\n ❌\n\n\n\n\nThe problem isn’t just that the model is sometimes wrong, it’s that the wrong answers can be indistinguishable from the right ones\nwe have a clearly parabolic plot and three descriptions from the same model shared tone, shared style, shared length – but different description each time if you didn’t know waht the plot looked like, you wouldn’t be able to disentangel the correct ones from the incorrect ones"
   },
   {
-    "objectID": "index.html#correctness-matters-in-data-analysis-1",
-    "href": "index.html#correctness-matters-in-data-analysis-1",
-    "title": "",
-    "section": "Correctness matters in data analysis",
-    "text": "Correctness matters in data analysis\n\nand so do reproducibility and transparency\n\n\n…all often at odds with how LLMs behave\n\n\nwe already mentioned how “correctness matters”. reproducibility – get consistent results from same conditions – and transparency – insight into how an analysis was done – are also central to data science, all often at odds with the nondetermistic and black box nature of LLMs.\nWhat does this mean for agents for data analysis?"
-  },
-  {
-    "objectID": "index.html#section-14",
-    "href": "index.html#section-14",
-    "title": "",
-    "section": "",
-    "text": "1. LLMs are great performers, but not always reliable reporters."
-  },
-  {
     "objectID": "index.html#section-15",
     "href": "index.html#section-15",
     "title": "",
     "section": "",
-    "text": "2. LLMs are still useful for data analysis.\n\n\n\ndon’t need to throw the whole thing away\nWe shouldn’t take evidence like bluffbench to mean that LLMs are useless anywhere you value correctness.\nInstead, you have to figure out where they can fit and how to design around their limitations.\nwe’re going to talk about what we did…"
+    "text": "1. LLMs fail at tasks central to data science."
   },
   {
     "objectID": "index.html#section-16",
     "href": "index.html#section-16",
     "title": "",
     "section": "",
-    "text": "LLMs are still useful for data analysis.\n\n\n\n\n\nHelp them get it right.\n\n\nMake it matter less when they’re wrong."
+    "text": "2. LLMs are still useful for data analysis.\n\n\n\ndon’t need to throw the whole thing away\nWe shouldn’t take evidence like bluffbench to mean that LLMs are useless anywhere you value correctness.\nInstead, you have to figure out where they can fit and how to design around their limitations.\nwe’re going to talk about what we did…"
+  },
+  {
+    "objectID": "index.html#section-17",
+    "href": "index.html#section-17",
+    "title": "",
+    "section": "",
+    "text": "LLMs are still useful for data analysis.\n\n\n\n\n\nMake it easy for them to be right.\n\n\nMake it matter less when they’re wrong."
   },
   {
     "objectID": "index.html#well-be-talking-about-agents",
     "href": "index.html#well-be-talking-about-agents",
     "title": "",
     "section": "We’ll be talking about agents",
-    "text": "We’ll be talking about agents\n\nCan gather information from the world (e.g., read files)\nCan alter the world (e.g., run code)"
+    "text": "We’ll be talking about agents\n\n\nCan gather information from the world (e.g., read files)\nCan alter the world (e.g., run code)"
   },
   {
     "objectID": "index.html#well-be-talking-about-agents-1",
@@ -196,101 +245,73 @@
     "text": "Posit Assistant\n\n\ndefine agent we are going to use Posit Assistant"
   },
   {
-    "objectID": "index.html#section-17",
-    "href": "index.html#section-17",
+    "objectID": "index.html#section-18",
+    "href": "index.html#section-18",
     "title": "",
     "section": "",
-    "text": "LLMs are still useful for data analysis.\n\n\n\n\n\nHelp them get it right\n\n\nMake it matter less when they’re wrong"
+    "text": "LLMs are still useful for data analysis.\n\n\n\n\n\nMake it easy for them to be right.\n\n\nMake it matter less when they’re wrong"
   },
   {
-    "objectID": "index.html#an-agent-is-more-than-just-the-model",
-    "href": "index.html#an-agent-is-more-than-just-the-model",
+    "objectID": "index.html#build-the-environment-so-that-its-easy-to-be-right",
+    "href": "index.html#build-the-environment-so-that-its-easy-to-be-right",
     "title": "",
-    "section": "An agent is more than just the model",
-    "text": "An agent is more than just the model\n\n\nIt comes wrapped in a harness:\n\n\n\nHow it’s told to act (prompting)\nWhat tools it has access to use (run code, read files, etc.)\nWhat information it has access to\nand more\n\n\nthere’s more to an agent than just the model comes wrapped in a harness [list] Unless your building or fine tuning an LLM yourself, you don’t have much control over the underlying LLM but you control the harness – this is what you shape, whether you use an agent like Posit Assistant or build your own\nthis is what we control when we control posit assistant extensive prompting about prioritizing correctness not just advancing the analysis forward statistical robustness\ntools that matter for correctness, ability to see your active session"
+    "section": "Build the environment so that it’s easy to be right",
+    "text": "Build the environment so that it’s easy to be right\nYou control the environmentharness around the model, not the model itself\n\n\nHave the model write code\nDesign the harness with correctness in mind\n\n\n\nthere’s more to an agent than just the model comes wrapped in a harness [list] Unless your building or fine tuning an LLM yourself, you don’t have much control over the underlying LLM but you control the harness – this is what you shape, whether you use an agent like Posit Assistant or build your own\nthis is what we control when we control posit assistant extensive prompting about prioritizing correctness not just advancing the analysis forward statistical robustness\ntools that matter for correctness, ability to see your active session"
   },
   {
     "objectID": "index.html#code-as-the-foundation",
     "href": "index.html#code-as-the-foundation",
     "title": "",
     "section": "Code as the foundation",
-    "text": "Code as the foundation\n\nModels are good at writing code\nCode can be run again - reproducibility\nCode is auditable - transparency\n\n\ndoesn’t necessarily need to write code could image an agent…\nModels are good at writing code Code is reproducible Code is auditable\ncode is a good choice"
+    "text": "Code as the foundation\n\nLLMs are good at writing code\nReproducible, transparent, auditable\n\n\ndoesn’t necessarily need to write code could image an agent…\nModels are good at writing code Code is reproducible Code is auditable\ncode is a good choice"
   },
   {
-    "objectID": "index.html#tell-the-model-to-care-about-being-right",
-    "href": "index.html#tell-the-model-to-care-about-being-right",
+    "objectID": "index.html#design-the-harness-with-correctness-in-mind",
+    "href": "index.html#design-the-harness-with-correctness-in-mind",
     "title": "",
-    "section": "Tell the model to care about being right",
-    "text": "Tell the model to care about being right\n\n\nThe harness can make a difference in correctness\n\n\nand it turns out all of this can make a difference even without affecting the underlying model when we tried interventions in isolation in bluffbench, limited success by posit assistant largely does better than minimal harness (default bluffbench case)\nso you can essentially tell the model to value correctness and give it the ability to do so, and it does help"
+    "section": "Design the harness with correctness in mind",
+    "text": "Design the harness with correctness in mind\n\nPrompting: prioritize correctness, not progress.\nTools that serve correctness: run code, see your session.\nAccess to your files and environment to have enough context.\n\n\nPrompting: prioritize correctness over just moving the analysis forward. Tools: the ability to run code and see your session. Context: give it broad access to your files and environment, so it has a good chance at knowing the correct context to solve the problem."
   },
   {
-    "objectID": "index.html#trusted-code",
-    "href": "index.html#trusted-code",
+    "objectID": "index.html#performance-improves-when-the-environment-makes-it-easy-to-be-right",
+    "href": "index.html#performance-improves-when-the-environment-makes-it-easy-to-be-right",
     "title": "",
-    "section": "Trusted code",
-    "text": "Trusted code\n\nYou don’t always want the model writing code from scratch\nIf you have code you trust, have the agent reuse it\n\n\nmodels are good at writing code, but you don’t always want them authoring it fresh if you already have vetted code use that"
-  },
-  {
-    "objectID": "index.html#section-18",
-    "href": "index.html#section-18",
-    "title": "",
-    "section": "",
-    "text": "LLMs are still useful for data analysis\n\n\n\n\nHelp them get it right\n\n\nMake it matter less when they’re wrong\n\n\nLean on code as a foundation\n\n\nDesign for how it’ll actually be used"
-  },
-  {
-    "objectID": "index.html#make-auditing-easy",
-    "href": "index.html#make-auditing-easy",
-    "title": "",
-    "section": "Make auditing easy",
-    "text": "Make auditing easy\nYou want a chance to catch mistakes\n\n\nprobably not enough for the model to write that code show it to the user when it matters make it easy to see and read small things like syntax highlighting, code styling"
-  },
-  {
-    "objectID": "index.html#shared-environment",
-    "href": "index.html#shared-environment",
-    "title": "",
-    "section": "Shared environment",
-    "text": "Shared environment\nSee eye-to-eye with the agent\n\n\nnot only is the model writing code writing it in a shared environment it has access to your same r/python session its not guessing what data you have loaded – it can see into that data in the same way you can you can audit its code by running it yourself it can inspect your objects and rerun code you ran\nthis turns out to be very useful, especially for data analysis where you are often turning the same object around and looking at it from multiple angles and transforming it\nyou’re seeing eye to eye with the agent, instead of the two of you occupying different worlds"
-  },
-  {
-    "objectID": "index.html#design-for-how-itll-actually-be-used",
-    "href": "index.html#design-for-how-itll-actually-be-used",
-    "title": "",
-    "section": "Design for how it’ll actually be used",
-    "text": "Design for how it’ll actually be used\n\nHow will people actually work with your agent?\nWhat does that mean for correctness and reproducibility?\n\n\nthis one is less a universal rule, more a design question you answer for your own agent think through how people will actually interact with it, and how that affects correctness and reproducibility our answer for data analysis comes next – because the point of analysis is understanding, we made posit assistant pause often"
-  },
-  {
-    "objectID": "index.html#have-the-model-pause-often",
-    "href": "index.html#have-the-model-pause-often",
-    "title": "",
-    "section": "Have the model pause often",
-    "text": "Have the model pause often\n\n\nKeep pace with the agent during exploration and analysis\n\n\n\n\n\n\n\nso we said the first way to make it less bad if the model is wrong was having it write code the second way is having it, in some cases, pause and involve the user\nposit assistant, during open ended tasks or ones it thinks need user involvement, purposefully slows down and does shorter turns\nnotice in the gif how…\nthis is in contrast to how it might behave without our harness, which is to move the analysis forward with lots of code and\nlosing the user and obscuring its uncertainties or deciding its own answers to questions it should have asked user"
-  },
-  {
-    "objectID": "index.html#have-the-model-pause-often-1",
-    "href": "index.html#have-the-model-pause-often-1",
-    "title": "",
-    "section": "Have the model pause often",
-    "text": "Have the model pause often\nWhat’s the point of an analysis?\n\n(often) building an understanding of the data\n\n\nanother reason for this though for verification and transparency: the human has to keep pace and see eye-to-eye with the agent (same environment)."
+    "section": "Performance improves when the environment makes it easy to be right",
+    "text": "Performance improves when the environment makes it easy to be right\n\n\nand it turns out all of this can make a difference even without affecting the underlying model when we tried interventions in isolation in bluffbench, limited success by posit assistant largely does better than minimal harness (default bluffbench case)\nso you can essentially tell the model to value correctness and give it the ability to do so, and it does help"
   },
   {
     "objectID": "index.html#section-19",
     "href": "index.html#section-19",
     "title": "",
     "section": "",
-    "text": "LLMs are great performers, but not always reliable reporters\n\n• Can and will confidently make errors \n\n\n\n…but they’re still useful for data analysis\n\n• Help them be accurate. • Make it matter less when they’re wrong."
+    "text": "LLMs are still useful for data analysis\n\n\n\n\nMake it easy for them to be right.\n\n\nMake it matter less when they’re wrong\n\n\n\n\n\neven with all that, it’ll still make mistakes – humans do, models do – so make it less bad when it’s wrong"
+  },
+  {
+    "objectID": "index.html#make-auditing-easy",
+    "href": "index.html#make-auditing-easy",
+    "title": "",
+    "section": "Make auditing easy",
+    "text": "Make auditing easy\nA chance to catch or diagnose mistakes\n\n\nprobably not enough for the model to write that code show it to the user when it matters make it easy to see and read small things like syntax highlighting, code styling you don’t inspect every time, but if you suspect something went wrong you have the option"
+  },
+  {
+    "objectID": "index.html#shared-environment",
+    "href": "index.html#shared-environment",
+    "title": "",
+    "section": "Shared environment",
+    "text": "Shared environment\nSee eye-to-eye with the agent. See the same outputs, run the same code.\n\n\nnot only is the model writing code writing it in a shared environment it has access to your same r/python session its not guessing what data you have loaded – it can see into that data in the same way you can you can audit its code by running it yourself it can inspect your objects and rerun code you ran\nthis turns out to be very useful, especially for data analysis where you are often turning the same object around and looking at it from multiple angles and transforming it\nyou’re seeing eye to eye with the agent, instead of the two of you occupying different worlds"
   },
   {
     "objectID": "index.html#section-20",
     "href": "index.html#section-20",
     "title": "",
     "section": "",
-    "text": "https://opensource.posit.co/tags/ai-newsletter/"
+    "text": "LLMs can fail at tasks central to data science.\n\n\n…but they’re still useful for data analysis\n\n\n\n• Make it easy for them to be right. • Make it matter less when they’re wrong."
   },
   {
     "objectID": "index.html#section-21",
     "href": "index.html#section-21",
     "title": "",
     "section": "",
-    "text": "thank you!"
+    "text": "thank you! \n\n\n\nSlides\nskaltman.github.io/scipy-2026\n\n\nbluffbench\ngithub.com/posit-dev/bluffbench\ngithub.com/posit-dev/bluffbench2\n\n\n\nAI newsletter"
   }
 ]
