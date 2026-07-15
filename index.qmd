@@ -764,7 +764,7 @@ you're seeing eye to eye with the agent, instead of the two of you occupying dif
 Keep pace with the agent during exploration and analysis
 </div>
 <div style="flex: 0 0 auto;">
-<img src="figures/posit-assistant-pause-often-python-short.gif" style="height: 580px; display: block;">
+<video src="figures/posit-assistant-pause-often-short.mp4" autoplay loop muted playsinline style="height: 580px; display: block;"></video>
 </div>
 </div>
 
