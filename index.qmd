@@ -551,9 +551,14 @@ we're going to talk about what we did...
 
 ## We'll be talking about agents
 
+::: {style="display: flex; flex-direction: column; justify-content: center; min-height: 65vh; font-size: 1.6em;"}
+
+
 ::: {.incremental}
 * Can gather information from the world (e.g., read files)
 * Can alter the world (e.g., run code)
+:::
+
 :::
 
 ## We'll be talking about agents
@@ -610,9 +615,8 @@ we are going to use Posit Assistant
 
 ## Build the environment so that it's easy to be right
 
-* Code as the foundation
-* Harness
-* Trusted code
+* Have the model write code
+* Design the harness with correctness in mind
 
 ::: notes
 there's more to an agent than just the model
@@ -649,13 +653,7 @@ Code is auditable
 code is a good choice
 :::
 
-## Harness
-
-::: {.fragment}
-::: {style="font-size: 1.2em;"}
-It comes wrapped in a harness:
-:::
-:::
+## Design the harness with correctness in mind
 
 ::: {.incremental}
 * How it's told to act (prompting)
@@ -745,10 +743,6 @@ so you can essentially tell the model to value correctness and give it the abili
 <ul>
 <li class="fragment semi-fade-out" data-fragment-index="1">Make it easy for them to be right.</li>
 <li class="fragment toc-emph" data-fragment-index="1">Make it matter less when they're wrong
-<ul style="font-size: 0.8em; line-height: 1.7; margin-top: 12px; opacity: 0.9; font-weight: 400;">
-<li class="fragment" data-fragment-index="2">Lean on code as a foundation</li>
-<li class="fragment" data-fragment-index="3">Design for how it'll actually be used</li>
-</ul>
 </li>
 </ul>
 </div>
@@ -800,7 +794,7 @@ you're seeing eye to eye with the agent, instead of the two of you occupying dif
 
 ::: {.fragment}
 ::: {style="font-size: 0.95em; margin-top: 12px; line-height: 1.5; opacity: 0.9;"}
-• Help them be accurate.<br>
+• Make it easy for them to be right.<br>
 • Make it matter less when they're wrong.
 :::
 
