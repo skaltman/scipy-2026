@@ -533,16 +533,17 @@ we're going to talk about what we did...
 .reveal .slides section .fragment.toc-emph.visible { font-weight: 700; }
 </style>
 
-::: {style="text-align: center; color: #093A3E; margin-top: 60px;"}
+::: {style="text-align: left; color: #093A3E; margin-top: 60px;"}
 
-::: {style="font-size: 2em;" data-id="still-useful"}
-LLMs are still useful for data analysis
+::: {style="font-size: 2em; font-weight: 700;" data-id="still-useful"}
+2. LLMs are still useful for data analysis.
 :::
 
 ::: {style="display: inline-block; text-align: left; font-size: 1.05em; line-height: 1.9; margin-top: 50px;"}
-[1. Tell them to care about being right]{.fragment data-fragment-index="1"}
-
-[2. Design the scaffold so that it matters less if they're wrong]{.fragment data-fragment-index="1"}
+<ul>
+<li class="fragment" data-fragment-index="1">Help them get it right.</li>
+<li class="fragment" data-fragment-index="1">Make it matter less when they're wrong.</li>
+</ul>
 :::
 
 :::
@@ -554,13 +555,34 @@ LLMs are still useful for data analysis
 * Can alter the world (e.g., run code)
 :::
 
+## We'll be talking about agents
+
+::: {style="display: flex; flex-direction: column; justify-content: center; min-height: 65vh;"}
+
+::: {.fragment}
+you can use an existing agent
+:::
+
+::: {.fragment}
+...or build one yourself
+:::
+
+:::
+
+::: notes
+lots of coding agents out there you can use for data analysis
+we'll use Posit Assistant as our running example
+but everything here applies broadly -- and these lessons are most
+pertinent if you're building your own agent
+:::
+
 ## Posit Assistant
 
 ![](figures/posit-assistant-python.png){fig-align="center" width="820"}
 
 :::notes
 define agent
-we are going to use Posit Assistant 
+we are going to use Posit Assistant
 :::
 
 ## {background-color="#E8F0F6"}
@@ -570,16 +592,17 @@ we are going to use Posit Assistant
 .reveal .slides section .fragment.toc-emph.visible { font-weight: 700; }
 </style>
 
-::: {style="text-align: center; color: #093A3E; margin-top: 60px;"}
+::: {style="text-align: left; color: #093A3E; margin-top: 60px;"}
 
-::: {style="font-size: 2em;"}
-LLMs are still useful for data analysis
+::: {style="font-size: 2em; font-weight: 700;"}
+2. LLMs are still useful for data analysis.
 :::
 
 ::: {style="display: inline-block; text-align: left; font-size: 1.05em; line-height: 1.9; margin-top: 50px;"}
-[1. Tell them to care about being right]{.fragment .toc-emph data-fragment-index="1"}
-
-[2. Design the scaffold so that it matters less if they're wrong]{.fragment .semi-fade-out data-fragment-index="1"}
+<ul>
+<li class="fragment toc-emph" data-fragment-index="1">Help them get it right</li>
+<li class="fragment semi-fade-out" data-fragment-index="1">Make it matter less when they're wrong</li>
+</ul>
 :::
 
 :::
@@ -604,7 +627,7 @@ there's more to an agent than just the model
 comes wrapped in a harness
 [list]
 Unless your building or fine tuning an LLM yourself, you don't have much control over the underlying LLM
-You do have control over the harness
+but you control the harness -- this is what you shape, whether you use an agent like Posit Assistant or build your own
 
 this is what we control when we control posit assistant
 extensive prompting about
@@ -613,6 +636,25 @@ not just advancing the analysis forward
 statistical robustness 
 
 tools that matter for correctness, ability to see your active session
+:::
+
+## Code as the foundation
+
+::: {.incremental}
+* Models are good at writing code
+* Code can be run again - reproducibility
+* Code is auditable - transparency
+:::
+
+::: notes
+doesn't necessarily need to write code
+could image an agent...
+
+Models are good at writing code
+Code is reproducible
+Code is auditable
+
+code is a good choice
 :::
 
 ## Tell the model to care about being right
@@ -687,6 +729,18 @@ by posit assistant largely does better than minimal harness (default bluffbench 
 so you can essentially tell the model to value correctness and give it the ability to do so, and it does help
 :::
 
+## Trusted code
+
+::: {.incremental}
+* You don't always want the model writing code from scratch
+* If you have code you trust, have the agent reuse it
+:::
+
+::: notes
+models are good at writing code, but you don't always want them authoring it fresh
+if you already have vetted code use that
+:::
+
 ## {background-color="#E8F0F6"}
 
 <style>
@@ -695,39 +749,23 @@ so you can essentially tell the model to value correctness and give it the abili
 </style>
 
 <div style="text-align: left; color: #093A3E; margin-top: 60px;">
-<div style="font-size: 2em;">LLMs are still useful for data analysis</div>
+<div style="font-size: 2em; font-weight: 700;">LLMs are still useful for data analysis</div>
 <div style="display: inline-block; text-align: left; font-size: 1.05em; line-height: 1.9; margin-top: 50px;">
-<span class="fragment semi-fade-out" data-fragment-index="1">1. Tell them to care about being right</span><br>
-<span class="fragment toc-emph" data-fragment-index="1">2. Design the scaffold so that it matters less if <br> they're wrong</span>
-<div style="font-size: 0.8em; margin-left: 1.5em; line-height: 1.7; margin-top: 12px; opacity: 0.9;">
-<span class="fragment" data-fragment-index="2">• Have the model write code, in a shared environment, and show it to the user</span><br>
-<span class="fragment" data-fragment-index="3">• Have the model pause often</span>
+<ul>
+<li class="fragment semi-fade-out" data-fragment-index="1">Help them get it right</li>
+<li class="fragment toc-emph" data-fragment-index="1">Make it matter less when they're wrong
+<ul style="font-size: 0.8em; line-height: 1.7; margin-top: 12px; opacity: 0.9; font-weight: 400;">
+<li class="fragment" data-fragment-index="2">Lean on code as a foundation</li>
+<li class="fragment" data-fragment-index="3">Design for how it'll actually be used</li>
+</ul>
+</li>
+</ul>
 </div>
 </div>
-</div>
 
-## Code as the foundation
+## Make auditing easy
 
-::: {.incremental}
-* Models are good at writing code
-* Code can be run again - reproducibility
-* Code is auditable - transparency
-:::
-
-::: notes
-doesn't necessarily need to write code
-could image an agent...
-
-Models are good at writing code
-Code is reproducible 
-Code is auditable
-
-code is a good choice
-:::
-
-## Code as the foundation
-
-Makes auditing easy when it matters
+You want a chance to catch mistakes
 
 ![](figures/posit-assistant-python-code.png){fig-align="center"}
 
@@ -755,6 +793,19 @@ it can inspect your objects and rerun code you ran
 this turns out to be very useful, especially for data analysis where you are often turning the same object around and looking at it from multiple angles and transforming it
 
 you're seeing eye to eye with the agent, instead of the two of you occupying different worlds
+:::
+
+## Design for how it'll actually be used
+
+::: {.incremental}
+* How will people actually work with your agent?
+* What does that mean for correctness and reproducibility?
+:::
+
+::: notes
+this one is less a universal rule, more a design question you answer for your own agent
+think through how people will actually interact with it, and how that affects correctness and reproducibility
+our answer for data analysis comes next -- because the point of analysis is understanding, we made posit assistant pause often
 :::
 
 ## Have the model pause often
@@ -800,20 +851,19 @@ for verification and transparency: the human has to keep pace and see eye-to-eye
 ::: {style="display: flex; flex-direction: column; gap: 44px; max-width: 90%; margin: 60px auto 0 auto; color: #E8F0F6;"}
 
 ::: {.fragment}
-[LLMs are great performers, but not always reliable reporters.]{style="font-weight: 700; font-size: 1.4em;"}
+[LLMs are great performers, but not always reliable reporters]{style="font-weight: 700; font-size: 1.4em;"}
 
 ::: {style="font-size: 0.95em; margin-top: 12px; line-height: 1.5; opacity: 0.9;"}
 • Can and will confidently make errors  <br>
-• Can be more concerned with performing progress than correctness
 :::
 :::
 
 ::: {.fragment}
-[LLMs are still useful for data analysis]{style="font-weight: 700; font-size: 1.4em;"}
+[...but they're still useful for data analysis]{style="font-weight: 700; font-size: 1.4em;"}
 
 ::: {style="font-size: 0.95em; margin-top: 12px; line-height: 1.5; opacity: 0.9;"}
-• Tell them to care about being right<br>
-• Design the scaffold so that it matters less if they are wrong
+• Help them be accurate.<br>
+• Make it matter less when they're wrong.
 :::
 :::
 
