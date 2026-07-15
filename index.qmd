@@ -555,7 +555,7 @@ we are going to use Posit Assistant
 ::: {style="display: inline-block; text-align: left; font-size: 1.05em; line-height: 1.9; margin-top: 50px;"}
 <ul>
 <li class="fragment toc-emph" data-fragment-index="1">Make it easy for them to be right.</li>
-<li class="fragment semi-fade-out" data-fragment-index="1">Make it matter less when they're wrong</li>
+<li class="fragment semi-fade-out" data-fragment-index="1">Make it matter less when they're wrong.</li>
 </ul>
 :::
 
@@ -700,7 +700,7 @@ so you can essentially tell the model to value correctness and give it the abili
 <div style="display: inline-block; text-align: left; font-size: 1.05em; line-height: 1.9; margin-top: 50px;">
 <ul>
 <li class="fragment semi-fade-out" data-fragment-index="1">Make it easy for them to be right.</li>
-<li class="fragment toc-emph" data-fragment-index="1">Make it matter less when they're wrong
+<li class="fragment toc-emph" data-fragment-index="1">Make it matter less when they're wrong.
 </li>
 </ul>
 </div>
