@@ -612,9 +612,10 @@ don't control the model control the harness
 :::
 
 ::: notes
-llms are good at code
 doesn't necessarily need to write code
 could imagine an agent...
+
+llms are good at code
 
 we've learned from years of code for analysis...
 
@@ -630,7 +631,8 @@ have the agent write code
 :::
 
 ::: notes
-Prompting: prioritize correctness over just moving the analysis forward. PA has this
+Prompting: prioritize correctness over just moving the analysis forward. 
+Posit Assistant ... " openness to uncertainty and subtlety, and a commitment to statistical rigor ... Rather than maintaining a feeling of "moving forward," call out ambiguities and unclear results.""
 Tools: the ability to run code and see your session.
 Context: give it broad access to your files and environment, so it has a good chance at knowing the correct context to solve the problem.
 :::
@@ -727,6 +729,8 @@ by posit assistant largely does better than minimal harness (default bluffbench 
 
 ::: notes
 even with all that, it'll still make mistakes -- humans do, models do -- so make it less bad when it's wrong
+
+again, code as foundation
 :::
 
 ## Make auditing easy

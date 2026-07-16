@@ -193,14 +193,14 @@
     "href": "index.html#code-as-the-foundation",
     "title": "",
     "section": "Code as the foundation",
-    "text": "Code as the foundation\n\nLLMs are good at writing code\nReproducible, transparent, auditable\n\n\nllms are good at code doesn’t necessarily need to write code could imagine an agent…\nwe’ve learned from years of code for analysis…\nhave the agent write code"
+    "text": "Code as the foundation\n\nLLMs are good at writing code\nReproducible, transparent, auditable\n\n\ndoesn’t necessarily need to write code could imagine an agent…\nllms are good at code\nwe’ve learned from years of code for analysis…\nhave the agent write code"
   },
   {
     "objectID": "index.html#design-the-harness-with-correctness-in-mind",
     "href": "index.html#design-the-harness-with-correctness-in-mind",
     "title": "",
     "section": "Design the harness with correctness in mind",
-    "text": "Design the harness with correctness in mind\n\nPrompting: prioritize correctness, not progress.\nTools that serve correctness: run code, see your session.\nAccess to your files and environment to have enough context.\n\n\nPrompting: prioritize correctness over just moving the analysis forward. PA has this Tools: the ability to run code and see your session. Context: give it broad access to your files and environment, so it has a good chance at knowing the correct context to solve the problem."
+    "text": "Design the harness with correctness in mind\n\nPrompting: prioritize correctness, not progress.\nTools that serve correctness: run code, see your session.\nAccess to your files and environment to have enough context.\n\n\nPrompting: prioritize correctness over just moving the analysis forward. Posit Assistant … ” openness to uncertainty and subtlety, and a commitment to statistical rigor … Rather than maintaining a feeling of “moving forward,” call out ambiguities and unclear results.”” Tools: the ability to run code and see your session. Context: give it broad access to your files and environment, so it has a good chance at knowing the correct context to solve the problem."
   },
   {
     "objectID": "index.html#performance-improves-when-the-environment-makes-it-easy-to-be-right",
@@ -214,7 +214,7 @@
     "href": "index.html#section-18",
     "title": "",
     "section": "",
-    "text": "LLMs are still useful for data analysis\n\n\n\n\nMake it easy for them to be right.\n\n\nMake it matter less when they’re wrong.\n\n\n\n\n\neven with all that, it’ll still make mistakes – humans do, models do – so make it less bad when it’s wrong"
+    "text": "LLMs are still useful for data analysis\n\n\n\n\nMake it easy for them to be right.\n\n\nMake it matter less when they’re wrong.\n\n\n\n\n\neven with all that, it’ll still make mistakes – humans do, models do – so make it less bad when it’s wrong\nagain, code as foundation"
   },
   {
     "objectID": "index.html#make-auditing-easy",
