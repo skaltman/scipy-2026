@@ -16,7 +16,7 @@ knitr:
 
 ## {background-image="figures/hero-bare.png" background-size="cover" background-position="center"}
 
-::: {style="display:flex; justify-content:flex-end; align-items:flex-start; min-height:80vh; padding-top:6vh; padding-right:0; margin-right:-7%;"}
+::: {style="display:flex; justify-content:flex-end; align-items:flex-start; min-height:80vh; padding-top:6vh; padding-right:0; margin-right:-2%;"}
 ::: {style="width: 80%; text-align: right; font-family:'DM Sans',sans-serif;"}
 <span style="color:#ffffff; font-size:200%; font-weight:600; line-height:0.98; display:block;">It's (still) very bad to be wrong</span>
 
