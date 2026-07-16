@@ -53,7 +53,7 @@
     "href": "index.html#section-7",
     "title": "",
     "section": "",
-    "text": "Run this code and tell me how many points there are and what color they are…\n\n\n\nCalls tool: Run Python code\n\n\n\n\n\nThere are 3 cyan points.\n\n\n\nLLMs can ‘see’ these plots just fine"
+    "text": "Run this code and tell me how many points there are and what color they are…\n\n\n\nCalls tool: Run Python code\n\n\n\n\n\nThere are 3 cyan points.\n\n\n\n🤨\n\n\nLLMs can ‘see’ these plots just fine"
   },
   {
     "objectID": "index.html#posit-devbluffbench",
