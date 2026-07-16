@@ -49,11 +49,6 @@ theme_update(
 ```
 
 
-:::notes
-For the data-inclined folks in the audience...
-There are two gotchas I want to try and slip past you in the first half of this talk.
-:::
-
 ##
 
 ```{python}
@@ -255,10 +250,6 @@ Hilariously, we let the model "think", and in its thinking, it would say "Huh, t
 <span style="color:#093A3E;">posit-dev.github.io/bluffbench</span>
 :::
 
-:::notes
-However, our priors are usually subverted more subtly...
-:::
-
 ## {background-color="#E8F0F6"}
 
 ::: {style="font-size: 1.5em; text-align: center; color: #093A3E;"}
@@ -311,9 +302,6 @@ plt.show()
 🤨
 :::
 
-:::notes
-make another plot
-:::
 
 ## 🤨
 

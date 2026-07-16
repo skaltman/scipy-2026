@@ -4,7 +4,7 @@
     "href": "index.html#section",
     "title": "",
     "section": "",
-    "text": "It’s (still) very bad to be wrong\nAgents for Correct, Transparent, and Reproducible Data Analysis\n   \nSara Altman & Simon Couch AI Core Team @ Posit\n\n\n\n\n\n\nFor the data-inclined folks in the audience… There are two gotchas I want to try and slip past you in the first half of this talk."
+    "text": "It’s (still) very bad to be wrong\nAgents for Correct, Transparent, and Reproducible Data Analysis\n   \nSara Altman & Simon Couch AI Core Team @ Posit"
   },
   {
     "objectID": "index.html#section-1",
@@ -74,7 +74,7 @@
     "href": "index.html#posit-devbluffbench-2",
     "title": "",
     "section": "posit-dev/bluffbench",
-    "text": "posit-dev/bluffbench\n\n\nposit-dev.github.io/bluffbench\n\n\nHowever, our priors are usually subverted more subtly…"
+    "text": "posit-dev/bluffbench\n\n\nposit-dev.github.io/bluffbench"
   },
   {
     "objectID": "index.html#section-8",
@@ -88,7 +88,7 @@
     "href": "index.html#section-10",
     "title": "",
     "section": "",
-    "text": "plot bmi vs cholesterol\n\n\nCalls tool: Run Python code\n\n\n\n\n\n\n\n\n\n\n\n\n\n🤨\n\n\nmake another plot"
+    "text": "plot bmi vs cholesterol\n\n\nCalls tool: Run Python code\n\n\n\n\n\n\n\n\n\n\n\n\n\n🤨"
   },
   {
     "objectID": "index.html#section-11",
