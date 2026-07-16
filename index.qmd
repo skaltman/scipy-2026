@@ -2,6 +2,8 @@
 title: ""
 format:
   revealjs:
+    width: 1245
+    height: 700
     theme: [default, custom.scss]
     footer: '<span style="color:#093A3E;">github.com/skaltman/scipy-2026</span>'
 editor: source
