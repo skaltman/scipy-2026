@@ -84,7 +84,7 @@ _Calls tool: Run Python code_
 :::
 
 ::: {.fragment style="align-self: flex-end; background-color: #d6eaf8; padding: 6px; border-radius: 18px 18px 4px 18px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);"}
-![](figures/tips-bill-tip-thumb.png){width="160px" style="border-radius: 12px; display: block;"}
+![](figures/tips-bill-tip-thumb.png){fig-alt="A small scatterplot thumbnail with total_bill on the x-axis and tip on the y-axis. The points drift downward from upper left to lower right, suggesting a negative association." width="160px" style="border-radius: 12px; display: block;"}
 
 <br>
 :::
@@ -100,6 +100,7 @@ There is a **strong, positive association.**
 ```{python}
 #| echo: false
 #| fig-align: center
+#| fig-alt: "The same tips plot."
 fig, ax = plt.subplots()
 ax.scatter(tips["total_bill"], tips["tip"], s=20)
 ax.set_xlabel("total_bill")
@@ -132,7 +133,7 @@ _Calls tool: Run Python code_
 :::
 
 ::: {style="align-self: flex-end; background-color: #d6eaf8; padding: 6px; border-radius: 18px 18px 4px 18px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);"}
-![](figures/tips-bill-tip-thumb.png){width="160px" style="border-radius: 12px; display: block;"}
+![](figures/tips-bill-tip-thumb.png){fig-alt="The same tips plot." width="160px" style="border-radius: 12px; display: block;"}
 :::
 
 ::: {style="align-self: flex-start; background-color: white; padding: 12px 18px; border-radius: 18px 18px 18px 4px; max-width: 70%; box-shadow: 0 2px 4px rgba(0,0,0,0.1); border: 1px solid #e0e0e0;"}
@@ -172,6 +173,7 @@ np.random.seed(322)
 
 ```{python}
 #| fig-align: center
+#| fig-alt: "A scatterplot of three cyan points."
 import numpy as np
 import seaborn as sns
 
@@ -207,7 +209,7 @@ _Calls tool: Run Python code_
 :::
 
 ::: {style="align-self: flex-end; background-color: #d6eaf8; padding: 6px; border-radius: 18px 18px 4px 18px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);"}
-![](figures/random-points-thumb.png){width="160px" style="border-radius: 12px; display: block;"}
+![](figures/random-points-thumb.png){fig-alt="The same plot from the previous slide." width="160px" style="border-radius: 12px; display: block;"}
 :::
 
 ::: {style="align-self: flex-start; background-color: white; padding: 12px 18px; border-radius: 18px 18px 18px 4px; max-width: 70%; box-shadow: 0 2px 4px rgba(0,0,0,0.1); border: 1px solid #e0e0e0;"}
@@ -226,7 +228,7 @@ LLMs can 'see' these plots just fine
 
 ## posit-dev/bluffbench
 
-![](figures/bluffbench-post.png){fig-align="center"}
+![](figures/bluffbench-post.png){fig-align="center" fig-alt="A browser screenshot of the Posit blog post titled 'When plotting, LLMs see what they expect to see,' written by Simon Couch and Sara Altman. The hero image shows pale scattered dots streaming into a plotting grid on a dark blue background."}
 
 :::footer
 <span style="color:#093A3E;">posit-dev.github.io/bluffbench</span>
@@ -234,7 +236,7 @@ LLMs can 'see' these plots just fine
 
 ## posit-dev/bluffbench
 
-![](figures/original-bluffbench-results.png)
+![](figures/original-bluffbench-results.png){fig-alt="A horizontal stacked bar chart titled 'Models often report what they expect to see, not what's plotted,' using well-known datasets. For GPT-5, Gemini Pro 2.5, and Claude Sonnet 4.5, each bar is almost entirely the orange Incorrect segment, with only a thin blue Correct sliver. No intervention we tried moved these scores much."}
 
 :::footer
 <span style="color:#093A3E;">posit-dev.github.io/bluffbench</span>
@@ -247,7 +249,7 @@ Hilariously, we let the model "think", and in its thinking, it would say "Huh, t
 
 ## posit-dev/bluffbench
 
-![](https://posit-dev.github.io/bluffbench/index_files/figure-html/plot-bluff-eval-mocked-1.png)
+![](https://posit-dev.github.io/bluffbench/index_files/figure-html/plot-bluff-eval-mocked-1.png){fig-alt="A faceted horizontal stacked bar chart of percent correct across many frontier models, split into 'Thinking' and 'No thinking' panels. Thinking models do better, with Claude Fable 5 and Gemini 3.5 Flash near 70 percent, while most non-thinking models sit below 35 percent correct."}
 
 :::footer
 <span style="color:#093A3E;">posit-dev.github.io/bluffbench</span>
@@ -283,6 +285,7 @@ _Calls tool: Run Python code_
 ```{python}
 #| echo: false
 #| fig-align: center
+#| fig-alt: "A scatterplot of BMI against cholesterol with a positive trend. A subset of points falls exactly along a straight line."
 rng = np.random.default_rng(109)
 
 n, n_imp = 150, 35
@@ -317,6 +320,7 @@ make another plot
 ```{python}
 #| echo: false
 #| fig-align: center
+#| fig-alt: "The same BMI plot."
 fig, ax = plt.subplots(figsize=(12, 6.5))
 ax.scatter(bmi, cholesterol, alpha=0.8, s=40)
 ax.set_xlabel("BMI")
@@ -329,6 +333,7 @@ plt.show()
 ```{r}
 #| echo: false
 #| fig-align: center
+#| fig-alt: "A horizontal bar chart of bluffbench2 scores by model. All models score low, with no model reaching half correct."
 library(bluffbench2)
 library(scales)
 
@@ -408,14 +413,14 @@ want any person or agent to have
 
 ::: {style="height: 560px; display:flex; flex-direction:row; gap:26px; justify-content:center; align-items:center;"}
 
-<img src="figures/bluffbench-performance-01.png" class="fragment semi-fade-out" data-fragment-index="1" style="height:285px; box-shadow:0 2px 12px rgba(0,0,0,.12);">
+<img src="figures/bluffbench-performance-01.png" alt="A plot-and-caption card titled Bacteria Count vs. Antibiotic Dosage with an upward trend line. The model's caption states that as dosage increases bacteria count rises in a strongly positive, roughly linear relationship." class="fragment semi-fade-out" data-fragment-index="1" style="height:285px; box-shadow:0 2px 12px rgba(0,0,0,.12);">
 
 <div class="fragment zoom-big" data-fragment-index="1" style="position:relative; z-index:10; background:#fff; box-shadow:0 4px 18px rgba(0,0,0,.2);">
-<img src="figures/bluffbench-performance-03.png" class="fragment fade-out" data-fragment-index="2" style="height:285px; display:block;">
-<img src="figures/bluffbench-performance-03-highlighted.png" class="fragment" data-fragment-index="2" style="position:absolute; top:0; left:0; height:285px;">
+<img src="figures/bluffbench-performance-03.png" alt="A plot-and-caption card titled Fuel Efficiency vs. Horsepower whose points form a clear U shape, dipping then rising. Yet the model's caption confidently claims a clear negative relationship where more horsepower means lower mpg." class="fragment fade-out" data-fragment-index="2" style="height:285px; display:block;">
+<img src="figures/bluffbench-performance-03-highlighted.png" alt="The same Fuel Efficiency vs. Horsepower card with the caption's phrase clear negative relationship underlined in orange, marking where the confident description fails to match the U-shaped plot." class="fragment" data-fragment-index="2" style="position:absolute; top:0; left:0; height:285px;">
 </div>
 
-<img src="figures/bluffbench-performance-02.png" class="fragment semi-fade-out" data-fragment-index="1" style="height:285px; box-shadow:0 2px 12px rgba(0,0,0,.12);">
+<img src="figures/bluffbench-performance-02.png" alt="A plot-and-caption card titled Diamond Price vs. Carat with a downward trend line. The model's caption flags the result as unexpected and warns that the data is likely not the standard diamonds dataset." class="fragment semi-fade-out" data-fragment-index="1" style="height:285px; box-shadow:0 2px 12px rgba(0,0,0,.12);">
 :::
 
 ::: {.fragment fragment-index="3" style="text-align:center; margin-top:-10px; font-size:1.1em;"}
@@ -433,18 +438,18 @@ the only problem is that, like in this case where it says this clearly negative 
 ## The answers look the same
 
 <div style="display:flex; flex-direction:row; align-items:center; justify-content:center; gap:34px; margin-top:24px;">
-<img src="figures/trees-plot.png" style="width:475px;">
+<img src="figures/trees-plot.png" alt="A scatterplot titled Doug Fir Height vs. Circumference. Height rises with circumference up to about 150 to 170 cm and then falls, forming a clear inverted-U parabola." style="width:475px;">
 <div style="display:flex; flex-direction:column; gap:22px;">
 <div style="position:relative;">
-<img src="figures/trees-incorrect-01.png" class="fragment" data-fragment-index="1" style="width:700px; display:block;">
+<img src="figures/trees-incorrect-01.png" alt="A model description of the tree plot claiming a weak positive correlation between circumference and height, though noisy. It is marked incorrect for the parabolic data, yet shares the same confident tone and style as the other answers." class="fragment" data-fragment-index="1" style="width:700px; display:block;">
 <span class="fragment" data-fragment-index="4" style="position:absolute; top:50%; right:16px; transform:translateY(-50%); font-size:2.4em; line-height:1; text-shadow:0 0 8px #fff, 0 0 8px #fff;">❌</span>
 </div>
 <div style="position:relative;">
-<img src="figures/trees-correct.png" class="fragment" data-fragment-index="2" style="width:700px; display:block;">
+<img src="figures/trees-correct.png" alt="A model description of the tree plot stating there is a non-linear, parabolic relationship where height increases with circumference up to about 150 to 170 cm and then decreases. This answer is correct, but reads no differently from the wrong ones." class="fragment" data-fragment-index="2" style="width:700px; display:block;">
 <span class="fragment" data-fragment-index="4" style="position:absolute; top:50%; right:16px; transform:translateY(-50%); font-size:2.4em; line-height:1; text-shadow:0 0 8px #fff, 0 0 8px #fff;">✅</span>
 </div>
 <div style="position:relative;">
-<img src="figures/trees-incorrect-02.png" class="fragment" data-fragment-index="3" style="width:700px; display:block;">
+<img src="figures/trees-incorrect-02.png" alt="A model description of the tree plot claiming a slight negative correlation between circumference and height. It is marked incorrect for the parabolic data, and is indistinguishable in tone and length from the correct answer above." class="fragment" data-fragment-index="3" style="width:700px; display:block;">
 <span class="fragment" data-fragment-index="4" style="position:absolute; top:50%; right:16px; transform:translateY(-50%); font-size:2.4em; line-height:1; text-shadow:0 0 8px #fff, 0 0 8px #fff;">❌</span>
 </div>
 </div>
@@ -556,7 +561,7 @@ most relevant if you have control of the agent yourself
 
 ## Posit Assistant
 
-![](figures/posit-assistant-python.png){fig-align="center" width="820"}
+![](figures/posit-assistant-python.png){fig-align="center" width="820" fig-alt="A screenshot of Positron running Posit Assistant: the assistant chat sits on the left, a Python console in the middle, and a Session panel with plots and variables on the right. The assistant has produced a map of Washington colored by forested status."}
 
 :::notes
 posit agent
@@ -649,6 +654,7 @@ Context: give it broad access to your files and environment, so it has a good ch
 ```{r}
 #| echo: false
 #| fig-align: center
+#| fig-alt: "A grouped horizontal bar chart of percent correct per model, comparing a minimal harness against Posit Assistant. Posit Assistant scores higher for every model."
 raw <- readRDS("data/bluffbench-additional-models.rds") |>
   filter(type == "intuitive") |>
   summarise(pct = mean(score == "C"), .by = model) |>
@@ -739,7 +745,7 @@ even with all that, it'll still make mistakes -- humans do, models do -- so make
 
 A chance to catch or diagnose mistakes
 
-![](figures/posit-assistant-python-code.png){fig-align="center"}
+![](figures/posit-assistant-python-code.png){fig-align="center" fig-alt="The Posit Assistant screenshot with an orange box drawn around the assistant's executeCode block, showing the Python source it ran to build an elevation histogram colored by forested status."}
 
 ::: notes
 probably not enough for the model to write that code
@@ -753,7 +759,7 @@ you don't inspect every time, but if you suspect something went wrong you have t
 
 See eye-to-eye with the agent. See the same outputs, run the same code.
 
-![](figures/posit-assistant-python-console.png){fig-align="center"}
+![](figures/posit-assistant-python-console.png){fig-align="center" fig-alt="The Posit Assistant screenshot with orange circles around matching code in the assistant panel and in the shared Python console."}
 
 ::: notes
 not only is the model writing code
@@ -817,7 +823,7 @@ you're seeing eye to eye with the agent, instead of the two of you occupying dif
 ::: {style="display: flex; flex-direction: column; align-items: flex-start; gap: 10px;"}
 [AI newsletter]{style="font-weight: 700; font-size: 1.1em;"}
 
-![](figures/newsletter-qr.png){width="240px"}
+![](figures/newsletter-qr.png){width="240px" fig-alt="A QR code that links to the authors' AI newsletter."}
 :::
 
 :::
