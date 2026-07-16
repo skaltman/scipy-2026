@@ -140,29 +140,15 @@
     "text": "Models largely fail to override their own priors about data."
   },
   {
-    "objectID": "index.html#section-9",
-    "href": "index.html#section-9",
-    "title": "",
-    "section": "",
-    "text": "load in labs.csv and print it out\n\n\nCalls tool: Run Python code\n\n\n\n\n\n\n\n\n\n\n\nspecimen\nfasting\nbmi\ncholesterol\n\n\n\n\n0\nL-0030\nyes\n35.4\n168.4\n\n\n1\nL-0051\nyes\n34.2\n256.2\n\n\n2\nL-0072\nyes\n40.4\n196.9\n\n\n3\nL-0103\nyes\n32.7\n187.2\n\n\n4\nL-0123\nyes\n24.8\n220.5\n\n\n...\n...\n...\n...\n...\n\n\n173\nL-0135\nyes\n24.4\n203.7\n\n\n174\nL-0077\nyes\n35.1\n189.7\n\n\n175\nL-0050\nyes\n27.8\n198.7\n\n\n176\nL-0165\nyes\n33.6\n207.4\n\n\n177\nL-0060\nyes\n27.9\n215.9\n\n\n\n\n178 rows × 4 columns\n\n\n\n\n\nsay you load some patient data in with a coding agent…"
-  },
-  {
     "objectID": "index.html#section-10",
     "href": "index.html#section-10",
-    "title": "",
-    "section": "",
-    "text": "make a histogram of bmi\n\n\nCalls tool: Run Python code\n\n\n\n\n\n\n\n\n\n\n\n\n\nmake a plot…"
-  },
-  {
-    "objectID": "index.html#section-11",
-    "href": "index.html#section-11",
     "title": "",
     "section": "",
     "text": "plot bmi vs cholesterol\n\n\nCalls tool: Run Python code\n\n\n\n\n\n\n\n\n\n\n\n\n\n🤨\n\n\nmake another plot"
   },
   {
-    "objectID": "index.html#section-12",
-    "href": "index.html#section-12",
+    "objectID": "index.html#section-11",
+    "href": "index.html#section-11",
     "title": "",
     "section": "🤨",
     "text": "🤨"
@@ -175,53 +161,53 @@
     "text": "posit-dev/bluffbench2"
   },
   {
-    "objectID": "index.html#section-13",
-    "href": "index.html#section-13",
+    "objectID": "index.html#section-12",
+    "href": "index.html#section-12",
     "title": "",
     "section": "",
     "text": "Models fail to notice subtle data quality issues that data scientists would not."
   },
   {
-    "objectID": "index.html#section-14",
-    "href": "index.html#section-14",
+    "objectID": "index.html#section-13",
+    "href": "index.html#section-13",
     "title": "",
     "section": "",
-    "text": "LLMs fail at tasks central to data science.\n\n\nFail to override priors about data\nFail to notice some subtle data quality issues\n\n\n\n\nso why is this a problem? when you’re working with real data with real world consequences, being correct matters. correctness, fittingly, is really a core value of data science when you do an analysis, you want your results to actually line up with the real world, or at least approximate it. That’s the whole point. But LLM behavior doesn’t necessarily always line up with this value of correctness"
+    "text": "LLMs fail at tasks central to data analysis.\n\n\nFail to override priors about data\nFail to notice subtle data quality issues\n\n\n\n\nbluffbench is evidence llms fail at tasks central to data analysis\n[click]\noverride priors fail to notice subtle\nboth of these ability to not let expectations get in the way spot data quality issues in visualizations\ncore skills want any person or agent to have"
   },
   {
     "objectID": "index.html#its-a-convincing-performance",
     "href": "index.html#its-a-convincing-performance",
     "title": "",
     "section": "It’s a convincing performance",
-    "text": "It’s a convincing performance\n\n\n\n\n \n\n\n\n\nbut one that occasionally fails to match reality\n\n\nbut it’s a convincing performance right we’ve seen in bluffbench that the model will interpret the plot, and will provide details and supposed evidence for what they see they act like they are moving the analysis forward the only problem is that, like in this case where it says this clearly negative trend is positive, is that it’s one that can fail to match reality"
+    "text": "It’s a convincing performance\n\n\n\n\n \n\n\n\n\nbut one that occasionally fails to match reality\n\n\nbut llms are great performers can put on a convincing performance of correctness we’ve seen in bluffbench that the model will interpret the plot, and will provide details and supposed evidence for what they see they act like they are moving the analysis forward the only problem is that, like in this case where it says this clearly negative trend is positive, is that it’s one that can fail to match reality"
   },
   {
     "objectID": "index.html#the-answers-look-the-same",
     "href": "index.html#the-answers-look-the-same",
     "title": "",
     "section": "The answers look the same",
-    "text": "The answers look the same\n\n\n\n\n ❌\n\n\n ✅\n\n\n ❌\n\n\n\n\nThe problem isn’t just that the model is sometimes wrong, it’s that the wrong answers can be indistinguishable from the right ones\nwe have a clearly parabolic plot and three descriptions from the same model shared tone, shared style, shared length – but different description each time if you didn’t know waht the plot looked like, you wouldn’t be able to disentangel the correct ones from the incorrect ones"
+    "text": "The answers look the same\n\n\n\n\n ❌\n\n\n ✅\n\n\n ❌\n\n\n\n\nThe problem with this performance just that the model is sometimes wrong, it’s that the wrong answers are confident and can be indistinguishable from the right ones\nwe have a clearly parabolic plot and three descriptions from the same model shared tone, shared style, shared length – but different description each time if you didn’t know what the plot looked like, you wouldn’t be able to disentangle the correct ones from the incorrect ones"
+  },
+  {
+    "objectID": "index.html#section-14",
+    "href": "index.html#section-14",
+    "title": "",
+    "section": "",
+    "text": "1. LLMs fail at tasks central to data analysis.\n\n\nnot only do they fail, they cloak incorrect answers in confident descriptions makes it hard to tell what is correct or not"
   },
   {
     "objectID": "index.html#section-15",
     "href": "index.html#section-15",
     "title": "",
     "section": "",
-    "text": "1. LLMs fail at tasks central to data science."
+    "text": "2. LLMs are still useful for data analysis.\n\n\n\ndon’t need to throw the whole thing away\nWe shouldn’t take evidence like bluffbench to mean that LLMs are useless anywhere you value correctness.\nInstead, you have to figure out where they can fit and how to design around their limitations."
   },
   {
     "objectID": "index.html#section-16",
     "href": "index.html#section-16",
     "title": "",
     "section": "",
-    "text": "2. LLMs are still useful for data analysis.\n\n\n\ndon’t need to throw the whole thing away\nWe shouldn’t take evidence like bluffbench to mean that LLMs are useless anywhere you value correctness.\nInstead, you have to figure out where they can fit and how to design around their limitations.\nwe’re going to talk about what we did…"
-  },
-  {
-    "objectID": "index.html#section-17",
-    "href": "index.html#section-17",
-    "title": "",
-    "section": "",
-    "text": "LLMs are still useful for data analysis.\n\n\n\n\n\nMake it easy for them to be right.\n\n\nMake it matter less when they’re wrong."
+    "text": "LLMs are still useful for data analysis.\n\n\n\n\n\nMake it easy for them to be right.\n\n\nMake it matter less when they’re wrong.\n\n\n\n\n\nprevention mitigation"
   },
   {
     "objectID": "index.html#well-be-talking-about-agents",
@@ -235,56 +221,56 @@
     "href": "index.html#well-be-talking-about-agents-1",
     "title": "",
     "section": "We’ll be talking about agents",
-    "text": "We’ll be talking about agents\n\n\nyou can use an existing agent\n\n\n…or build one yourself\n\n\n\nlots of coding agents out there you can use for data analysis we’ll use Posit Assistant as our running example but everything here applies broadly – and these lessons are most pertinent if you’re building your own agent"
+    "text": "We’ll be talking about agents\n\n\nyou can use an existing agent\n\n\n…or build one yourself\n\n\n\nyou might already use an agent can also make one yourself\nmost relevant if you have control of the agent yourself"
   },
   {
     "objectID": "index.html#posit-assistant",
     "href": "index.html#posit-assistant",
     "title": "",
     "section": "Posit Assistant",
-    "text": "Posit Assistant\n\n\ndefine agent we are going to use Posit Assistant"
+    "text": "Posit Assistant\n\n\nposit agent general purpose coding and data analysis\nuse as an example"
   },
   {
-    "objectID": "index.html#section-18",
-    "href": "index.html#section-18",
+    "objectID": "index.html#section-17",
+    "href": "index.html#section-17",
     "title": "",
     "section": "",
-    "text": "LLMs are still useful for data analysis.\n\n\n\n\n\nMake it easy for them to be right.\n\n\nMake it matter less when they’re wrong"
+    "text": "LLMs are still useful for data analysis.\n\n\n\n\n\nMake it easy for them to be right.\n\n\nMake it matter less when they’re wrong.\n\n\n\n\n\nneed to make it easy for the models to be right"
   },
   {
     "objectID": "index.html#build-the-environment-so-that-its-easy-to-be-right",
     "href": "index.html#build-the-environment-so-that-its-easy-to-be-right",
     "title": "",
     "section": "Build the environment so that it’s easy to be right",
-    "text": "Build the environment so that it’s easy to be right\nYou control the environmentharness around the model, not the model itself\n\n\nHave the model write code\nDesign the harness with correctness in mind\n\n\n\nthere’s more to an agent than just the model comes wrapped in a harness [list] Unless your building or fine tuning an LLM yourself, you don’t have much control over the underlying LLM but you control the harness – this is what you shape, whether you use an agent like Posit Assistant or build your own\nthis is what we control when we control posit assistant extensive prompting about prioritizing correctness not just advancing the analysis forward statistical robustness\ntools that matter for correctness, ability to see your active session"
+    "text": "Build the environment so that it’s easy to be right\n\nYou control the harness around the model, not the model itself\n\n\n\nHave the model write code\nDesign the harness with correctness in mind\n\n\n\nbuild an environment that makes it as likely as possible that your agent will fall into correctness\ndon’t control the model control the harness"
   },
   {
     "objectID": "index.html#code-as-the-foundation",
     "href": "index.html#code-as-the-foundation",
     "title": "",
     "section": "Code as the foundation",
-    "text": "Code as the foundation\n\nLLMs are good at writing code\nReproducible, transparent, auditable\n\n\ndoesn’t necessarily need to write code could image an agent…\nModels are good at writing code Code is reproducible Code is auditable\ncode is a good choice"
+    "text": "Code as the foundation\n\nLLMs are good at writing code\nReproducible, transparent, auditable\n\n\nllms are good at code doesn’t necessarily need to write code could imagine an agent…\nwe’ve learned from years of code for analysis…\nhave the agent write code"
   },
   {
     "objectID": "index.html#design-the-harness-with-correctness-in-mind",
     "href": "index.html#design-the-harness-with-correctness-in-mind",
     "title": "",
     "section": "Design the harness with correctness in mind",
-    "text": "Design the harness with correctness in mind\n\nPrompting: prioritize correctness, not progress.\nTools that serve correctness: run code, see your session.\nAccess to your files and environment to have enough context.\n\n\nPrompting: prioritize correctness over just moving the analysis forward. Tools: the ability to run code and see your session. Context: give it broad access to your files and environment, so it has a good chance at knowing the correct context to solve the problem."
+    "text": "Design the harness with correctness in mind\n\nPrompting: prioritize correctness, not progress.\nTools that serve correctness: run code, see your session.\nAccess to your files and environment to have enough context.\n\n\nPrompting: prioritize correctness over just moving the analysis forward. PA has this Tools: the ability to run code and see your session. Context: give it broad access to your files and environment, so it has a good chance at knowing the correct context to solve the problem."
   },
   {
     "objectID": "index.html#performance-improves-when-the-environment-makes-it-easy-to-be-right",
     "href": "index.html#performance-improves-when-the-environment-makes-it-easy-to-be-right",
     "title": "",
     "section": "Performance improves when the environment makes it easy to be right",
-    "text": "Performance improves when the environment makes it easy to be right\n\n\nand it turns out all of this can make a difference even without affecting the underlying model when we tried interventions in isolation in bluffbench, limited success by posit assistant largely does better than minimal harness (default bluffbench case)\nso you can essentially tell the model to value correctness and give it the ability to do so, and it does help"
+    "text": "Performance improves when the environment makes it easy to be right\n\n\n\n\n\n\n\n\n\n\n\n\nperformance improves when … and it turns out all of this can make a difference even without affecting the underlying model when we tried interventions in isolation in bluffbench, limited success by posit assistant largely does better than minimal harness (default bluffbench case)"
   },
   {
-    "objectID": "index.html#section-19",
-    "href": "index.html#section-19",
+    "objectID": "index.html#section-18",
+    "href": "index.html#section-18",
     "title": "",
     "section": "",
-    "text": "LLMs are still useful for data analysis\n\n\n\n\nMake it easy for them to be right.\n\n\nMake it matter less when they’re wrong\n\n\n\n\n\neven with all that, it’ll still make mistakes – humans do, models do – so make it less bad when it’s wrong"
+    "text": "LLMs are still useful for data analysis\n\n\n\n\nMake it easy for them to be right.\n\n\nMake it matter less when they’re wrong.\n\n\n\n\n\neven with all that, it’ll still make mistakes – humans do, models do – so make it less bad when it’s wrong"
   },
   {
     "objectID": "index.html#make-auditing-easy",
@@ -301,15 +287,15 @@
     "text": "Shared environment\nSee eye-to-eye with the agent. See the same outputs, run the same code.\n\n\nnot only is the model writing code writing it in a shared environment it has access to your same r/python session its not guessing what data you have loaded – it can see into that data in the same way you can you can audit its code by running it yourself it can inspect your objects and rerun code you ran\nthis turns out to be very useful, especially for data analysis where you are often turning the same object around and looking at it from multiple angles and transforming it\nyou’re seeing eye to eye with the agent, instead of the two of you occupying different worlds"
   },
   {
-    "objectID": "index.html#section-20",
-    "href": "index.html#section-20",
+    "objectID": "index.html#section-19",
+    "href": "index.html#section-19",
     "title": "",
     "section": "",
-    "text": "LLMs can fail at tasks central to data science.\n\n\n…but they’re still useful for data analysis\n\n\n\n• Make it easy for them to be right. • Make it matter less when they’re wrong."
+    "text": "LLMs can fail at tasks central to data analysis.\n\n\n…but they’re still useful for data analysis.\n\n\n\n• Make it easy for them to be right. • Make it matter less when they’re wrong."
   },
   {
-    "objectID": "index.html#section-21",
-    "href": "index.html#section-21",
+    "objectID": "index.html#section-20",
+    "href": "index.html#section-20",
     "title": "",
     "section": "",
     "text": "thank you! \n\n\n\nSlides\nskaltman.github.io/scipy-2026\n\n\nbluffbench\ngithub.com/posit-dev/bluffbench\ngithub.com/posit-dev/bluffbench2\n\n\n\nAI newsletter"
