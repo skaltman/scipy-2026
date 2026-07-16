@@ -370,18 +370,27 @@ _Models fail to notice subtle data quality issues that data scientists would not
 <br>
 LLMs fail at tasks central to data analysis.
 
-::: {style="font-size: 0.6em; font-weight: 400; margin-left: 1.5em;"}
+::: {.incremental style="font-size: 0.6em; font-weight: 400; margin-left: 1.5em;"}
 - Fail to override priors about data
 - Fail to notice subtle data quality issues
 :::
 :::
 
 ::: notes
-so why is this a problem?
-when you're working with real data with real world consequences, being correct matters.
-correctness, fittingly, is really a core value of data science
-when you do an analysis, you want your results to actually line up with the real world, or at least approximate it. That's the whole point.
-But LLM behavior doesn't necessarily always line up with this value of correctness
+bluffbench is evidence
+llms fail at tasks central to data analysis
+
+[click]
+
+override priors
+fail to notice subtle
+
+both of these 
+ability to not let expectations get in the way
+spot data quality issues in visualizations
+
+core skills 
+want any person or agent to have
 :::
 
 ## It's a convincing performance
@@ -408,7 +417,8 @@ but one that occasionally fails to match reality
 :::
 
 ::: notes
-but it's a convincing performance right
+but llms are great performers
+can put on a convincing performance of correctness
 we've seen in bluffbench that the model will interpret the plot, and will provide details and supposed evidence for what they see 
 they act like they are moving the analysis forward
 the only problem is that, like in this case where it says this clearly negative trend is positive, is that **it's one that can fail to match reality**
@@ -435,12 +445,12 @@ the only problem is that, like in this case where it says this clearly negative 
 </div>
 
 ::: notes
-The problem isn't just that the model is sometimes wrong, it's that the wrong answers can be indistinguishable from the right ones
+The problem with this performance just that the model is sometimes wrong, it's that the wrong answers are confident and can be indistinguishable from the right ones
 
 we have a clearly parabolic plot
 and three descriptions from the same model
 shared tone, shared style, shared length -- but different description each time
-if you didn't know waht the plot looked like, you wouldn't be able to disentangel the correct ones from the incorrect ones
+if you didn't know what the plot looked like, you wouldn't be able to disentangle the correct ones from the incorrect ones
 :::
 
 ## {background-color="#093A3E"}
@@ -450,6 +460,11 @@ if you didn't know waht the plot looked like, you wouldn't be able to disentange
 <br>
 <br>
 1. LLMs fail at tasks central to data analysis.
+:::
+
+::: notes
+not only do they fail, they cloak incorrect answers in confident descriptions
+makes it hard to tell what is correct or not
 :::
 
 ## {background-color="#093A3E" auto-animate=true}
@@ -471,8 +486,6 @@ don't need to throw the whole thing away
 We shouldn't take evidence like bluffbench to mean that LLMs are useless _anywhere_ you value correctness. 
 
 Instead, you have to figure out where they can fit and how to design around their limitations.
-
-we're going to talk about what we did...
 :::
 
 ## {background-color="#E8F0F6" auto-animate=true}
@@ -495,6 +508,11 @@ we're going to talk about what we did...
 </ul>
 :::
 
+:::
+
+::: notes
+prevention
+mitigation
 :::
 
 ## We'll be talking about agents
@@ -524,10 +542,10 @@ you can use an existing agent
 :::
 
 ::: notes
-lots of coding agents out there you can use for data analysis
-we'll use Posit Assistant as our running example
-but everything here applies broadly -- and these lessons are most
-pertinent if you're building your own agent
+you might already use an agent
+can also make one yourself
+
+most relevant if you have control of the agent yourself
 :::
 
 ## Posit Assistant
@@ -535,8 +553,10 @@ pertinent if you're building your own agent
 ![](figures/posit-assistant-python.png){fig-align="center" width="820"}
 
 :::notes
-define agent
-we are going to use Posit Assistant
+posit agent
+general purpose coding and data analysis
+
+use as an example
 :::
 
 ## {background-color="#E8F0F6"}
@@ -555,15 +575,22 @@ we are going to use Posit Assistant
 ::: {style="display: inline-block; text-align: left; font-size: 1.05em; line-height: 1.9; margin-top: 50px;"}
 <ul>
 <li class="fragment toc-emph" data-fragment-index="1">Make it easy for them to be right.</li>
-<li class="fragment semi-fade-out" data-fragment-index="1">Make it matter less when they're wrong</li>
+<li class="fragment semi-fade-out" data-fragment-index="1">Make it matter less when they're wrong.</li>
 </ul>
 :::
 
 :::
 
+::: notes
+need to make it easy for the models to be right
+:::
+
 ## Build the environment so that it's easy to be right
 
-You control the <span style="position:relative; display:inline-block;"><span class="fragment fade-out" data-fragment-index="1">_environment_</span><span class="fragment fade-in" data-fragment-index="1" style="position:absolute; left:0; top:0; font-weight:700; white-space:nowrap;">harness</span></span> around the model, not the model itself
+::: {.fragment}
+
+You control the harness around the model, not the model itself
+:::
 
 ::: {.fragment}
 ::: {.incremental}
@@ -573,19 +600,9 @@ You control the <span style="position:relative; display:inline-block;"><span cla
 :::
 
 ::: notes
-there's more to an agent than just the model
-comes wrapped in a harness
-[list]
-Unless your building or fine tuning an LLM yourself, you don't have much control over the underlying LLM
-but you control the harness -- this is what you shape, whether you use an agent like Posit Assistant or build your own
+build an environment that makes it as likely as possible that your agent will fall into correctness
 
-this is what we control when we control posit assistant
-extensive prompting about
-prioritizing correctness
-not just advancing the analysis forward
-statistical robustness 
-
-tools that matter for correctness, ability to see your active session
+don't control the model control the harness
 :::
 
 ## Code as the foundation
@@ -596,14 +613,13 @@ tools that matter for correctness, ability to see your active session
 :::
 
 ::: notes
+llms are good at code
 doesn't necessarily need to write code
-could image an agent...
+could imagine an agent...
 
-Models are good at writing code
-Code is reproducible
-Code is auditable
+we've learned from years of code for analysis...
 
-code is a good choice
+have the agent write code
 :::
 
 ## Design the harness with correctness in mind
@@ -615,12 +631,14 @@ code is a good choice
 :::
 
 ::: notes
-Prompting: prioritize correctness over just moving the analysis forward.
+Prompting: prioritize correctness over just moving the analysis forward. PA has this
 Tools: the ability to run code and see your session.
 Context: give it broad access to your files and environment, so it has a good chance at knowing the correct context to solve the problem.
 :::
 
 ## Performance improves when the environment makes it easy to be right
+
+::: {.fragment}
 
 ```{r}
 #| echo: false
@@ -680,12 +698,13 @@ bind_rows(raw, harness) |>
   )
 ```
 
+:::
+
 ::: notes
+performance improves when ...
 and it turns out all of this can make a difference even without affecting the underlying model
 when we tried interventions in isolation in bluffbench, limited success
 by posit assistant largely does better than minimal harness (default bluffbench case)
-
-so you can essentially tell the model to value correctness and give it the ability to do so, and it does help
 :::
 
 ## {background-color="#E8F0F6"}
@@ -700,7 +719,7 @@ so you can essentially tell the model to value correctness and give it the abili
 <div style="display: inline-block; text-align: left; font-size: 1.05em; line-height: 1.9; margin-top: 50px;">
 <ul>
 <li class="fragment semi-fade-out" data-fragment-index="1">Make it easy for them to be right.</li>
-<li class="fragment toc-emph" data-fragment-index="1">Make it matter less when they're wrong
+<li class="fragment toc-emph" data-fragment-index="1">Make it matter less when they're wrong.
 </li>
 </ul>
 </div>
@@ -752,7 +771,7 @@ you're seeing eye to eye with the agent, instead of the two of you occupying dif
 :::
 
 ::: {.fragment}
-[...but they're still useful for data analysis]{style="font-weight: 700; font-size: 1.4em;"}
+[...but they're still useful for data analysis.]{style="font-weight: 700; font-size: 1.4em;"}
 :::
 
 ::: {.fragment}
@@ -768,7 +787,7 @@ you're seeing eye to eye with the agent, instead of the two of you occupying dif
 
 ## {background-image="figures/thankyou-bare.png" background-size="cover" background-position="center"}
 
-::: {style="display: flex; flex-direction: column; justify-content: center; align-items: center; min-height: 70vh; gap: 40px;"}
+::: {style="display: flex; flex-direction: column; justify-content: center; align-items: center; min-height: 70vh; gap: 40px; transform: translateY(-6vh);"}
 [thank you!]{style="color: #093A3E; font-weight: 700; font-size: 2.4em;"} <span style="font-size: 2.4em; margin-left: 0.25em;"></span>
 
 ::: {style="display: flex; flex-direction: row; justify-content: center; align-items: center; gap: 80px; color: #093A3E;"}
