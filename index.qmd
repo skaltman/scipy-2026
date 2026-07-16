@@ -216,6 +216,10 @@ There are **3 cyan points.**
 
 :::
 
+::: {.fragment style="position: absolute; right: 40%; top: 55%; font-size: 4em; transform: rotate(18deg);"}
+🤨
+:::
+
 :::notes
 LLMs can 'see' these plots just fine
 :::
