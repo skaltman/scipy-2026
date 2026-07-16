@@ -148,7 +148,7 @@ There is a **strong, positive association.**
 ::: {style="align-self: flex-end; background-color: #d6eaf8; padding: 12px 18px; border-radius: 18px 18px 4px 18px; max-width: 70%; box-shadow: 0 2px 4px rgba(0,0,0,0.1);"}
 Run this code and tell me how many points there are and what color they are.
 
-```python
+```{.python code-line-numbers="|4|5-6"}
 import numpy as np
 import seaborn as sns
 
